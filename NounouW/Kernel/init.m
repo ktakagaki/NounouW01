@@ -6,7 +6,8 @@ Get[ "NounouW`NounouW`"];
 NounouW`$JavaStackSize = 6144;
 
 
-Needs[ "JLink`"];
+Needs[ "JLink`" ];
+Needs[ "HokahokaW`" ];
 (*SetOptions[JLink`InstallJava, JVMArguments -> "-Xmx1024m"];
 SetOptions[JLink`ReinstallJava, JVMArguments -> "-Xmx1024m"];
 ReinstallJava[];*)
