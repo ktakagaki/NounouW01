@@ -1,0 +1,395 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11205,        386]
+NotebookOptionsPosition[      8878,        298]
+NotebookOutlinePosition[      9221,        313]
+CellTagsIndexPosition[      9178,        310]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Modify a Span with a suffix ( x ;; y )@NN", "Section",
+ CellChangeTimes->{{3.6170849099590197`*^9, 3.6170849578837605`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Span", "[", 
+  RowBox[{"1", ",", " ", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.61708237870424*^9, 3.6170823825754614`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1", ";;", "5"}]], "Output",
+ CellChangeTimes->{3.6170823829894853`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "@", "x"}]], "Input",
+ CellChangeTimes->{{3.61708242276276*^9, 3.6170824241028366`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.617082424564863*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempProtected", "=", 
+  RowBox[{"Unprotect", "[", "Span", "]"}]}]], "Input",
+ CellChangeTimes->{{3.617082515339055*^9, 3.617082532350028*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Span\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.617082533519095*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Span", "[", 
+    RowBox[{"start_", ",", " ", "end_"}], "]"}], "[", "3", "]"}], ":=", " ", 
+  RowBox[{"hello", "[", 
+   RowBox[{"start", ",", " ", "end"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6170823839205384`*^9, 3.617082439110695*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Protect", "[", 
+  RowBox[{"Evaluate", "[", "tempProtected", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.617082544391717*^9, 3.617082551823142*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Span\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.6170825527661963`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"1", ";;", "3"}], ")"}], "@", "3"}]], "Input",
+ CellChangeTimes->{{3.617082559727594*^9, 3.6170825715732718`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hello", "[", 
+  RowBox[{"1", ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{3.617082572215308*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Definition", "[", ";;", "]"}]], "Input",
+ CellChangeTimes->{{3.6170826783983817`*^9, 3.617082695420355*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Definition", "::", "ssle"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol, string, or HoldPattern[symbol] expected at \
+position \[NoBreak]\\!\\(1\\)\[NoBreak] in \[NoBreak]\\!\\(Definition[\\(\\(1 \
+;; All\\)\\)]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/ssle\\\", ButtonNote -> \
+\\\"Definition::ssle\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.617082695653369*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"\"\>",
+  Definition[
+   Span[1, All]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.617082695654369*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Can Span be used with fractions... no", "Section",
+ CellChangeTimes->{{3.6170849099590197`*^9, 3.617084918423504*^9}, {
+  3.6170849654831953`*^9, 3.6170849708275013`*^9}, {3.6170851268584256`*^9, 
+  3.617085132649757*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1.4", " ", ";;", " ", "5"}]], "Input",
+ CellChangeTimes->{{3.617085134331853*^9, 3.617085137219018*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.4`", ";;", "5"}]], "Output",
+ CellChangeTimes->{3.6170851375650377`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Create a new infix notation?", "Section",
+ CellChangeTimes->{{3.6170849099590197`*^9, 3.617084918423504*^9}, {
+  3.6170849654831953`*^9, 3.6170849708275013`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "Notation`"}]], "Input",
+ CellChangeTimes->{{3.6170828166722903`*^9, 3.617082819251438*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NNTo", "[", 
+   RowBox[{"x_", ",", " ", "y_"}], "]"}], ":=", " ", 
+  RowBox[{"hello", "[", 
+   RowBox[{"x", ",", " ", "y"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6170850395244303`*^9, 3.6170850518441353`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InfixNotation", "[", " ", 
+   RowBox[{"to", ",", " ", "NNTo"}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.617082787799639*^9, 3.617082791619858*^9}, {
+  3.6170847575973053`*^9, 3.6170847883570642`*^9}, {3.617084832245575*^9, 
+  3.6170848424531584`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"InfixNotation", "::", "noboxtag"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The InfixNotation boxes \[NoBreak]\\!\\(to\\)\[NoBreak] do \
+not have an embedded TemplateBox with tag NotationTemplateTag. The \
+InfixNotation statement \[NoBreak]\\!\\(InfixNotation[\\(\\(to, \
+NNTo\\)\\)]\\)\[NoBreak] may not have been entered using the palette, or the \
+embedded TemplateBox may have been deleted. The embedded TemplateBox ensures \
+correct parsing and retention of proper styling and grouping information. \\!\
+\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:Notation/ref/InfixNotation\\\", \
+ButtonNote -> \\\"Notation`InfixNotation::noboxtag\\\"]\\)\"\>"}]], "Message",\
+ "MSG",
+ CellChangeTimes->{3.6170848430561934`*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.6170848430561934`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"InfixNotation", "[", 
+  RowBox[{
+   TemplateBox[{"to"},
+    "NotationTemplateTag"], ",", "NNTo"}], "]"}]], "Input",
+ CellChangeTimes->{{3.61708485821306*^9, 3.617084869213689*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", " ", "to", " ", "3"}]], "Input",
+ CellChangeTimes->{{3.617084872798894*^9, 3.6170848737409477`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hello", "[", 
+  RowBox[{"1", ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{3.6170848741339703`*^9, 3.617085066563977*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"InfixNotation", "[", 
+  RowBox[{
+   TemplateBox[{"\[BeamedEighthNote]"},
+    "NotationTemplateTag"], ",", "NNTo"}], "]"}]], "Input",
+ CellChangeTimes->{{3.61708485821306*^9, 3.617084869213689*^9}, {
+  3.617084981372104*^9, 3.617084990670636*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", " ", "\[BeamedEighthNote]", " ", "3"}]], "Input",
+ CellChangeTimes->{{3.6170849957129245`*^9, 3.617085001988283*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hello", "[", 
+  RowBox[{"1", ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{3.617085002556316*^9, 3.617085060360622*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", " ", "to", " ", "3", "\[BeamedEighthNote]", " ", "5"}]], "Input",
+ CellChangeTimes->{{3.617085251906578*^9, 3.6170852534416656`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hello", "[", 
+  RowBox[{
+   RowBox[{"hello", "[", 
+    RowBox[{"1", ",", "3"}], "]"}], ",", "5"}], "]"}]], "Output",
+ CellChangeTimes->{3.617085253899692*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputForm", "[", " ", ":", " ", "]"}]], "Input",
+ CellChangeTimes->{{3.6170854369231606`*^9, 3.617085491578286*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Syntax", "::", "tsntxi"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\\\"\[NoBreak]\\!\\(InputForm[:]\\)\[NoBreak]\\\" is \
+incomplete; more input is \
+needed.\[NoBreak]\\!\\(\\\"\\\"\\)\[NoBreak]\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6170854954495077`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Allow to be called by array?", "Section",
+ CellChangeTimes->{{3.6170849099590197`*^9, 3.617084918423504*^9}, {
+  3.6170849654831953`*^9, 3.6170849708275013`*^9}, {3.617085548040516*^9, 
+  3.617085553063803*^9}}],
+
+Cell[BoxData[
+ RowBox[{"XXX", "@", 
+  RowBox[{"readTrace", "[", 
+   RowBox[{"channel", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", " ", "10000", ",", " ", "10"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6170855574550543`*^9, 3.6170855707458143`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.6170849099590197`*^9, 3.617084918423504*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problems with the \"x to y by z\" syntax", "Subsection",
+ CellChangeTimes->{{3.617085307843777*^9, 3.6170853327622023`*^9}}],
+
+Cell["What if these become keywords in the future?", "Text",
+ CellChangeTimes->{{3.617085319665454*^9, 3.617085336897439*^9}}],
+
+Cell["What if the user overwrites them => Protect", "Text",
+ CellChangeTimes->{{3.617085319665454*^9, 3.6170853513522663`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{778, 886},
+WindowMargins->{{Automatic, 174}, {Automatic, 100}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 130, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[735, 27, 152, 3, 31, "Input"],
+Cell[890, 32, 95, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1022, 39, 116, 2, 31, "Input"],
+Cell[1141, 43, 97, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1275, 50, 166, 3, 31, "Input"],
+Cell[1444, 55, 103, 2, 31, "Output"]
+}, Open  ]],
+Cell[1562, 60, 288, 7, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1875, 71, 173, 3, 31, "Input"],
+Cell[2051, 76, 105, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2193, 83, 165, 4, 31, "Input"],
+Cell[2361, 89, 124, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2522, 97, 132, 2, 31, "Input"],
+Cell[2657, 101, 546, 11, 21, "Message"],
+Cell[3206, 114, 149, 5, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3404, 125, 228, 3, 63, "Section"],
+Cell[CellGroupData[{
+Cell[3657, 132, 128, 2, 31, "Input"],
+Cell[3788, 136, 98, 2, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3935, 144, 168, 2, 63, "Section"],
+Cell[4106, 148, 121, 2, 31, "Input"],
+Cell[4230, 152, 248, 6, 31, "Input"],
+Cell[CellGroupData[{
+Cell[4503, 162, 292, 6, 31, "Input"],
+Cell[4798, 170, 842, 15, 73, "Message"],
+Cell[5643, 187, 78, 1, 31, "Output"]
+}, Open  ]],
+Cell[5736, 191, 204, 5, 41, "Input"],
+Cell[CellGroupData[{
+Cell[5965, 200, 128, 2, 31, "Input"],
+Cell[6096, 204, 148, 3, 31, "Output"]
+}, Open  ]],
+Cell[6259, 210, 270, 6, 41, "Input"],
+Cell[CellGroupData[{
+Cell[6554, 220, 145, 2, 31, "Input"],
+Cell[6702, 224, 146, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6885, 232, 161, 2, 31, "Input"],
+Cell[7049, 236, 182, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7268, 246, 170, 3, 31, "Input"],
+Cell[7441, 251, 320, 8, 21, "Message"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7810, 265, 217, 3, 63, "Section"],
+Cell[8030, 270, 272, 7, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8339, 282, 97, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[8461, 287, 130, 1, 43, "Subsection"],
+Cell[8594, 290, 126, 1, 30, "Text"],
+Cell[8723, 293, 127, 1, 30, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

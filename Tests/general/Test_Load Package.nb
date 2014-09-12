@@ -1,0 +1,627 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22647,        618]
+NotebookOptionsPosition[     20422,        532]
+NotebookOutlinePosition[     20762,        547]
+CellTagsIndexPosition[     20719,        544]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["NounouW Test", "Title",
+ CellChangeTimes->{{3.616828795767544*^9, 3.616828800202798*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Load Package (updated 14.08.12)", "Chapter",
+ CellChangeTimes->{{3.616828803719999*^9, 3.6168288238431497`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.6168284755362277`*^9, 3.6168284777263527`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Welcome to NounouW, the Wolfram Language/Mathematica \
+interface to nounou!\"\>"], "Print",
+ CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
+  3.6168346868714952`*^9, 3.6172760765950108`*^9, 3.6172773097255416`*^9, 
+  3.617277769217823*^9, 3.617277945840925*^9, 3.617278101211812*^9, 
+  3.6172781587731047`*^9, 3.6172783810628185`*^9, 3.617278503015794*^9, 
+  3.6172785891717215`*^9, 3.6172787942534513`*^9, 3.617285890847354*^9, 
+  3.617342662943532*^9, 3.6173432441767764`*^9, 3.617343354425082*^9}],
+
+Cell[BoxData["\<\"      ( current Git HEAD:  \
+e0c7c2016f2472a8ad787a60d0c04963110e0281 )\"\>"], "Print",
+ CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
+  3.6168346868714952`*^9, 3.6172760765950108`*^9, 3.6172773097255416`*^9, 
+  3.617277769217823*^9, 3.617277945840925*^9, 3.617278101211812*^9, 
+  3.6172781587731047`*^9, 3.6172783810628185`*^9, 3.617278503015794*^9, 
+  3.6172785891717215`*^9, 3.6172787942534513`*^9, 3.617285890847354*^9, 
+  3.617342662943532*^9, 3.6173432441767764`*^9, 3.6173433544260826`*^9}],
+
+Cell[BoxData["\<\"      ( http://github.org/ktakagaki/nounouw )\"\>"], "Print",
+ CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
+  3.6168346868714952`*^9, 3.6172760765950108`*^9, 3.6172773097255416`*^9, 
+  3.617277769217823*^9, 3.617277945840925*^9, 3.617278101211812*^9, 
+  3.6172781587731047`*^9, 3.6172783810628185`*^9, 3.617278503015794*^9, 
+  3.6172785891717215`*^9, 3.6172787942534513`*^9, 3.617285890847354*^9, 
+  3.617342662943532*^9, 3.6173432441767764`*^9, 3.6173433544280825`*^9}],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
+  3.6168346868714952`*^9, 3.6172760765950108`*^9, 3.6172773097255416`*^9, 
+  3.617277769217823*^9, 3.617277945840925*^9, 3.617278101211812*^9, 
+  3.6172781587731047`*^9, 3.6172783810628185`*^9, 3.617278503015794*^9, 
+  3.6172785891717215`*^9, 3.6172787942534513`*^9, 3.617285890847354*^9, 
+  3.617342662943532*^9, 3.6173432441767764`*^9, 3.617343354455084*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Are Main Objects Loaded? (NN, NNDataReader)", "Section",
+ CellChangeTimes->{{3.6168288273673515`*^9, 3.6168288305325327`*^9}, {
+   3.617277318287031*^9, 3.6172773320628195`*^9}, 3.617277778131333*^9}],
+
+Cell[BoxData[
+ RowBox[{"JavaClassPath", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6173426897610655`*^9, 3.617342696979479*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFile", "[", "\"\<NounouW`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6173427568719044`*^9, 3.6173427679075356`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\\\\NounouW\\\\Kernel\\\\init.m\"\>"], "Output",
+ CellChangeTimes->{
+  3.6173427684475665`*^9, 3.617343250146118*^9, {3.617343356725214*^9, 
+   3.6173433730111456`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input",
+ CellChangeTimes->{{3.6172759579872265`*^9, 3.617275971562003*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NounouW`\"\>", ",", "\<\"JLink`\"\>", 
+   ",", "\<\"TemplatingLoader`\"\>", ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.617275960885392*^9, 3.6172759718170176`*^9}, 
+   3.617276078523121*^9, 3.6172773106905966`*^9, 3.6172777708709173`*^9, 
+   3.617277946742977*^9, 3.6172781030029144`*^9, 3.617278160186185*^9, 
+   3.617278383454955*^9, 3.617278503929846*^9, 3.6172785909338226`*^9, 
+   3.6172787956995344`*^9, 3.617285892955474*^9, 3.6173426643806143`*^9, 
+   3.6173432517632103`*^9, {3.617343356745215*^9, 3.617343373997202*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NounouW`*"}]], "Input",
+ CellChangeTimes->{{3.6172759754302244`*^9, 3.617275980547517*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["NounouW`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["NounouW`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["IncreaseJavaStack",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"IncreaseJavaStack", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNFunctionQ",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNFunctionQ", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNPadZeros",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNPadZeros", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["tempret",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"tempret", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["$JavaStackSize",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"$JavaStackSize", "NounouW`"}},
+          ButtonNote->"NounouW`"]},
+        {
+         ButtonBox["NNAddOptions",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNAddOptions", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNJoinOptionLists",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"NNJoinOptionLists", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNRuleListQ",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNRuleListQ", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["tempret$",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"tempret$", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["$NNData",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"$NNData", "NounouW`"}},
+          ButtonNote->"NounouW`"]},
+        {
+         ButtonBox["NNExtractRules",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"NNExtractRules", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNNextPower",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNNextPower", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["NNRuleQ",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350575-3991403", {"NNRuleQ", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["$GitCurrentHead",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"$GitCurrentHead", "NounouW`"}},
+          ButtonNote->"NounouW`"], 
+         ButtonBox["$PackageDirectory",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350575-3991403", {"$PackageDirectory", "NounouW`"}},
+          ButtonNote->"NounouW`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.19]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{3.617343375441284*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "nounou`NN`*"}]], "Input",
+ CellChangeTimes->{{3.6172773597054005`*^9, 3.617277365022704*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["nounou`NN`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["nounou`NN`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["hello",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"hello", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["OptNull",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"OptNull", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeFrAll",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"RangeFrAll", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeMsEvent",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350577-3991403", {"RangeMsEvent", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeTsEvent",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3617350577-3991403", {"RangeTsEvent", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["XTrodeN",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"XTrodeN", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"]},
+        {
+         ButtonBox["newNNData",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"newNNData", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeFr",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"RangeFr", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeMs",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"RangeMs", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["RangeTs",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"RangeTs", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], 
+         ButtonBox["toArray",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3617350577-3991403", {"toArray", "nounou`NN`"}},
+          ButtonNote->"nounou`NN`"], ""}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.15833333333333333`]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{3.617343377651411*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Definition", "[", "NN", "]"}]], "Input",
+ CellChangeTimes->{{3.617277958114627*^9, 3.6172779613968153`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"NN", "=", 
+         InterpretationBox[
+          RowBox[{"JavaClass", "[", 
+           RowBox[{"nounou", ".", "NN"}], ",", "<>", "]"}],
+          JLink`JavaClass["nounou.NN", 0, {
+            JLink`JVM["vm1"]}, 1, "nounou`NN`", False, True]]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`NN],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.6172779616318283`*^9, 3.6172781090152583`*^9, 
+  3.6172781669255705`*^9, 3.617278385955098*^9, 3.617278506810011*^9, 
+  3.6172785938019867`*^9, 3.617278797912661*^9, 3.6173426693879004`*^9, 
+  3.617343256670491*^9, 3.6173433801335526`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Methods", "[", 
+   RowBox[{"LoadJavaClass", "[", "\"\<nounou.NN$\>\"", "]"}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6173430846326513`*^9, 3.6173430942572017`*^9}, {
+  3.6173433879850016`*^9, 3.617343389415084*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Methods", "[", "NN", "]"}]], "Input",
+ CellChangeTimes->{{3.617278267183305*^9, 3.6172782701314735`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"boolean equals(Object)\"\>"},
+     {"\<\"Class getClass()\"\>"},
+     {"\<\"int hashCode()\"\>"},
+     {"\<\"static String hello()\"\>"},
+     {"\<\"static nounou.NNData newNNData()\"\>"},
+     {"\<\"void notify()\"\>"},
+     {"\<\"void notifyAll()\"\>"},
+     {"\<\"static nounou.package$OptNull$ OptNull()\"\>"},
+     {"\<\"static nounou.data.ranges.RangeFrAll RangeFrAll()\"\>"},
+     {"\<\"static nounou.data.ranges.RangeFrAll RangeFrAll(int)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeFr RangeFr(int, int)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeFr RangeFr(int, int, int)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMs RangeMs(double, double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMs RangeMs(double, double, \
+double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMsEvent[] RangeMsEvent(double[], \
+double, double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMsEvent RangeMsEvent(double, \
+double, double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMsEvent[] RangeMsEvent(double[], \
+double, double, double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeMsEvent RangeMsEvent(double, \
+double, double, double)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeTsEvent[] RangeTsEvent(long[], int, \
+int)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeTsEvent RangeTsEvent(long, int, \
+int)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeTs RangeTs(long, long)\"\>"},
+     {"\<\"static nounou.data.ranges.RangeTs RangeTs(long, long, long)\"\>"},
+     {"\<\"static int[][] toArray(nounou.data.XSpike)\"\>"},
+     {"\<\"static int[][][] toArray(nounou.data.XSpike[])\"\>"},
+     {"\<\"String toString()\"\>"},
+     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
+     {"\<\"void wait(long) throws InterruptedException\"\>"},
+     {"\<\"void wait() throws InterruptedException\"\>"},
+     {"\<\"static nounou.data.XTrodeN XTrodeN(int[])\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.617278270556498*^9, 3.6172783865471325`*^9, 
+  3.6172785073450413`*^9, 3.617278597872219*^9, 3.617278798507695*^9, 
+  3.617342670153944*^9, 3.617343116735487*^9, 3.617343385488859*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Check calling syntax", "Section",
+ CellChangeTimes->{{3.6168288273673515`*^9, 3.6168288305325327`*^9}, {
+   3.617277318287031*^9, 3.6172773320628195`*^9}, 3.617277778131333*^9, {
+   3.61727828929557*^9, 3.61727829349581*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nounou`NN`newNNData", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6172780202351804`*^9, 3.6172780286986647`*^9}, {
+  3.617278625174781*^9, 3.617278627375907*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "NNData"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject30180585016131585]], "Output",
+ CellChangeTimes->{
+  3.6172780311628056`*^9, 3.6172781122874455`*^9, 3.6172781697537327`*^9, 
+   3.6172784385641074`*^9, 3.61727851447845*^9, {3.6172786048176165`*^9, 
+   3.617278628112949*^9}, 3.6172856628013105`*^9, 3.6173426736521444`*^9, 
+   3.6173433926122665`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NN`newNNData", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.617275856771437*^9, 3.617275860859671*^9}, {
+   3.617275950989826*^9, 3.617275953192952*^9}, 3.6172761443608866`*^9, {
+   3.617277344775546*^9, 3.617277376976388*^9}, {3.6172777969424086`*^9, 
+   3.6172777988135157`*^9}, {3.617277974539567*^9, 3.6172779810349383`*^9}, 
+   3.617285670454748*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "NNData"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject26709774179500033]], "Output",
+ CellChangeTimes->{
+  3.617275861095685*^9, 3.6172759542930155`*^9, {3.6172773418013763`*^9, 
+   3.6172773775404205`*^9}, 3.617277801185652*^9, {3.6172779513402395`*^9, 
+   3.6172779815419674`*^9}, 3.6172781133525066`*^9, {3.6172781707487893`*^9, 
+   3.6172781832765055`*^9}, 3.617278438621111*^9, 3.6172784775493374`*^9, 
+   3.617278516000537*^9, 3.61727860487362*^9, 3.6172856668915443`*^9, 
+   3.6173426747802086`*^9, 3.617343393356309*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"newNNData", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.61727803525904*^9, 3.6172780369151344`*^9}, 
+   3.6173433994476576`*^9}],
+
+Cell[BoxData[
+ RowBox[{"newNNData", "[", "]"}]], "Output",
+ CellChangeTimes->{
+  3.617278118260787*^9, 3.617278184279563*^9, 3.617278440131197*^9, 
+   3.617278518137659*^9, 3.617278606069688*^9, 3.6173426780353947`*^9, {
+   3.617343394211358*^9, 3.617343400082694*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nounou`NN`hello", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6172778035737877`*^9, 3.61727780588492*^9}, {
+  3.6172780410743723`*^9, 3.6172780426184607`*^9}, {3.61727825922785*^9, 
+  3.6172782593788586`*^9}, {3.61734268196762*^9, 3.6173426820676255`*^9}}],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\"\>"], "Output",
+ CellChangeTimes->{
+  3.617277806197938*^9, 3.6172780433705034`*^9, {3.6172782554306326`*^9, 
+   3.617278259666875*^9}, 3.61727844350239*^9, 3.617278609302873*^9, 
+   3.6173426796844893`*^9, 3.6173434029798594`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NN`hello", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6172778035737877`*^9, 3.61727780588492*^9}, {
+  3.6172780410743723`*^9, 3.6172780426184607`*^9}, {3.61727825922785*^9, 
+  3.6172782593788586`*^9}, {3.61734268196762*^9, 3.6173426820676255`*^9}, {
+  3.617343404758961*^9, 3.617343407302107*^9}}],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\"\>"], "Output",
+ CellChangeTimes->{3.617343407578122*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Testing", "Section",
+ CellChangeTimes->{{3.6168288273673515`*^9, 3.6168288305325327`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PackageDirectory", " ", "=", " ", 
+  RowBox[{"ParentDirectory", "[", 
+   RowBox[{"DirectoryName", "[", 
+    RowBox[{"FindFile", "[", "\"\<NounouW`\>\"", "]"}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.616828493344246*^9, 3.6168284936152616`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\\\\NounouW\"\>"], "Output",
+ CellChangeTimes->{{3.6168284939252796`*^9, 3.61682851439645*^9}, 
+   3.616834693857895*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{952, 1104},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 95, 1, 90, "Title"],
+Cell[CellGroupData[{
+Cell[700, 27, 118, 1, 64, "Chapter"],
+Cell[CellGroupData[{
+Cell[843, 32, 122, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[990, 38, 536, 7, 23, "Print"],
+Cell[1529, 47, 534, 7, 23, "Print"],
+Cell[2066, 56, 508, 6, 23, "Print"],
+Cell[2577, 64, 501, 6, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3127, 76, 206, 2, 63, "Section"],
+Cell[3336, 80, 129, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[3490, 86, 146, 2, 31, "Input"],
+Cell[3639, 90, 262, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3938, 99, 106, 1, 31, "Input"],
+Cell[4047, 102, 656, 10, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4740, 117, 120, 2, 31, "Input"],
+Cell[4863, 121, 3720, 96, 99, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8620, 222, 122, 2, 31, "Input"],
+Cell[8745, 226, 2842, 71, 77, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11624, 302, 132, 2, 31, "Input"],
+Cell[11759, 306, 1155, 28, 31, "Output"]
+}, Open  ]],
+Cell[12929, 337, 267, 6, 31, "Input"],
+Cell[CellGroupData[{
+Cell[13221, 347, 129, 2, 31, "Input"],
+Cell[13353, 351, 2659, 55, 462, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16061, 412, 231, 3, 63, "Section"],
+Cell[CellGroupData[{
+Cell[16317, 419, 186, 3, 31, "Input"],
+Cell[16506, 424, 497, 10, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17040, 439, 378, 6, 31, "Input"],
+Cell[17421, 447, 669, 12, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18127, 464, 152, 3, 31, "Input"],
+Cell[18282, 469, 269, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18588, 479, 280, 4, 31, "Input"],
+Cell[18871, 485, 321, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19229, 495, 322, 5, 31, "Input"],
+Cell[19554, 502, 147, 2, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19750, 510, 96, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[19871, 515, 282, 6, 31, "Input"],
+Cell[20156, 523, 214, 3, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

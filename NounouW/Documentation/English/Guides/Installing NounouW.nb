@@ -1,0 +1,470 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13114,        461]
+NotebookOptionsPosition[      9504,        333]
+NotebookOutlinePosition[      9922,        349]
+CellTagsIndexPosition[      9879,        346]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["NounouW", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["NounouW`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["NounouW/guide/Installing NounouW", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Installing NounouW", "GuideTitle",
+ CellID->942062912],
+
+Cell["Setting up a git client", "GuideTutorial",
+ CellChangeTimes->{{3.6167409756935225`*^9, 3.616740978840703*^9}, {
+  3.616741349597909*^9, 3.6167413536381397`*^9}},
+ CellID->219500793],
+
+Cell[TextData[{
+ "Obtain a git client if you don't have one already (for simple use, \
+something like ",
+ ButtonBox["GitHub for Windows",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://windows.github.com/"], None},
+  ButtonNote->"https://windows.github.com/"],
+ " or ",
+ ButtonBox["GitHub for Mac",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://mac.github.com/"], None},
+  ButtonNote->"https://mac.github.com/"],
+ " may be the best choice). Using git will allow you to use the up-to-date \
+version of NounouW at all times. It will also allow you to rewind to a \
+previous version, in case you want to reproduce a previous figure or analysis \
+exactly."
+}], "GuideAbstract",
+ CellChangeTimes->{{3.6167410108525343`*^9, 3.616741114495462*^9}, {
+  3.616741149983492*^9, 3.616741306326434*^9}, {3.6167413404493856`*^9, 
+  3.6167414062781506`*^9}},
+ CellID->36591412],
+
+Cell[TextData[{
+ "If you do serious programming, you likely have a git client already, and \
+you likely use the git commands on the command prompt. I personally use ",
+ ButtonBox["TortoiseGit",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://code.google.com/p/tortoisegit/wiki/SetupHowTo"], None},
+  ButtonNote->"https://code.google.com/p/tortoisegit/wiki/SetupHowTo"],
+ " for day-to-day git work on Windows."
+}], "GuideAbstract",
+ CellChangeTimes->{{3.6167410108525343`*^9, 3.616741114495462*^9}, {
+  3.616741149983492*^9, 3.616741306326434*^9}, {3.6167413404493856`*^9, 
+  3.616741360862553*^9}, {3.6167414126455154`*^9, 3.6167414258692713`*^9}},
+ CellID->450126463],
+
+Cell["Downloading the NounouW git repository", "GuideTutorial",
+ CellChangeTimes->{{3.6167409756935225`*^9, 3.616740978840703*^9}, {
+  3.616741349597909*^9, 3.6167413536381397`*^9}, {3.6167414384049883`*^9, 
+  3.6167414452053776`*^9}},
+ CellID->163339727],
+
+Cell[TextData[{
+ "The NounouW github repository is at the following address: ",
+ ButtonBox["https://github.com/ktakagaki/nounouw",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://github.com/ktakagaki/nounouw"], None},
+  ButtonNote->"https://github.com/ktakagaki/nounouw"],
+ ". This repository can be downloaded (i.e. \"cloned\") to your local \
+harddisk using the git client you set up in the previous step. The repository \
+includes all package code, including a runnable .jar file backend. The \
+repository address (",
+ ButtonBox["https://github.com/ktakagaki/nounouw",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://github.com/ktakagaki/nounouw"], None},
+  ButtonNote->"https://github.com/ktakagaki/nounouw"],
+ ") is all you need to set to do a Git \"pull.\""
+}], "GuideAbstract",
+ CellChangeTimes->{{3.6167414683016987`*^9, 3.616741578388995*^9}, {
+  3.616741609580779*^9, 3.616741612252932*^9}, {3.6167419148112373`*^9, 
+  3.616741957993707*^9}},
+ CellID->731358795],
+
+Cell[TextData[{
+ StyleBox["For those planning to contribute to NounouW, please also download \
+the development repository (",
+  FontSlant->"Italic"],
+ StyleBox[ButtonBox["https://github.com/ktakagaki/nounouw_dev",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://github.com/ktakagaki/nounouw_dev"], None},
+  ButtonNote->"https://github.com/ktakagaki/nounouw_dev"],
+  FontSlant->"Italic"],
+ StyleBox["). This development repository is structured as a Wolfram \
+Workbench project, and includes some non-essential support code to facilitate \
+development. The devleopment repository is periodically deployed to the main \
+NounouW repository, and you can think of this as a \"release.\"",
+  FontSlant->"Italic"]
+}], "GuideAbstract",
+ CellChangeTimes->{{3.6167416142500463`*^9, 3.6167417661877365`*^9}},
+ CellID->397771843],
+
+Cell[TextData[{
+ "When you create a local repository, the easiest way is to put the local \
+repository on the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Path, so that it can be loaded as an application."
+}], "GuideAbstract",
+ CellChangeTimes->{
+  3.6167408766808596`*^9, {3.616740935713236*^9, 3.616740947928935*^9}, {
+   3.6167415984441423`*^9, 3.6167416079006834`*^9}, {3.6167417957394266`*^9, 
+   3.616741824571076*^9}},
+ CellID->2001916300],
+
+Cell["The best directory will usually be, for a Windows system,", \
+"GuideAbstract",
+ CellChangeTimes->{
+  3.6167408766808596`*^9, {3.616740935713236*^9, 3.616740947928935*^9}},
+ CellID->7180878],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$UserBaseDirectory", " ", "<>", " ", 
+  "\"\<\\\\Applications\>\""}]], "Input",
+ CellChangeTimes->{{3.6167418579049826`*^9, 3.6167418788051777`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->151947100],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>"], "Output",
+ CellChangeTimes->{
+  3.616740887803496*^9, {3.6167418587260294`*^9, 3.616741879333208*^9}, {
+   3.6167421823815413`*^9, 3.6167421917890797`*^9}, 3.6167422689644938`*^9},
+ CellLabel->"Out[0]=",
+ CellID->13076777]
+}, Open  ]],
+
+Cell["After this, the package can be invoked with", "GuideAbstract",
+ CellID->338114398],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.616740918403246*^9, 3.6167409216274304`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->86779971],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Welcome to NounouW, the Wolfram Language/Mathematica \
+interface to nounou!\"\>"], "Print",
+ CellChangeTimes->{3.616742195659301*^9, 3.6167422698785458`*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->811744126],
+
+Cell[BoxData["\<\"      ( current Git HEAD:   )\"\>"], "Print",
+ CellChangeTimes->{3.616742195659301*^9, 3.616742269879546*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->17643324],
+
+Cell[BoxData["\<\"      ( http://github.org/ktakagaki/nounouw )\"\>"], "Print",
+ CellChangeTimes->{3.616742195659301*^9, 3.616742269880546*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->202689200],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.616742195659301*^9, 3.6167422699065475`*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->286459745]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell[TextData[{
+ Cell[BoxData["XXXX"], "InlineGuideFunction"],
+ " \[LongDash] XXXX"
+}], "GuideText",
+ CellID->203374175],
+
+Cell[TextData[{
+ Cell[BoxData["XXXX"], "InlineGuideFunction"],
+ " \[LongDash] XXXX"
+}], "GuideText",
+ CellID->1463276848],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->311258892],
+
+Cell["XXXX . XXXX . ", "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->806871991],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1567025153],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->415694148]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 218}, {75, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "ShiftJIS"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 22, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 77, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1337, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1396, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1478, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1534, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1600, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1672, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1738, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1812, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1876, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1940, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[2004, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2085, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2189, 110, 60, 1, 76, "GuideTitle",
+ CellID->942062912],
+Cell[2252, 113, 187, 3, 20, "GuideTutorial",
+ CellID->219500793],
+Cell[2442, 118, 887, 22, 67, "GuideAbstract",
+ CellID->36591412],
+Cell[3332, 142, 679, 13, 53, "GuideAbstract",
+ CellID->450126463],
+Cell[4014, 157, 255, 4, 20, "GuideTutorial",
+ CellID->163339727],
+Cell[4272, 163, 994, 21, 81, "GuideAbstract",
+ CellID->731358795],
+Cell[5269, 186, 828, 17, 81, "GuideAbstract",
+ CellID->397771843],
+Cell[6100, 205, 456, 11, 39, "GuideAbstract",
+ CellID->2001916300],
+Cell[6559, 218, 195, 4, 25, "GuideAbstract",
+ CellID->7180878],
+Cell[CellGroupData[{
+Cell[6779, 226, 216, 5, 27, "Input",
+ CellID->151947100],
+Cell[6998, 233, 323, 6, 25, "Output",
+ CellID->13076777]
+}, Open  ]],
+Cell[7336, 242, 88, 1, 25, "GuideAbstract",
+ CellID->338114398],
+Cell[CellGroupData[{
+Cell[7449, 247, 162, 4, 27, "Input",
+ CellID->86779971],
+Cell[CellGroupData[{
+Cell[7636, 255, 239, 4, 41, "Print",
+ CellID->811744126],
+Cell[7878, 261, 190, 3, 21, "Print",
+ CellID->17643324],
+Cell[8071, 266, 207, 3, 21, "Print",
+ CellID->202689200],
+Cell[8281, 271, 204, 3, 21, "Print",
+ CellID->286459745]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8546, 281, 54, 1, 68, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[8603, 284, 120, 4, 23, "GuideText",
+ CellID->203374175],
+Cell[8726, 290, 121, 4, 23, "GuideText",
+ CellID->1463276848],
+Cell[CellGroupData[{
+Cell[8872, 298, 48, 1, 26, "GuideDelimiter",
+ CellID->311258892],
+Cell[8923, 301, 71, 1, 23, "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9043, 308, 62, 1, 70, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[9108, 311, 49, 1, 20, "GuideTutorial",
+ CellID->806871991],
+Cell[9160, 314, 50, 1, 20, "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9247, 320, 62, 1, 70, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[9312, 323, 51, 1, 20, "GuideMoreAbout",
+ CellID->1567025153],
+Cell[9366, 326, 50, 1, 20, "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+Cell[9431, 330, 69, 1, 70, "GuideRelatedLinksSection",
+ CellID->415694148]
+}
+]
+*)
+
+(* End of internal cache information *)
