@@ -72,7 +72,4 @@ NounouW`$NNData = NN`newNNData[];
 SetComplexClass["breeze.math.Complex"];
 
 
-(*Needs["NounouW`Plotting`"];*)
-
-
-(*Needs["NounouW`DataPlotting`"];*)
+Needs["NounouW`Data`"];
