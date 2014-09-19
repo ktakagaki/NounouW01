@@ -55,7 +55,7 @@ NNERPPlotTS::usage="Extracts segments from a data object and plots ERP.";
 Begin["`Private`"];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNLoad*)
 
 
@@ -158,7 +158,7 @@ NNERPExtractTS[args___]:=Message[NNERPExtractTS::invalidArgs, {args}];
 NNERPPlotTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preTs_, postTs_} ]:=
 Module[{tempERP},
 	tempERP =  NNERPExtractTS[dataObj, channel, timeStamps, {preTs, postTs}];
-	ListLinePlot[tempERP]
+	ListLinePlot[tempERP, PlotRange->All]
 ];
 
 
