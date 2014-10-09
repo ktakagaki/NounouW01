@@ -145,9 +145,9 @@ NNEventSelect[args___]:=Message[NNEventSelect::invalidArgs, {args}];
 (*TRACE PLOTTING: NNERPExtract, NNERPPlot*)
 
 
-NNERPExtractTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preTs_, postTs_} ]:=
+NNERPExtractTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
 Module[{tempEvents},
-	tempEvents = JavaNew["nounou.data.ranges.RangeTs", #-preTs, #+postTs]& /@ timeStamps;
+	tempEvents = JavaNew["nounou.data.ranges.RangeTSEvent", #, preFrames, postFrames]& /@ timeStamps;
 	(dataObj@readTraceAbsA[channel, #]&) /@ tempEvents
 ];
 
@@ -155,9 +155,9 @@ Module[{tempEvents},
 NNERPExtractTS[args___]:=Message[NNERPExtractTS::invalidArgs, {args}];
 
 
-NNERPPlotTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preTs_, postTs_} ]:=
+NNERPPlotTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
 Module[{tempERP},
-	tempERP =  NNERPExtractTS[dataObj, channel, timeStamps, {preTs, postTs}];
+	tempERP =  NNERPExtractTS[dataObj, channel, timeStamps, {preFrames, postFrames, step}];
 	ListLinePlot[tempERP, PlotRange->All]
 ];
 
