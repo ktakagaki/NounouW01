@@ -23,7 +23,7 @@ NNFilterData::usage="Applies FIR filter to data object and gives resulting filte
 NNDownsampleData::usage="Applies Downsample filter to data object and gives resulting filter object.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNToList*)
 
 
@@ -84,7 +84,7 @@ NNDownsampleData[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], factor_:1
 NNDownsampleData[args___]:=Message[NNDownsampleData::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNToList*)
 
 
@@ -95,7 +95,8 @@ Module[{tempret, tempPortEvt},
 		{p, #@timestamp[], #@duration[], #@code[], #@comment[]}& /@ tempPortEvt,
 		{p,eventObj@ports[]}
 	];
-	Flatten[tempret,1]
+	tempret=Flatten[tempret,1];
+	Sort[tempret, (#1[[2]] < #2[[2]])&]
 ];
 NNToList[args___]:=Message[NNToList::invalidArgs, {args}];
 
