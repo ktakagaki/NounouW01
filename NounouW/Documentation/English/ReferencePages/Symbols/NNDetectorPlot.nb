@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     48956,       1581]
-NotebookOptionsPosition[     39889,       1244]
-NotebookOutlinePosition[     40519,       1268]
-CellTagsIndexPosition[     40439,       1263]
+NotebookDataLength[     38217,       1264]
+NotebookOptionsPosition[     30821,        991]
+NotebookOutlinePosition[     31449,       1015]
+CellTagsIndexPosition[     31369,       1010]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -212,6 +212,62 @@ Cell[BoxData[
  CellID->182887016],
 
 Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.637329170483926*^9},
+ Background->GrayLevel[0.85],
+ CellID->349551209],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6373291706449347`*^9},
+ Background->GrayLevel[0.85],
+ CellID->16295068],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \[NoBreak]\\!\\(\\\"HokahokaW`HokahokaW`\\\"\\)\
+\[NoBreak] was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.637328512448288*^9, 3.637329170714939*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->26520379],
+
+Cell[TextData[{
  StyleBox["NounouW`",
   StripOnInput->False,
   FontFamily->"Helvetica",
@@ -223,29 +279,22 @@ Cell[TextData[{
   FontFamily->"Courier",
   FontSize->Small],
  "\n",
- StyleBox["current Git HEAD:  5d8a6a9d177f634e9f9e987fd58e7d344f60e5a5\n\
-newest file:  Mon 6 Apr 2015 16:07:37 ",
+ StyleBox["current Git HEAD:  a7b569f93d24f934eedde6a6ac130f15f8bd31fe\n\
+newest file:  Mon 6 Apr 2015 19:08:11 ",
   StripOnInput->False,
   FontFamily->"Courier",
   FontSize->Small]
 }], "Text",
  GeneratedCell->True,
  CellAutoOverwrite->True,
- CellChangeTimes->{3.6373180674278545`*^9},
+ CellChangeTimes->{3.6373291710579586`*^9},
  Background->GrayLevel[0.85],
- CellID->279300447],
+ CellID->373472672],
 
 Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
- CellChangeTimes->CompressedData["
-1:eJxTTMoPSmVkYGDQAOIJ7d1PiyVfO367nfYORE8XYuAvAdFeq0JB9IpFDnkg
-2s7avx9Ez2dZthJEL256vhVEc+WH7APRq3hEb4Jog4W/mUuBtINwqgyITvtx
-WhFEv60/rwaiO9gVTEH0u77mMBDdpD61C0Sfe7nqFYje3LTqB4i2PzmRrQxI
-X9tdKQKi750QSQPRzzxSKkD0uWkx/SBa5cnjOSD6U6WUeiWQNlrNZwSi5yy1
-9QLRSuar00D0KraG9SD68g3eCyC6KbnnOoi+tZ5XuQpIW2xSdwTRBZWPDoPo
-78Hmt8H8RpFXINpKdfe9NiB9akKl5iKQ/vxCMxANACgbljo=
-  "],
+ CellChangeTimes->{3.6373285132403336`*^9, 3.6373291716049895`*^9},
  CellLabel->"During evaluation of In[1]:=",
- CellID->39608429],
+ CellID->1088287],
 
 Cell[BoxData[
  RowBox[{
@@ -269,205 +318,14 @@ Cell[BoxData[
   ";"}]], "Input",
  CellChangeTimes->{{3.637223389607436*^9, 3.6372235160506687`*^9}, {
   3.637236853572986*^9, 3.637236853933007*^9}},
- CellLabel->"In[4]:=",
+ CellLabel->"In[1]:=",
  CellID->121274972],
 
 Cell[BoxData[
  RowBox[{"AllowRaggedArrays", "[", "True", "]"}]], "Input",
  CellChangeTimes->{{3.637223875178211*^9, 3.6372238797094707`*^9}},
- CellLabel->"In[5]:=",
+ CellLabel->"In[2]:=",
  CellID->514242286],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp", " ", "=", 
-  RowBox[{
-  "LoadJavaClass", "[", 
-   "\"\<nounou.elements.layouts.NNDataLayoutHexagonal\>\"", "]"}]}]], "Input",
- CellChangeTimes->{{3.63722359052993*^9, 3.637223596555275*^9}},
- CellLabel->"In[6]:=",
- CellID->252123378],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"JavaClass", "[", 
-   RowBox[{
-   "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}], 
-   ",", "<>", "]"}],
-  JLink`JavaClass["nounou.elements.layouts.NNDataLayoutHexagonal", 3, {
-    JLink`JVM["vm2"]}, 4, "nounou`elements`layouts`NNDataLayoutHexagonal`", 
-   False, True]]], "Output",
- CellChangeTimes->{
-  3.6372235969062953`*^9, 3.637224326764042*^9, 3.6372245760122986`*^9, 
-   3.6372247871804066`*^9, 3.63722488436399*^9, 3.637224950884798*^9, 
-   3.6372251671501675`*^9, 3.6372255109178295`*^9, {3.637225702029764*^9, 
-   3.637225745732264*^9}, 3.6372257871786346`*^9, 3.63722589997509*^9, 
-   3.637226170479562*^9, 3.637226585772365*^9, 3.637227352613228*^9, 
-   3.637227465710705*^9, 3.637227578228141*^9, 3.6372276876614*^9, 
-   3.637228341128776*^9, 3.6372284865120916`*^9, 3.6372286756059074`*^9, 
-   3.6372287773997293`*^9, 3.637233981539655*^9, 3.637234068786646*^9, 
-   3.6372342623407183`*^9, 3.637234491874853*^9, 3.6372350702779436`*^9, 
-   3.6372353320089226`*^9, 3.6372353922773695`*^9, 3.637235995171873*^9, 
-   3.637237285396685*^9, 3.637237468830177*^9, 3.6372375890450525`*^9, 
-   3.637262072858466*^9, 3.637317972540425*^9, {3.6373180725671487`*^9, 
-   3.6373180777724466`*^9}},
- CellLabel->"Out[6]=",
- CellID->120093351]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ShowJavaConsole", "[", "]"}]], "Input",
- CellChangeTimes->{{3.637225721732891*^9, 3.637225724843069*^9}, 
-   3.637227409957507*^9, {3.637233985428878*^9, 3.6372339880420275`*^9}},
- CellLabel->"In[7]:=",
- CellID->247228319],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{
-    "com", ".", "wolfram", ".", "jlink", ".", "ui", ".", "ConsoleWindow"}], 
-    "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject29236437991817217]], "Output",
- CellChangeTimes->{3.637233988888076*^9, 3.6372340701077213`*^9, 
-  3.6372342631227627`*^9, 3.6372350711139913`*^9, 3.6372353330769835`*^9, 
-  3.637235393076415*^9, 3.63723599599592*^9, 3.6372372861607285`*^9, 
-  3.6372374701892548`*^9, 3.6372375902581224`*^9, 3.637262073992531*^9, 
-  3.6373179748005543`*^9, 3.6373180792435303`*^9},
- CellLabel->"Out[7]=",
- CellID->80640924]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Constructors", "[", "temp", "]"}]], "Input",
- CellChangeTimes->{{3.637223699984191*^9, 3.637223704147429*^9}},
- CellLabel->"In[5]:=",
- CellID->250370886],
-
-Cell[BoxData[
- TagBox[
-  TagBox[GridBox[{
-     {"\<\"NNDataLayoutHexagonal()\"\>"},
-     {"\<\"NNDataLayoutHexagonal(int[][])\"\>"},
-     {"\<\"NNDataLayoutHexagonal(int[][], double, double)\"\>"}
-    },
-    GridBoxAlignment->{
-     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-      "RowsIndexed" -> {}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.5599999999999999]}, 
-        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.4]}, 
-        Offset[0.2]}, "RowsIndexed" -> {}}],
-   Column],
-  Function[BoxForm`e$, 
-   TableForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{3.6372237043694415`*^9},
- CellLabel->"Out[5]//TableForm=",
- CellID->270252740]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Methods", "[", "temp", "]"}]], "Input",
- CellChangeTimes->{{3.6372235976513376`*^9, 3.637223600755515*^9}},
- CellLabel->"In[4]:=",
- CellID->120182463],
-
-Cell[BoxData[
- TagBox[
-  TagBox[GridBox[{
-     {"\<\"int channelCount()\"\>"},
-     {"\<\"int channelCountCache()\"\>"},
-     {"\<\"void channelCountCache_$eq(int)\"\>"},
-     {"\<\"double channelDistance()\"\>"},
-     {"\<\"void channelDistance_$eq(double)\"\>"},
-     {"\<\"double channelRadius()\"\>"},
-     {"\<\"void channelRadius_$eq(double)\"\>"},
-     {"\<\"double[] channelToCoordinatesImpl(int)\"\>"},
-     {"\<\"double[] channelToCoordinates(int)\"\>"},
-     {"\<\"String className()\"\>"},
-     {"\<\"boolean equals(Object)\"\>"},
-     {"\<\"javafx.scene.shape.Rectangle field()\"\>"},
-     {"\<\"javafx.scene.shape.Rectangle fieldCache()\"\>"},
-     {"\<\"void fieldCache_$eq(javafx.scene.shape.Rectangle)\"\>"},
-     {"\<\"double fieldHeight()\"\>"},
-     {"\<\"double fieldMaxX()\"\>"},
-     {"\<\"double fieldMaxY()\"\>"},
-     {"\<\"double fieldWidth()\"\>"},
-     {"\<\"double fieldX()\"\>"},
-     {"\<\"double fieldY()\"\>"},
-     {"\<\"int getChannelCount()\"\>"},
-     {"\<\"double getChannelDistance()\"\>"},
-     {"\<\"double getChannelRadius()\"\>"},
-     {"\<\"Class getClass()\"\>"},
-     {"\<\"String gitHead()\"\>"},
-     {"\<\"int hashCode()\"\>"},
-     {"\<\"void initialize()\"\>"},
-     {"\<\"boolean initialized()\"\>"},
-     {"\<\"void initialized_$eq(boolean)\"\>"},
-     {"\<\"boolean isCompatible(nounou.elements.NNElement)\"\>"},
-     {"\<\"boolean isCompatible(scala.collection.Seq)\"\>"},
-     {"\<\"boolean isMasked(int)\"\>"},
-     {"\<\"boolean isValidChannel(int)\"\>"},
-     {"\<\"int[][] layoutArray()\"\>"},
-     {"\<\"void layoutArray_$eq(int[][])\"\>"},
-     {"\<\"scala.collection.mutable.HashMap layoutLookupCache()\"\>"},
-     {"\<\"void layoutLookupCache_$eq(scala.collection.mutable.HashMap)\"\>"},
-     {"\<\"static nounou.elements.NNElement loadJson(java.io.File)\"\>"},
-     {"\<\"com.typesafe.scalalogging.Logger logger()\"\>"},
-     {"\<\"com.typesafe.scalalogging.slf4j.Logger logger()\"\>"},
-     {"\<\"IllegalArgumentException loggerError(String, scala.collection.Seq)\
-\"\>"},
-     {"\<\"void loggerRequire(boolean, String, scala.collection.Seq) throws \
-IllegalArgumentException\"\>"},
-     {"\<\"java.util.HashSet masked()\"\>"},
-     {"\<\"void mask(int)\"\>"},
-     {"\<\"void mask(scala.collection.Seq)\"\>"},
-     {"\<\"void notify()\"\>"},
-     {"\<\"void notifyAll()\"\>"},
-     {"\<\"void \
-nounou$elements$layouts$NNDataLayoutHexagonal$$updateMaxMin$1(int, int)\"\>"},
-     {"\<\"void \
-nounou$elements$layouts$NNDataLayoutHexagonal$$writeNewChannelCache$1(int, \
-scala.Tuple2, scala.collection.mutable.ArrayBuffer, \
-scala.collection.mutable.HashMap)\"\>"},
-     {"\<\"void requireValidChannel(int)\"\>"},
-     {"\<\"String toJsonString()\"\>"},
-     {"\<\"String toString()\"\>"},
-     {"\<\"void unmask(int)\"\>"},
-     {"\<\"void unmask(scala.collection.Seq)\"\>"},
-     {"\<\"double version()\"\>"},
-     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
-     {"\<\"void wait(long) throws InterruptedException\"\>"},
-     {"\<\"void wait() throws InterruptedException\"\>"}
-    },
-    GridBoxAlignment->{
-     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-      "RowsIndexed" -> {}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.5599999999999999]}, 
-        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.4]}, 
-        Offset[0.2]}, "RowsIndexed" -> {}}],
-   Column],
-  Function[BoxForm`e$, 
-   TableForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{3.637223601063533*^9},
- CellLabel->"Out[4]//TableForm=",
- CellID->975853073]
-}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -480,7 +338,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.637223344303845*^9, 3.6372233870822916`*^9}, {
   3.637223519265852*^9, 3.6372235209719496`*^9}, {3.6372345001313257`*^9, 
   3.637234501027377*^9}, {3.6372368491017303`*^9, 3.637236860245368*^9}},
- CellLabel->"In[8]:=",
+ CellLabel->"In[3]:=",
  CellID->687037852],
 
 Cell[BoxData[
@@ -490,7 +348,7 @@ Cell[BoxData[
     RowBox[{
     "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
      "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject12644260507549697]], "Output",
+  JLink`Objects`vm2`JavaObject23456350864408577]], "Output",
  CellChangeTimes->{
   3.637223521731993*^9, 3.6372235540228424`*^9, 3.6372238953683662`*^9, 
    3.6372241218233204`*^9, 3.6372243154213934`*^9, 3.6372251753126345`*^9, 
@@ -504,27 +362,55 @@ Cell[BoxData[
    3.6372350769383245`*^9, 3.6372353359831495`*^9, 3.6372353954925537`*^9, 
    3.6372359986530724`*^9, {3.6372368393581734`*^9, 3.6372368723230586`*^9}, 
    3.637237290287965*^9, 3.6372374728614073`*^9, 3.637237595533424*^9, 
-   3.6372620777617464`*^9, 3.6373179783547573`*^9, 3.6373180834397707`*^9},
- CellLabel->"Out[8]=",
- CellID->539999368]
+   3.6372620777617464`*^9, 3.6373179783547573`*^9, 3.6373180834397707`*^9, 
+   3.6373198212771797`*^9, 3.637322195288967*^9, {3.6373271836542854`*^9, 
+   3.637327198613141*^9}, 3.6373276952725487`*^9, 3.6373280175359807`*^9, 
+   3.6373283349701366`*^9, 3.637328403817075*^9, 3.637328522084839*^9},
+ CellLabel->"Out[13]=",
+ CellID->504254057]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"layout", "@", 
-  RowBox[{"channelCount", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.637234502443458*^9, 3.6372345148661685`*^9}},
- CellLabel->"In[9]:=",
+  RowBox[{"getChannelCount", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.637234502443458*^9, 3.6372345148661685`*^9}, {
+  3.6373211813919754`*^9, 3.637321182327029*^9}},
+ CellLabel->"In[14]:=",
  CellID->176169232],
 
 Cell[BoxData["16"], "Output",
- CellChangeTimes->{3.637234515121183*^9, 3.637235077050331*^9, 
-  3.637235336986207*^9, 3.6372353955305557`*^9, 3.6372359987430773`*^9, 
-  3.6372368738341455`*^9, 3.6372372907569914`*^9, 3.6372374729664135`*^9, 
-  3.637237595957448*^9, 3.637262078432785*^9, 3.6373180847728467`*^9},
- CellLabel->"Out[9]=",
- CellID->485073017]
+ CellChangeTimes->{
+  3.637234515121183*^9, 3.637235077050331*^9, 3.637235336986207*^9, 
+   3.6372353955305557`*^9, 3.6372359987430773`*^9, 3.6372368738341455`*^9, 
+   3.6372372907569914`*^9, 3.6372374729664135`*^9, 3.637237595957448*^9, 
+   3.637262078432785*^9, 3.6373180847728467`*^9, 3.637319821335183*^9, 
+   3.6373211827920556`*^9, 3.637322195367972*^9, {3.6373271805231066`*^9, 
+   3.6373271986851454`*^9}, 3.637327695337552*^9, 3.637328017591984*^9, 
+   3.637328335953193*^9, 3.6373284044411106`*^9, 3.6373285221398425`*^9},
+ CellLabel->"Out[14]=",
+ CellID->220948255]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"getChannelRadius", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.637234502443458*^9, 3.6372345148661685`*^9}, {
+  3.637321124438718*^9, 3.637321149463149*^9}, {3.637321184879175*^9, 
+  3.6373211853992047`*^9}},
+ CellLabel->"In[15]:=",
+ CellID->12581516],
+
+Cell[BoxData["50.`"], "Output",
+ CellChangeTimes->{{3.6373211289559765`*^9, 3.6373211498041687`*^9}, 
+   3.637321185774226*^9, 3.637322195419975*^9, 3.6373271988641553`*^9, 
+   3.6373276953835545`*^9, 3.637328017622986*^9, 3.637328336504225*^9, 
+   3.6373284049781413`*^9, 3.6373285221718445`*^9},
+ CellLabel->"Out[15]=",
+ CellID->194523598]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -533,7 +419,7 @@ Cell[BoxData[
  RowBox[{"layout", "@", 
   RowBox[{"layoutArray", "[", "]"}]}]], "Input",
  CellChangeTimes->{{3.637234502443458*^9, 3.637234528042922*^9}},
- CellLabel->"In[10]:=",
+ CellLabel->"In[16]:=",
  CellID->186302334],
 
 Cell[BoxData[
@@ -553,9 +439,12 @@ Cell[BoxData[
  CellChangeTimes->{3.6372345289719753`*^9, 3.6372350776193633`*^9, 
   3.6372353378032537`*^9, 3.6372353958675747`*^9, 3.6372359993231106`*^9, 
   3.637236874324173*^9, 3.637237291309023*^9, 3.637237473373437*^9, 
-  3.637237596444476*^9, 3.6372620791288247`*^9, 3.6373180853078775`*^9},
- CellLabel->"Out[10]=",
- CellID->32406927]
+  3.637237596444476*^9, 3.6372620791288247`*^9, 3.6373180853078775`*^9, 
+  3.6373198213701854`*^9, 3.637322195468978*^9, 3.6373272001332283`*^9, 
+  3.637327695441558*^9, 3.6373280176559877`*^9, 3.637328337081258*^9, 
+  3.637328405432167*^9, 3.637328522202846*^9},
+ CellLabel->"Out[16]=",
+ CellID->714609180]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -564,7 +453,7 @@ Cell[BoxData[
  RowBox[{"layout", "@", 
   RowBox[{"toJsonString", "[", "]"}]}]], "Input",
  CellChangeTimes->{{3.637234538762535*^9, 3.637234545890943*^9}},
- CellLabel->"In[11]:=",
+ CellLabel->"In[17]:=",
  CellID->32444361],
 
 Cell[BoxData["\<\"{\\\"layoutArray\\\":[[-1,15,14,13,12,11],[10,9,8,1,0],[7,6,\
@@ -576,458 +465,316 @@ NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
  CellChangeTimes->{3.637234546219962*^9, 3.6372350780563884`*^9, 
   3.6372353387033052`*^9, 3.6372353967046227`*^9, 3.637236000176159*^9, 
   3.637236875106218*^9, 3.6372372924570885`*^9, 3.637237473987472*^9, 
-  3.637237597706548*^9, 3.637262080851923*^9, 3.637318086191928*^9},
- CellLabel->"Out[11]=",
- CellID->257260538]
+  3.637237597706548*^9, 3.637262080851923*^9, 3.637318086191928*^9, 
+  3.6373198240493383`*^9, 3.637322196299025*^9, 3.637327201374299*^9, 
+  3.6373276955065613`*^9, 3.637328017719991*^9, 3.637328337626289*^9, 
+  3.6373284062962165`*^9, 3.637328522257849*^9},
+ CellLabel->"Out[17]=",
+ CellID->96204095]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"NNGit`gitFileLoaded", "[", "]"}], ",", 
-   RowBox[{"NNGit`gitRepoLoaded", "[", "]"}]}], "}"}]], "Input",
- CellChangeTimes->{{3.637236672828648*^9, 3.6372366951699257`*^9}},
- CellLabel->"In[13]:=",
- CellID->311394842],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"False", ",", "False"}], "}"}]], "Output",
- CellChangeTimes->{3.637236695804962*^9, 3.6372373056168413`*^9, 
-  3.637237482928983*^9, 3.6372376153525577`*^9},
- CellLabel->"Out[13]=",
- CellID->531152567]
-}, Open  ]],
-
-Cell[CellGroupData[{
+ RowBox[{"NNDetectorPlot", "[", "layout", "]"}]], "Input",
+ CellChangeTimes->{{3.6373213626963453`*^9, 3.637321368799695*^9}},
+ CellLabel->"In[19]:=",
+ CellID->200294427],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"NNGit`jsonFile", "[", "]"}], "@", 
-  RowBox[{"getAbsolutePath", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372367187332735`*^9, 3.6372367518441677`*^9}},
- CellLabel->"In[16]:=",
- CellID->56794416],
-
-Cell[BoxData["\<\"C:\\\\Users\\\\ktakagaki\\\\.\\\\src\\\\main\\\\resources\\\
-\\NNGit.gson.txt\"\>"], "Output",
- CellChangeTimes->{3.637237308335997*^9, 3.637237484746087*^9, 
-  3.6372376158805876`*^9, 3.6372622360027976`*^9},
- CellLabel->"Out[16]=",
- CellID->529295895]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp", " ", "=", 
-  RowBox[{"layout", "@", 
-   RowBox[{
-    RowBox[{"getClass", "[", "]"}], "@", 
-    RowBox[{
-     RowBox[{"getClassLoader", "[", "]"}], "@", 
-     RowBox[{"getResource", "[", "\"\<NNGit.gson.txt\>\"", "]"}]}]}]}]}]], \
-"Input",
- CellChangeTimes->{{3.6372367990678687`*^9, 3.6372368347809114`*^9}, {
-  3.637236878068387*^9, 3.637236916876607*^9}, {3.637237508381439*^9, 
-  3.6372375119976463`*^9}, {3.637238011101193*^9, 3.6372380333334646`*^9}},
- CellLabel->"In[17]:=",
- CellID->589324225],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"java", ".", "net", ".", "URL"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject4056778241212417]], "Output",
- CellChangeTimes->{{3.6372380261540537`*^9, 3.6372380340005026`*^9}, 
-   3.6372622416711216`*^9},
- CellLabel->"Out[17]=",
- CellID->181878069]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"tempS", " ", "=", 
-  RowBox[{"layout", "@", 
-   RowBox[{
-    RowBox[{"getClass", "[", "]"}], "@", 
-    RowBox[{
-     RowBox[{"getClassLoader", "[", "]"}], "@", 
-     RowBox[{
-     "getResourceAsStream", "[", "\"\<NNGit.gson.txt\>\"", "]"}]}]}]}]}]], \
-"Input",
- CellChangeTimes->{{3.6372367990678687`*^9, 3.6372368347809114`*^9}, {
-  3.637236878068387*^9, 3.637236916876607*^9}, {3.637237508381439*^9, 
-  3.6372375119976463`*^9}, {3.637238011101193*^9, 3.6372380333334646`*^9}, {
-  3.637262560345349*^9, 3.6372625920731635`*^9}},
- CellLabel->"In[32]:=",
- CellID->437453423],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{
-    "sun", ".", "net", ".", "www", ".", "protocol", ".", "jar", ".", 
-     "JarURLConnection$JarURLInputStream"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject25420742959038465]], "Output",
- CellChangeTimes->{3.6372625928292065`*^9},
- CellLabel->"Out[32]=",
- CellID->755835159]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"layout", "@", 
+  StyleBox[
+   RowBox[{"NNToList", "::", "invalidArgs"}], "MessageName"], 
   RowBox[{
-   RowBox[{"getClass", "[", "]"}], "@", 
-   RowBox[{
-    RowBox[{"getClassLoader", "[", "]"}], "@", 
-    RowBox[{"getResourceAsStream", "[", "\"\<NNGit.gson.txte\>\"", "]"}]}]}]}]
-  ], "Input",
- CellChangeTimes->{{3.6372367990678687`*^9, 3.6372368347809114`*^9}, {
-  3.637236878068387*^9, 3.637236916876607*^9}, {3.637237508381439*^9, 
-  3.6372375119976463`*^9}, {3.637238011101193*^9, 3.6372380333334646`*^9}, {
-  3.637262560345349*^9, 3.6372625920731635`*^9}, {3.6372626609281015`*^9, 
-  3.637262666473419*^9}},
- CellLabel->"In[33]:=",
- CellID->183971346],
+  ":", " "}], "\<\"Function called with invalid arguments \
+\[NoBreak]\\!\\({\\*InterpretationBox[\\(\[LeftGuillemet] \
+\\(\\(JavaObject[nounou.elements.layouts.NNDataLayoutHexagonal]\\)\\) \
+\[RightGuillemet]\\), JLink`Objects`vm2`JavaObject23456350864408577]}\\)\
+\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6373213692927227`*^9, 3.63732219830914*^9, 
+  3.6373227202409925`*^9, 3.63732720278938*^9, 3.6373276971996584`*^9, 
+  3.6373280180350094`*^9, 3.6373283391193743`*^9, 3.637328409180382*^9, 
+  3.6373285241669583`*^9},
+ CellLabel->"During evaluation of In[19]:=",
+ CellID->203163290]
+}, Open  ]],
 
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.637299691116354*^9, 3.637299692549436*^9}},
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InstanceOf", "[", 
+  RowBox[{"layout", ",", " ", "$NNDataLayoutSpatialClass"}], "]"}]], "Input",
+ CellChangeTimes->{{3.637322219192334*^9, 3.637322235680278*^9}, {
+  3.637322352888982*^9, 3.6373223561361675`*^9}},
+ CellLabel->"In[20]:=",
+ CellID->410026117],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.6373222364723225`*^9, 3.637322356372181*^9, 3.6373226057294436`*^9, 
+   3.6373227169498043`*^9, 3.6373272091227417`*^9, {3.637327268082114*^9, 
+   3.6373272871742067`*^9}, 3.6373276990497646`*^9, 3.637328019015065*^9, 
+   3.6373283400124254`*^9, 3.6373284102404423`*^9, 3.6373285250300074`*^9},
+ CellLabel->"Out[20]=",
+ CellID->400834876]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"JavaObjectQ", "[", 
+  RowBox[{"layou", " ", "qt"}], "]"}]], "Input",
+ CellChangeTimes->{{3.637322631280905*^9, 3.637322632335965*^9}, {
+  3.637328613574072*^9, 3.6373286136540766`*^9}},
+ CellLabel->"In[21]:=",
+ CellID->590624524],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6373226326379824`*^9, 3.6373227155517244`*^9, 
+  3.6373272106448293`*^9, 3.6373272878562455`*^9, 3.6373277000758233`*^9, 
+  3.637328019527095*^9, 3.637328340992481*^9, 3.637328410936482*^9, 
+  3.6373285256290417`*^9},
+ CellLabel->"Out[21]=",
+ CellID->105287466]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HHJavaObjectQ", "[", 
+  RowBox[{"layout", ",", "$NNDataLayoutSpatialClass"}], "]"}]], "Input",
+ CellChangeTimes->{{3.637299691116354*^9, 3.637299692549436*^9}, {
+  3.637321382456476*^9, 3.6373213873357553`*^9}},
+ CellLabel->"In[22]:=",
  CellID->469911287],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp", "@", 
-  RowBox[{"getPath", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}},
- CellLabel->"In[18]:=",
- CellID->208311696],
-
-Cell[BoxData["\<\"file:/C:/ProgramData/Mathematica/Applications/NounouW/Java/\
-nounou.jar!/NNGit.gson.txt\"\>"], "Output",
- CellChangeTimes->{{3.63723752710751*^9, 3.637237531560765*^9}, 
-   3.637237618436734*^9, 3.637237844829683*^9, 3.637237956975097*^9, 
-   3.6372380377567177`*^9, 3.6372622448883057`*^9},
- CellLabel->"Out[18]=",
- CellID->171151230]
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.6373213882218056`*^9, 3.6373221993622003`*^9, 3.6373226035623193`*^9, {
+   3.6373226887491913`*^9, 3.6373227115684967`*^9}, 3.6373272116038837`*^9, 
+   3.637327288665292*^9, 3.637327504504637*^9, 3.6373277019339294`*^9, 
+   3.637328020062125*^9, 3.6373280630785856`*^9, 3.6373283417765265`*^9, 
+   3.637328411410509*^9, 3.637328526101069*^9},
+ CellLabel->"Out[22]=",
+ CellID->25647138]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"temp", "@", 
-  RowBox[{"getFile", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}, {3.6372622546718655`*^9, 
-  3.637262286073661*^9}},
- CellLabel->"In[20]:=",
- CellID->266673251],
-
-Cell[BoxData["\<\"file:/C:/ProgramData/Mathematica/Applications/NounouW/Java/\
-nounou.jar!/NNGit.gson.txt\"\>"], "Output",
- CellChangeTimes->{{3.637262259458139*^9, 3.637262286251672*^9}},
- CellLabel->"Out[20]=",
- CellID->508694452]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp", "@", 
-  RowBox[{"getContent", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}, {3.6372622546718655`*^9, 
-  3.637262286073661*^9}, {3.637262322000716*^9, 3.6372623284810867`*^9}},
- CellLabel->"In[21]:=",
- CellID->43898952],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{
-    "sun", ".", "net", ".", "www", ".", "content", ".", "text", ".", 
-     "PlainTextInputStream"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject23858587688239105]], "Output",
- CellChangeTimes->{3.6372623287921047`*^9},
- CellLabel->"Out[21]=",
- CellID->142675284]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp", "@", 
-  RowBox[{"toURI", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}, {3.6372622546718655`*^9, 
-  3.637262286073661*^9}, {3.637262322000716*^9, 3.6372623284810867`*^9}, {
-  3.637262363129069*^9, 3.6372623820731525`*^9}},
+ RowBox[{"HHJavaObjectQ", "[", 
+  RowBox[{
+  "layout", ",", "\"\<nounou.elements.layouts.NNDataLayoutHexagonal\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.637299691116354*^9, 3.637299692549436*^9}, {
+  3.637321382456476*^9, 3.6373213873357553`*^9}, {3.6373272493970456`*^9, 
+  3.637327257604515*^9}},
  CellLabel->"In[23]:=",
- CellID->47591674],
+ CellID->72937],
 
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"java", ".", "net", ".", "URI"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject25193152793018369]], "Output",
- CellChangeTimes->{{3.637262366836281*^9, 3.6372623823411674`*^9}},
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.6373275084878645`*^9, 3.637327703240004*^9, 
+  3.637328020790167*^9, 3.637328061438492*^9, 3.637328342579572*^9, 
+  3.6373284119615407`*^9, 3.637328526784108*^9},
  CellLabel->"Out[23]=",
- CellID->918443411]
+ CellID->58582956]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HHJavaObjectQ", "[", "layout", "]"}]], "Input",
+ CellChangeTimes->{{3.637299691116354*^9, 3.637299692549436*^9}, {
+  3.637321382456476*^9, 3.6373213873357553`*^9}, {3.6373272493970456`*^9, 
+  3.637327257604515*^9}, {3.637327509780939*^9, 3.6373275128301134`*^9}},
+ CellLabel->"In[24]:=",
+ CellID->214773236],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.637327513089128*^9, 3.6373277039360437`*^9, 
+  3.637328021310197*^9, 3.6373280597663965`*^9, 3.6373283433606167`*^9, 
+  3.6373284124805703`*^9, 3.6373285273501406`*^9},
+ CellLabel->"Out[24]=",
+ CellID->145106188]
 }, Open  ]],
 
 Cell[BoxData[
- RowBox[{"temp", "@", 
-  RowBox[{
-   RowBox[{"toURI", "[", "]"}], "@", 
-   RowBox[{"getPath", "[", "]"}]}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}, {3.6372622546718655`*^9, 
-  3.637262286073661*^9}, {3.637262322000716*^9, 3.6372623284810867`*^9}, {
-  3.637262363129069*^9, 3.6372624144810057`*^9}},
+ RowBox[{"Definition", "[", "HHJavaObjectQ", "]"}]], "Input",
+ CellChangeTimes->{{3.6373285305853257`*^9, 3.6373285359896345`*^9}},
  CellLabel->"In[25]:=",
- CellID->474885628],
+ CellID->171120571],
 
 Cell[CellGroupData[{
 
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6373291934582396`*^9},
+ CellID->88241639],
+
 Cell[BoxData[
- RowBox[{"temp", "@", 
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+           RowBox[{
+           "HokahokaW`Java`Private`JavaObjectQ", "[", 
+            "HokahokaW`Java`Private`x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+            RowBox[{
+            "HokahokaW`Java`Private`JavaObjectQ", "[", 
+             "HokahokaW`Java`Private`x", "]"}]}], ",", 
+           "HokahokaW`Java`Private`className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"HokahokaW`Java`Private`InstanceOf", "[", 
+             RowBox[{
+             "HokahokaW`Java`Private`x", ",", 
+              "HokahokaW`Java`Private`className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[HokahokaW`Java`HHJavaObjectQ],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.637328536280651*^9},
+ CellLabel->"Out[25]=",
+ CellID->355031587]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
   RowBox[{
-   RowBox[{"toURI", "[", "]"}], "@", 
-   RowBox[{"toString", "[", "]"}]}]}]], "Input",
- CellChangeTimes->{{3.6372369179716697`*^9, 3.6372369223359194`*^9}, {
-  3.637237520773148*^9, 3.6372375312857494`*^9}, {3.6372622546718655`*^9, 
-  3.637262286073661*^9}, {3.637262322000716*^9, 3.6372623284810867`*^9}, {
-  3.637262363129069*^9, 3.637262425408631*^9}, {3.637262461689706*^9, 
-  3.6372624629447775`*^9}},
- CellLabel->"In[26]:=",
- CellID->14458664],
-
-Cell[BoxData["\<\"jar:file:/C:/ProgramData/Mathematica/Applications/NounouW/\
-Java/nounou.jar!/NNGit.gson.txt\"\>"], "Output",
- CellChangeTimes->{3.6372624631307883`*^9},
- CellLabel->"Out[26]=",
- CellID->831003326]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"Methods", "[", "%", "]"}]], "Input",
- CellChangeTimes->{{3.637237818793194*^9, 3.6372378212213326`*^9}},
- CellLabel->"In[28]:=",
- CellID->67124369],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "=", 
-  RowBox[{"JavaNew", "[", 
-   RowBox[{"\"\<java.io.File\>\"", ",", " ", 
-    RowBox[{"temp", "@", 
-     RowBox[{"getPath", "[", "]"}]}]}], " ", "]"}]}]], "Input",
- CellChangeTimes->{{3.637237684490512*^9, 3.637237703965626*^9}},
- CellLabel->"In[41]:=",
- CellID->46719490],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"java", ".", "io", ".", "File"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject18255029773271043]], "Output",
- CellChangeTimes->{3.6372377042926445`*^9, 3.637237855061268*^9, 
-  3.6372380519495296`*^9},
- CellLabel->"Out[41]=",
- CellID->213340714]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "@", 
-  RowBox[{"exists", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.637237870213135*^9, 3.637237885897032*^9}},
- CellLabel->"In[42]:=",
- CellID->4761356],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{{3.6372378747403936`*^9, 3.6372378862800536`*^9}, 
-   3.6372380535396204`*^9},
- CellLabel->"Out[42]=",
- CellID->501265324]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "=", 
-  RowBox[{"JavaNew", "[", 
-   RowBox[{"\"\<java.io.File\>\"", ",", " ", 
-    RowBox[{"temp", "@", 
+   RowBox[{
+    RowBox[{"HHJavaObjectQ", "[", 
+     RowBox[{"x_", "/;", 
+      RowBox[{"JavaObjectQ", "[", "x", "]"}]}], "]"}], ":=", "True"}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"HHJavaObjectQ", "[", 
      RowBox[{
-      RowBox[{"toURI", "[", "]"}], "@", 
-      RowBox[{"toString", "[", "]"}]}]}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.637237684490512*^9, 3.637237703965626*^9}, 
-   3.6372625001929083`*^9},
- CellLabel->"In[27]:=",
- CellID->327179369],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"java", ".", "io", ".", "File"}], "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject35944278672801793]], "Output",
- CellChangeTimes->{3.6372377042926445`*^9, 3.637237855061268*^9, 
-  3.6372380519495296`*^9, 3.637262501640991*^9},
- CellLabel->"Out[27]=",
- CellID->26649391]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "@", 
-  RowBox[{"exists", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.637237870213135*^9, 3.637237885897032*^9}},
- CellLabel->"In[28]:=",
- CellID->987582122],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{{3.6372378747403936`*^9, 3.6372378862800536`*^9}, 
-   3.6372380535396204`*^9, 3.6372625030610723`*^9},
- CellLabel->"Out[28]=",
- CellID->275325734]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "@", 
-  RowBox[{"getAbsolutePath", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.637238059053936*^9, 3.6372380986732016`*^9}},
+      RowBox[{"x_", "/;", 
+       RowBox[{"JavaObjectQ", "[", "x", "]"}]}], ",", "className_String"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<Hello\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"InstanceOf", "[", 
+        RowBox[{"x", ",", "className"}], "]"}]}]}], "]"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6373290419965763`*^9, 3.6373290419975767`*^9}},
  CellLabel->"In[29]:=",
- CellID->584336853],
-
-Cell[BoxData["\<\"C:\\\\Users\\\\ktakagaki\\\\jar:file:\\\\C:\\\\ProgramData\\\
-\\Mathematica\\\\Applications\\\\NounouW\\\\Java\\\\nounou.jar!\\\\NNGit.gson.\
-txt\"\>"], "Output",
- CellChangeTimes->{{3.6372380647012587`*^9, 3.637238098945217*^9}, 
-   3.637262505769227*^9},
- CellLabel->"Out[29]=",
- CellID->272793725]
-}, Open  ]],
+ CellID->2360046],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Methods", "[", "temp2", "]"}]], "Input",
- CellChangeTimes->{{3.637237856478349*^9, 3.63723786681294*^9}},
+ RowBox[{"Definition", "[", "HHJavaObjectQ", "]"}]], "Input",
  CellLabel->"In[32]:=",
- CellID->1187825],
+ CellID->47136202],
 
 Cell[BoxData[
- TagBox[
-  TagBox[GridBox[{
-     {"\<\"boolean canExecute()\"\>"},
-     {"\<\"boolean canRead()\"\>"},
-     {"\<\"boolean canWrite()\"\>"},
-     {"\<\"int compareTo(java.io.File)\"\>"},
-     {"\<\"int compareTo(Object)\"\>"},
-     {"\<\"boolean createNewFile() throws java.io.IOException\"\>"},
-     {"\<\"static java.io.File createTempFile(String, String, java.io.File) \
-throws java.io.IOException\"\>"},
-     {"\<\"static java.io.File createTempFile(String, String) throws \
-java.io.IOException\"\>"},
-     {"\<\"boolean delete()\"\>"},
-     {"\<\"void deleteOnExit()\"\>"},
-     {"\<\"boolean equals(Object)\"\>"},
-     {"\<\"boolean exists()\"\>"},
-     {"\<\"java.io.File getAbsoluteFile()\"\>"},
-     {"\<\"String getAbsolutePath()\"\>"},
-     {"\<\"java.io.File getCanonicalFile() throws java.io.IOException\"\>"},
-     {"\<\"String getCanonicalPath() throws java.io.IOException\"\>"},
-     {"\<\"Class getClass()\"\>"},
-     {"\<\"long getFreeSpace()\"\>"},
-     {"\<\"String getName()\"\>"},
-     {"\<\"String getParent()\"\>"},
-     {"\<\"java.io.File getParentFile()\"\>"},
-     {"\<\"String getPath()\"\>"},
-     {"\<\"long getTotalSpace()\"\>"},
-     {"\<\"long getUsableSpace()\"\>"},
-     {"\<\"int hashCode()\"\>"},
-     {"\<\"boolean isAbsolute()\"\>"},
-     {"\<\"boolean isDirectory()\"\>"},
-     {"\<\"boolean isFile()\"\>"},
-     {"\<\"boolean isHidden()\"\>"},
-     {"\<\"long lastModified()\"\>"},
-     {"\<\"long length()\"\>"},
-     {"\<\"String[] list()\"\>"},
-     {"\<\"java.io.File[] listFiles()\"\>"},
-     {"\<\"java.io.File[] listFiles(java.io.FileFilter)\"\>"},
-     {"\<\"java.io.File[] listFiles(java.io.FilenameFilter)\"\>"},
-     {"\<\"String[] list(java.io.FilenameFilter)\"\>"},
-     {"\<\"static java.io.File[] listRoots()\"\>"},
-     {"\<\"boolean mkdir()\"\>"},
-     {"\<\"boolean mkdirs()\"\>"},
-     {"\<\"void notify()\"\>"},
-     {"\<\"void notifyAll()\"\>"},
-     {"\<\"boolean renameTo(java.io.File)\"\>"},
-     {"\<\"boolean setExecutable(boolean)\"\>"},
-     {"\<\"boolean setExecutable(boolean, boolean)\"\>"},
-     {"\<\"boolean setLastModified(long)\"\>"},
-     {"\<\"boolean setReadable(boolean)\"\>"},
-     {"\<\"boolean setReadable(boolean, boolean)\"\>"},
-     {"\<\"boolean setReadOnly()\"\>"},
-     {"\<\"boolean setWritable(boolean)\"\>"},
-     {"\<\"boolean setWritable(boolean, boolean)\"\>"},
-     {"\<\"java.nio.file.Path toPath()\"\>"},
-     {"\<\"String toString()\"\>"},
-     {"\<\"java.net.URI toURI()\"\>"},
-     {"\<\"java.net.URL toURL() throws java.net.MalformedURLException\"\>"},
-     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
-     {"\<\"void wait(long) throws InterruptedException\"\>"},
-     {"\<\"void wait() throws InterruptedException\"\>"}
-    },
-    GridBoxAlignment->{
-     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-      "RowsIndexed" -> {}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.5599999999999999]}, 
-        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.4]}, 
-        Offset[0.2]}, "RowsIndexed" -> {}}],
-   Column],
-  Function[BoxForm`e$, 
-   TableForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{3.6372378670429535`*^9},
- CellLabel->"Out[32]//TableForm=",
- CellID->484491746]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"temp2", "@", 
-  RowBox[{"getPath", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.6372377056247206`*^9, 3.6372377292530723`*^9}},
- CellLabel->"In[20]:=",
- CellID->243604935],
-
-Cell[BoxData["\<\"file:\\\\C:\\\\ProgramData\\\\Mathematica\\\\Applications\\\
-\\NounouW\\\\Java\\\\nounou.jar!\\\\NNGit.gson.txt\"\>"], "Output",
- CellChangeTimes->{{3.6372377103589916`*^9, 3.637237729951112*^9}},
- CellLabel->"Out[20]=",
- CellID->673817]
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+           RowBox[{
+           "HokahokaW`Java`Private`JavaObjectQ", "[", 
+            "HokahokaW`Java`Private`x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+            RowBox[{
+            "HokahokaW`Java`Private`JavaObjectQ", "[", 
+             "HokahokaW`Java`Private`x", "]"}]}], ",", 
+           "HokahokaW`Java`Private`className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"HokahokaW`Java`Private`InstanceOf", "[", 
+             RowBox[{
+             "HokahokaW`Java`Private`x", ",", 
+              "HokahokaW`Java`Private`className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"x_", "/;", 
+           RowBox[{"JavaObjectQ", "[", "x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"x_", "/;", 
+            RowBox[{"JavaObjectQ", "[", "x", "]"}]}], ",", 
+           "className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"InstanceOf", "[", 
+             RowBox[{"x", ",", "className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[HokahokaW`Java`HHJavaObjectQ],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.6373290530252075`*^9},
+ CellLabel->"Out[32]=",
+ CellID->627200296]
 }, Open  ]]
 }, Open  ]],
 
@@ -1242,10 +989,10 @@ initialized\\n\"\>"], "Output",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{952, 1160},
-WindowMargins->{{960, Automatic}, {Automatic, -2466}},
+WindowSize->{952, 1133},
+WindowMargins->{{960, Automatic}, {Automatic, -2400}},
 CellContext->"Global`",
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
   CharacterEncoding -> "ShiftJIS"]
 ]
@@ -1255,14 +1002,14 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[33101, 1035, 100, 2, 53, "ExtendedExamplesSection",
+  Cell[24033, 782, 100, 2, 53, "ExtendedExamplesSection",
    CellTags->"ExtendedExamples",
    CellID->1854448968]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 40299, 1256}
+ {"ExtendedExamples", 31230, 1003}
  }
 *)
 (*NotebookFileOutline
@@ -1363,222 +1110,158 @@ Cell[3718, 194, 356, 11, 68, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[4077, 207, 160, 4, 27, "Input",
  CellID->182887016],
-Cell[4240, 213, 641, 22, 78, "Text",
- CellID->279300447],
-Cell[4884, 237, 534, 10, 21, "Print",
- CellID->39608429],
-Cell[5421, 249, 769, 23, 48, "Input",
+Cell[4240, 213, 637, 19, 78, "Text",
+ CellID->349551209],
+Cell[4880, 234, 638, 19, 78, "Text",
+ CellID->16295068],
+Cell[5521, 255, 574, 12, 39, "Message",
+ CellID->26520379],
+Cell[6098, 269, 641, 22, 78, "Text",
+ CellID->373472672],
+Cell[6742, 293, 204, 3, 21, "Print",
+ CellID->1088287],
+Cell[6949, 298, 769, 23, 48, "Input",
  CellID->121274972],
-Cell[6193, 274, 184, 4, 27, "Input",
+Cell[7721, 323, 184, 4, 27, "Input",
  CellID->514242286],
 Cell[CellGroupData[{
-Cell[6402, 282, 264, 7, 27, "Input",
- CellID->252123378],
-Cell[6669, 291, 1312, 24, 25, "Output",
- CellID->120093351]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8018, 320, 246, 5, 27, "Input",
- CellID->247228319],
-Cell[8267, 327, 657, 14, 25, "Output",
- CellID->80640924]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8961, 346, 177, 4, 27, "Input",
- CellID->250370886],
-Cell[9141, 352, 788, 22, 52, "Output",
- CellID->270252740]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[9966, 379, 174, 4, 23, "Input",
- CellID->120182463],
-Cell[10143, 385, 3653, 83, 884, "Output",
- CellID->975853073]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[13833, 473, 452, 10, 44, "Input",
+Cell[7930, 331, 452, 10, 48, "Input",
  CellID->687037852],
-Cell[14288, 485, 1308, 23, 25, "Output",
- CellID->539999368]
+Cell[8385, 343, 1531, 26, 25, "Output",
+ CellID->504254057]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15633, 513, 199, 5, 27, "Input",
+Cell[9953, 374, 254, 6, 27, "Input",
  CellID->176169232],
-Cell[15835, 520, 355, 6, 25, "Output",
- CellID->485073017]
+Cell[10210, 382, 606, 10, 25, "Output",
+ CellID->220948255]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16227, 531, 197, 5, 27, "Input",
+Cell[10853, 397, 303, 7, 27, "Input",
+ CellID->12581516],
+Cell[11159, 406, 341, 6, 25, "Output",
+ CellID->194523598]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11537, 417, 197, 5, 27, "Input",
  CellID->186302334],
-Cell[16427, 538, 771, 19, 25, "Output",
- CellID->32406927]
+Cell[11737, 424, 963, 22, 25, "Output",
+ CellID->714609180]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17235, 562, 197, 5, 27, "Input",
+Cell[12737, 451, 197, 5, 27, "Input",
  CellID->32444361],
-Cell[17435, 569, 698, 11, 83, "Output",
- CellID->257260538]
+Cell[12937, 458, 888, 14, 83, "Output",
+ CellID->96204095]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18170, 585, 268, 7, 27, "Input",
- CellID->311394842],
-Cell[18441, 594, 240, 6, 25, "Output",
- CellID->531152567]
+Cell[13862, 477, 184, 4, 27, "Input",
+ CellID->200294427],
+Cell[14049, 483, 716, 15, 39, "Message",
+ CellID->203163290]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18718, 605, 235, 6, 27, "Input",
- CellID->56794416],
-Cell[18956, 613, 271, 5, 25, "Output",
- CellID->529295895]
+Cell[14802, 503, 281, 6, 27, "Input",
+ CellID->410026117],
+Cell[15086, 511, 394, 7, 25, "Output",
+ CellID->400834876]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19264, 623, 531, 13, 27, InheritFromParent,
- CellID->589324225],
-Cell[19798, 638, 373, 9, 25, "Output",
- CellID->181878069]
+Cell[15517, 523, 253, 6, 27, "Input",
+ CellID->590624524],
+Cell[15773, 531, 314, 6, 25, "Output",
+ CellID->105287466]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20208, 652, 597, 15, 48, InheritFromParent,
- CellID->437453423],
-Cell[20808, 669, 402, 10, 57, "Output",
- CellID->755835159]
-}, Open  ]],
-Cell[21225, 682, 607, 14, 27, InheritFromParent,
- CellID->183971346],
-Cell[21835, 698, 112, 2, 27, "Input",
+Cell[16124, 542, 279, 6, 27, "Input",
  CellID->469911287],
-Cell[CellGroupData[{
-Cell[21972, 704, 246, 6, 27, "Input",
- CellID->208311696],
-Cell[22221, 712, 353, 6, 45, "Output",
- CellID->171151230]
+Cell[16406, 550, 442, 8, 25, "Output",
+ CellID->25647138]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22611, 723, 297, 7, 27, "Input",
- CellID->266673251],
-Cell[22911, 732, 232, 4, 45, "Output",
- CellID->508694452]
+Cell[16885, 563, 360, 9, 27, "Input",
+ CellID->72937],
+Cell[17248, 574, 259, 5, 25, "Output",
+ CellID->58582956]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23180, 741, 347, 7, 27, "Input",
- CellID->43898952],
-Cell[23530, 750, 388, 10, 25, "Output",
- CellID->142675284]
+Cell[17544, 584, 331, 6, 27, "Input",
+ CellID->214773236],
+Cell[17878, 592, 266, 5, 25, "Output",
+ CellID->145106188]
 }, Open  ]],
+Cell[18159, 600, 189, 4, 27, "Input",
+ CellID->171120571],
 Cell[CellGroupData[{
-Cell[23955, 765, 393, 8, 27, "Input",
- CellID->47591674],
-Cell[24351, 775, 344, 8, 25, "Output",
- CellID->918443411]
+Cell[18373, 608, 108, 2, 48, "Input",
+ CellID->88241639],
+Cell[18484, 612, 1835, 50, 186, "Output",
+ CellID->355031587]
 }, Open  ]],
-Cell[24710, 786, 448, 10, 27, "Input",
- CellID->474885628],
+Cell[20334, 665, 961, 31, 148, "Input",
+ CellID->2360046],
 Cell[CellGroupData[{
-Cell[25183, 800, 497, 11, 27, "Input",
- CellID->14458664],
-Cell[25683, 813, 214, 4, 45, "Output",
- CellID->831003326]
-}, Open  ]],
-Cell[25912, 820, 171, 4, 27, "Input",
- CellID->67124369],
-Cell[CellGroupData[{
-Cell[26108, 828, 309, 8, 27, "Input",
- CellID->46719490],
-Cell[26420, 838, 369, 9, 25, "Output",
- CellID->213340714]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[26826, 852, 189, 5, 27, "Input",
- CellID->4761356],
-Cell[27018, 859, 174, 4, 25, "Output",
- CellID->501265324]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[27229, 868, 392, 11, 27, "Input",
- CellID->327179369],
-Cell[27624, 881, 390, 9, 25, "Output",
- CellID->26649391]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[28051, 895, 191, 5, 27, "Input",
- CellID->987582122],
-Cell[28245, 902, 198, 4, 25, "Output",
- CellID->275325734]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[28480, 911, 202, 5, 27, "Input",
- CellID->584336853],
-Cell[28685, 918, 318, 6, 45, "Output",
- CellID->272793725]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[29040, 929, 171, 4, 27, "Input",
- CellID->1187825],
-Cell[29214, 935, 3347, 78, 862, "Output",
- CellID->484491746]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[32598, 1018, 196, 5, 23, "Input",
- CellID->243604935],
-Cell[32797, 1025, 255, 4, 45, "Output",
- CellID->673817]
+Cell[21320, 700, 118, 3, 27, "Input",
+ CellID->47136202],
+Cell[21441, 705, 2543, 71, 289, "Output",
+ CellID->627200296]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33101, 1035, 100, 2, 53, "ExtendedExamplesSection",
+Cell[24033, 782, 100, 2, 53, "ExtendedExamplesSection",
  CellTags->"ExtendedExamples",
  CellID->1854448968],
-Cell[33204, 1039, 125, 3, 30, "ExampleSection",
+Cell[24136, 786, 125, 3, 30, "ExampleSection",
  CellID->1293636265],
-Cell[33332, 1044, 148, 3, 18, "ExampleSection",
+Cell[24264, 791, 148, 3, 18, "ExampleSection",
  CellID->1020263627],
 Cell[CellGroupData[{
-Cell[33505, 1051, 127, 3, 18, "ExampleSection",
+Cell[24437, 798, 127, 3, 18, "ExampleSection",
  CellID->2061341341],
-Cell[33635, 1056, 130, 3, 70, "ExampleSubsection",
+Cell[24567, 803, 130, 3, 70, "ExampleSubsection",
  CellID->1757724783],
-Cell[33768, 1061, 130, 3, 70, "ExampleSubsection",
+Cell[24700, 808, 130, 3, 70, "ExampleSubsection",
  CellID->1295379749]
 }, Closed]],
-Cell[33913, 1067, 131, 3, 18, "ExampleSection",
+Cell[24845, 814, 131, 3, 18, "ExampleSection",
  CellID->258228157],
-Cell[34047, 1072, 142, 3, 18, "ExampleSection",
+Cell[24979, 819, 142, 3, 18, "ExampleSection",
  CellID->2123667759],
-Cell[34192, 1077, 135, 3, 18, "ExampleSection",
+Cell[25124, 824, 135, 3, 18, "ExampleSection",
  CellID->1305812373],
-Cell[34330, 1082, 140, 3, 18, "ExampleSection",
+Cell[25262, 829, 140, 3, 18, "ExampleSection",
  CellID->1653164318],
 Cell[CellGroupData[{
-Cell[34495, 1089, 132, 3, 18, "ExampleSection",
+Cell[25427, 836, 132, 3, 18, "ExampleSection",
  CellID->589267740],
 Cell[CellGroupData[{
-Cell[34652, 1096, 407, 9, 27, "Input",
+Cell[25584, 843, 407, 9, 27, "Input",
  CellID->200997102],
-Cell[35062, 1107, 531, 11, 25, "Output",
+Cell[25994, 854, 531, 11, 25, "Output",
  CellID->652428351]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35630, 1123, 175, 4, 27, "Input",
+Cell[26562, 870, 175, 4, 27, "Input",
  CellID->280566528],
-Cell[35808, 1129, 2205, 53, 509, "Output",
+Cell[26740, 876, 2205, 53, 502, "Output",
  CellID->282496226]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38050, 1187, 175, 4, 27, "Input",
+Cell[28982, 934, 175, 4, 27, "Input",
  CellID->144722191],
-Cell[38228, 1193, 206, 7, 25, "Output",
+Cell[29160, 940, 206, 7, 25, "Output",
  CellID->384988149]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38471, 1205, 280, 6, 27, "Input",
+Cell[29403, 952, 280, 6, 27, "Input",
  CellID->28537956],
-Cell[38754, 1213, 412, 7, 45, "Output",
+Cell[29686, 960, 412, 7, 45, "Output",
  CellID->390098434]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39203, 1225, 283, 6, 27, "Input",
+Cell[30135, 972, 283, 6, 27, "Input",
  CellID->223484729],
-Cell[39489, 1233, 360, 6, 83, "Output",
+Cell[30421, 980, 360, 6, 83, "Output",
  CellID->9266469]
 }, Open  ]]
 }, Open  ]]

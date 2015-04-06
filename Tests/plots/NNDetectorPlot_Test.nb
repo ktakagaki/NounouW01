@@ -1,0 +1,317 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11411,        308]
+NotebookOptionsPosition[     10605,        275]
+NotebookOutlinePosition[     10953,        290]
+CellTagsIndexPosition[     10910,        287]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6373357953054514`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 19:49:18 is \
+a7b569f93d24f934eedde6a6ac130f15f8bd31fe.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6373357954594603`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData[
+ RowBox[{"AllowRaggedArrays", "[", "True", "]"}]], "Input",
+ CellChangeTimes->{{3.637223875178211*^9, 3.6372238797094707`*^9}},
+ CellID->514242286],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", " ", "=", 
+  RowBox[{"JavaNew", "[", 
+   RowBox[{"\"\<nounou.elements.layouts.NNDataLayoutHexagonal\>\"", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", "15", ",", "14", ",", "13", ",", "12", 
+        ",", "11"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+       "10", ",", " ", "9", ",", " ", "8", ",", " ", "1", ",", " ", "0"}], 
+       "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"7", ",", " ", "6", ",", " ", "5", ",", " ", "4"}], "}"}], ",",
+       " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", "3", ",", "2"}], "}"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.637223344303845*^9, 3.6372233870822916`*^9}, {
+   3.637223519265852*^9, 3.6372235209719496`*^9}, {3.6372345001313257`*^9, 
+   3.637234501027377*^9}, {3.6372368491017303`*^9, 3.637236860245368*^9}, 
+   3.6373357601374397`*^9},
+ CellID->687037852],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
+     "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject4337107132743681]], "Output",
+ CellChangeTimes->{
+  3.637223521731993*^9, 3.6372235540228424`*^9, 3.6372238953683662`*^9, 
+   3.6372241218233204`*^9, 3.6372243154213934`*^9, 3.6372251753126345`*^9, 
+   3.637225531551014*^9, {3.637225703962875*^9, 3.6372257511425734`*^9}, 
+   3.6372257917388954`*^9, 3.63722590382631*^9, {3.637226592822768*^9, 
+   3.637226616137102*^9}, 3.637227359418617*^9, 3.637227472682104*^9, 
+   3.637227584816518*^9, 3.6372276954578457`*^9, 3.6372283459320507`*^9, 
+   3.6372283973649926`*^9, 3.6372284918583975`*^9, 3.637228680916211*^9, 
+   3.637228780277894*^9, 3.637233992684293*^9, 3.6372340738019323`*^9, 
+   3.637234268302059*^9, {3.637234494818022*^9, 3.6372345015304055`*^9}, 
+   3.6372350769383245`*^9, 3.6372353359831495`*^9, 3.6372353954925537`*^9, 
+   3.6372359986530724`*^9, {3.6372368393581734`*^9, 3.6372368723230586`*^9}, 
+   3.637237290287965*^9, 3.6372374728614073`*^9, 3.637237595533424*^9, 
+   3.6372620777617464`*^9, 3.6373179783547573`*^9, 3.6373180834397707`*^9, 
+   3.6373198212771797`*^9, 3.637322195288967*^9, {3.6373271836542854`*^9, 
+   3.637327198613141*^9}, 3.6373276952725487`*^9, 3.6373280175359807`*^9, 
+   3.6373283349701366`*^9, 3.637328403817075*^9, 3.637328522084839*^9, 
+   3.6373313909925385`*^9, 3.6373323506554284`*^9, 3.637332698563328*^9, 
+   3.637333499612145*^9, 3.637335558851927*^9, 3.6373357630126038`*^9, 
+   3.637335801866826*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"layout", "@", 
+      RowBox[{"mask", "[", "#", "]"}]}], ")"}], "&"}], " ", "/@", " ", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.63733490642661*^9, 3.6373349566404824`*^9}, 
+   3.637335644281813*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"toJsonString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.637234538762535*^9, 3.637234545890943*^9}},
+ CellID->32444361],
+
+Cell[BoxData["\<\"{\\\"layoutArray\\\":[[-1,15,14,13,12,11],[10,9,8,1,0],[7,6,\
+5,4],[-1,3,2]],\\\"channelRadius\\\":50.0,\\\"channelDistance\\\":100.0,\\\"\
+masked\\\":[2,4],\\\"className\\\":\\\"nounou.elements.layouts.\
+NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
+674199eda7404048d811c228fb848bd74709fd6a\\\",\\\"version\\\":0.5,\\\"bitmap$0\
+\\\":false}\"\>"], "Output",
+ CellChangeTimes->{
+  3.637234546219962*^9, 3.6372350780563884`*^9, 3.6372353387033052`*^9, 
+   3.6372353967046227`*^9, 3.637236000176159*^9, 3.637236875106218*^9, 
+   3.6372372924570885`*^9, 3.637237473987472*^9, 3.637237597706548*^9, 
+   3.637262080851923*^9, 3.637318086191928*^9, 3.6373198240493383`*^9, 
+   3.637322196299025*^9, 3.637327201374299*^9, 3.6373276955065613`*^9, 
+   3.637328017719991*^9, 3.637328337626289*^9, 3.6373284062962165`*^9, 
+   3.637328522257849*^9, 3.637331394143719*^9, 3.6373323532055745`*^9, 
+   3.637332700126417*^9, 3.637333501489252*^9, 3.6373346393793364`*^9, 
+   3.6373349718673534`*^9, 3.637335563923217*^9, {3.6373357828177366`*^9, 
+   3.637335802932887*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNDetectorPlot", "[", 
+  RowBox[{"layout", ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", " ", "\"\<SPP035 ECoG Grid\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6373213626963453`*^9, 3.637321368799695*^9}, {
+  3.6373356525452857`*^9, 3.637335701657095*^9}},
+ CellID->200294427],
+
+Cell[BoxData[
+ GraphicsBox[{CircleBox[{450., 259.8076211353316}, 50.], 
+   CircleBox[{350., 259.8076211353316}, 50.], {
+    {GrayLevel[0.5], DiskBox[{350., 86.60254037844386}, 50.]}, 
+    CircleBox[{350., 86.60254037844386}, 50.]}, 
+   CircleBox[{250., 86.60254037844386}, 50.], {
+    {GrayLevel[0.5], DiskBox[{400., 173.20508075688772`}, 50.]}, 
+    CircleBox[{400., 173.20508075688772`}, 50.]}, 
+   CircleBox[{300., 173.20508075688772`}, 50.], 
+   CircleBox[{200., 173.20508075688772`}, 50.], 
+   CircleBox[{100., 173.20508075688772`}, 50.], 
+   CircleBox[{250., 259.8076211353316}, 50.], 
+   CircleBox[{150., 259.8076211353316}, 50.], 
+   CircleBox[{50., 259.8076211353316}, 50.], 
+   CircleBox[{500., 346.41016151377545`}, 50.], 
+   CircleBox[{400., 346.41016151377545`}, 50.], 
+   CircleBox[{300., 346.41016151377545`}, 50.], 
+   CircleBox[{200., 346.41016151377545`}, 50.], 
+   CircleBox[{100., 346.41016151377545`}, 50.], {
+    {GrayLevel[0], InsetBox[
+      StyleBox["0",
+       StripOnInput->False,
+       FontSize->Medium], {450., 259.8076211353316}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["1",
+       StripOnInput->False,
+       FontSize->Medium], {350., 259.8076211353316}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["2",
+       StripOnInput->False,
+       FontSize->Medium], {350., 86.60254037844386}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["3",
+       StripOnInput->False,
+       FontSize->Medium], {250., 86.60254037844386}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["4",
+       StripOnInput->False,
+       FontSize->Medium], {400., 173.20508075688772`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["5",
+       StripOnInput->False,
+       FontSize->Medium], {300., 173.20508075688772`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["6",
+       StripOnInput->False,
+       FontSize->Medium], {200., 173.20508075688772`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["7",
+       StripOnInput->False,
+       FontSize->Medium], {100., 173.20508075688772`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["8",
+       StripOnInput->False,
+       FontSize->Medium], {250., 259.8076211353316}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["9",
+       StripOnInput->False,
+       FontSize->Medium], {150., 259.8076211353316}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["10",
+       StripOnInput->False,
+       FontSize->Medium], {50., 259.8076211353316}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["11",
+       StripOnInput->False,
+       FontSize->Medium], {500., 346.41016151377545`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["12",
+       StripOnInput->False,
+       FontSize->Medium], {400., 346.41016151377545`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["13",
+       StripOnInput->False,
+       FontSize->Medium], {300., 346.41016151377545`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["14",
+       StripOnInput->False,
+       FontSize->Medium], {200., 346.41016151377545`}, {0, 0}]}, 
+    {GrayLevel[0], InsetBox[
+      StyleBox["15",
+       StripOnInput->False,
+       FontSize->Medium], {100., 346.41016151377545`}, {0, 0}]}}},
+  ImageMargins->0.,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  PlotLabel->FormBox["\"SPP035 ECoG Grid\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{
+  3.6373327027175655`*^9, 3.6373327689803553`*^9, 3.6373335025213113`*^9, {
+   3.637334363972584*^9, 3.637334382802661*^9}, {3.6373344610571365`*^9, 
+   3.6373344792721786`*^9}, 3.6373345316351733`*^9, {3.6373345653741035`*^9, 
+   3.637334641339448*^9}, {3.6373346860140033`*^9, 3.637334699891797*^9}, {
+   3.6373347470514946`*^9, 3.637334811542183*^9}, 3.6373349762606044`*^9, 
+   3.6373350267034893`*^9, 3.637335059160346*^9, 3.6373351682665863`*^9, {
+   3.6373355749888496`*^9, 3.6373356012633524`*^9}, 3.6373357045222588`*^9, 
+   3.637335804074953*^9}]
+}, Open  ]]
+},
+WindowSize->{952, 1133},
+WindowMargins->{{960, Automatic}, {Automatic, -2400}},
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 52, 1, 31, "Input"],
+Cell[613, 23, 619, 18, 76, "Text"],
+Cell[1235, 43, 617, 18, 76, "Text"],
+Cell[1855, 63, 161, 3, 31, "Input",
+ CellID->514242286],
+Cell[CellGroupData[{
+Cell[2041, 70, 983, 25, 52, "Input",
+ CellID->687037852],
+Cell[3027, 97, 1658, 27, 31, "Output"]
+}, Open  ]],
+Cell[4700, 127, 330, 10, 31, "Input"],
+Cell[CellGroupData[{
+Cell[5055, 141, 173, 4, 31, "Input",
+ CellID->32444361],
+Cell[5231, 147, 1077, 16, 72, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6345, 168, 308, 7, 31, "Input",
+ CellID->200294427],
+Cell[6656, 177, 3933, 95, 303, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

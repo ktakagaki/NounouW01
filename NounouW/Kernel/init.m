@@ -3,17 +3,16 @@
 (* Mathematica Init File *)
 
 
-Needs[ "JLink`" ];
-Needs[ "HokahokaW`" ];
+
 (*SetOptions[JLink`InstallJava, JVMArguments -> "-Xmx1024m"];
 SetOptions[JLink`ReinstallJava, JVMArguments -> "-Xmx1024m"];
 ReinstallJava[];*)
 
-SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
+
+Needs[ "JLink`" ];
 
 
-Get[ "NounouW`NounouW`"];
-NounouW`$JavaStackSize = 6144;
+InstallJava[];
 
 
 NounouW`IncreaseJavaStack[stackSize_Integer]:=
@@ -63,5 +62,15 @@ NounouW`IncreaseJavaStack[stackSize_Integer]:=
 NounouW`IncreaseJavaStack[NounouW`$JavaStackSize];
 
 
+Get[ "NounouW`NounouW`"];
+
+
+Needs[ "HokahokaW`" ];
+
+
 Needs["NounouW`Data`"];
 Needs["NounouW`Graphics`"];
+
+
+SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
+NounouW`$JavaStackSize = 6144;
