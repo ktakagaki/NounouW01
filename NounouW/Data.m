@@ -16,36 +16,10 @@ NNLoad::usage="Load data objects from files.";
 
 
 (* ::Subsection:: *)
-(*FILTER RELATED: NNFilterData, NNDownsampleData*)
-
-
-NNFilterData::usage="Applies FIR filter to data object and gives resulting filter object.";
-NNDownsampleData::usage="Applies Downsample filter to data object and gives resulting filter object.";
-
-
-(* ::Subsection:: *)
 (*NNToList*)
 
 
 NNToList::usage="Import data objects into Mathematica List.";
-
-
-(* ::Subsection::Closed:: *)
-(*EVENT RELATED: NNEventSegmentTimestamps, NNEventSelect*)
-
-
-NNEventSegmentTimestamps::usage="Extracts segment timestamps from event record.";
-
-
-NNEventSelect::usage="";
-
-
-(* ::Subsection:: *)
-(*TRACE PLOTTING: NNERPExtract, NNERPPlot*)
-
-
-NNERPExtractTS::usage="Extracts ERP traces from a data object.";
-NNERPPlotTS::usage="Extracts segments from a data object and plots ERP.";
 
 
 (* ::Section:: *)
@@ -59,36 +33,18 @@ Begin["`Private`"];
 (*NNLoad*)
 
 
-NNLoad[fileName_String]:=NNDataReader`load[fileName];
-NNLoad[fileNames:{__String}]:=NNDataReader`load[fileNames];
+NNLoad[fileName_String]:=NN`load[fileName];
+NNLoad[fileNames:{__String}]:=NN`load[fileNames];
 
 
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
-(*FILTER RELATED: NNFilterData*)
-
-
-NNFilterData[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"]]:= 
-	JavaNew["nounou.data.filters.XDataFilterFIR", dataObj];
-
-
-NNFilterData[args___]:=Message[NNFilterData::invalidArgs, {args}];
-
-
-NNDownsampleData[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], factor_:10]:= 
-	JavaNew["nounou.data.filters.XDataFilterDownsample", dataObj, factor];
-
-
-NNDownsampleData[args___]:=Message[NNDownsampleData::invalidArgs, {args}];
-
-
-(* ::Subsection:: *)
 (*NNToList*)
 
 
-NNToList[eventObj_/;HHJavaObjectQ[eventObj,"nounou.data.XEvents"]]:=
+NNToList[eventObj_/;HHJavaObjectQ[eventObj,$NNEventClass]]:=
 Module[{tempret, tempPortEvt},
 	tempret=Table[
 		tempPortEvt=eventObj@filterByPortA[p];
@@ -104,11 +60,29 @@ NNToList[args___]:=Message[NNToList::invalidArgs, {args}];
 NNToList[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
-(*EVENT RELATED: NNEventSegmentTimestamps, NNEventSelect*)
+(* ::Section:: *)
+(*Ending*)
 
 
-NNEventSegmentTimestamps[events_List]:=
+End[]
+
+
+EndPackage[]
+
+
+(* ::Section:: *)
+(*Backup*)
+
+
+(*NNEventSegmentTimestamps::usage="Extracts segment timestamps from event record.";
+NNEventSelect::usage="";*)
+
+
+(*NNERPExtractTS::usage="Extracts ERP traces from a data object.";
+NNERPPlotTS::usage="Extracts segments from a data object and plots ERP.";*)
+
+
+(*NNEventSegmentTimestamps[events_List]:=
 NNEventSegmentTimestamps[events]=
 Module[{tempEventStarts, tempEventEnds, tempSegs},
 	tempEventStarts=Select[events, (#[[1]]==0 && #[[5]]=="Starting Recording")& ];
@@ -123,11 +97,7 @@ Module[{tempEventStarts, tempEventEnds, tempSegs},
 
 NNEventSegmentEndTSSelect[startEvent_, eventEnds_]:=
 	SelectFirst[eventEnds, (#[[2]] > startEvent[[2]])&, {Null,Infinity}][[2]];
-
-
 NNEventSegmentTimestamps[args___]:=Message[NNEventSegmentTimestamps::invalidArgs, {args}];
-
-
 NNEventSelect[events_List, eventNo_Integer]:=
 Module[{tempEST},
 	tempEST = NNEventSegmentTimestamps[events];
@@ -137,40 +107,50 @@ Module[{tempEST},
 	]
 ];
 NNEventSelect::invalidEventNo="The event list only has `1` detected segments, and eventNo `2` is therefore invalid.";
+NNEventSelect[args___]:=Message[NNEventSelect::invalidArgs, {args}];*)
 
 
-NNEventSelect[args___]:=Message[NNEventSelect::invalidArgs, {args}];
-
-
-(* ::Subsection:: *)
-(*TRACE PLOTTING: NNERPExtract, NNERPPlot*)
-
-
-NNERPExtractTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
+(*NNERPExtractTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
 Module[{tempEvents},
 	tempEvents = JavaNew["nounou.data.ranges.RangeTSEvent", #, preFrames, postFrames]& /@ timeStamps;
 	(dataObj@readTraceAbsA[channel, #]&) /@ tempEvents
 ];
 
 
-NNERPExtractTS[args___]:=Message[NNERPExtractTS::invalidArgs, {args}];
+NNERPExtractTS[args___]:=Message[NNERPExtractTS::invalidArgs, {args}];*)
 
 
-NNERPPlotTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
+(*NNERPPlotTS[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], channel_Integer, timeStamps_List, {preFrames_, postFrames_, step_:1} ]:=
 Module[{tempERP},
 	tempERP =  NNERPExtractTS[dataObj, channel, timeStamps, {preFrames, postFrames, step}];
 	ListLinePlot[tempERP, PlotRange->All]
 ];
 
 
-NNERPPlotTS[args___]:=Message[NNERPPlotTS::invalidArgs, {args}];
+NNERPPlotTS[args___]:=Message[NNERPPlotTS::invalidArgs, {args}];*)
 
 
-(* ::Section:: *)
-(*Ending*)
+(* ::Subsection:: *)
+(*FILTER RELATED: NNFilterData*)
 
 
-End[]
+(*NNFilterData[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"]]:= 
+	JavaNew["nounou.data.filters.XDataFilterFIR", dataObj];
 
 
-EndPackage[]
+NNFilterData[args___]:=Message[NNFilterData::invalidArgs, {args}];*)
+
+
+(*NNDownsampleData[dataObj_/;HHJavaObjectQ[dataObj,"nounou.data.XData"], factor_:10]:= 
+	JavaNew["nounou.data.filters.XDataFilterDownsample", dataObj, factor];
+
+
+NNDownsampleData[args___]:=Message[NNDownsampleData::invalidArgs, {args}];*)
+
+
+(* ::Subsection:: *)
+(*FILTER RELATED: NNFilterData, NNDownsampleData*)
+
+
+(*NNFilterData::usage="Applies FIR filter to data object and gives resulting filter object.";
+NNDownsampleData::usage="Applies Downsample filter to data object and gives resulting filter object.";*)

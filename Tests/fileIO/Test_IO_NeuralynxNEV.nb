@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     26216,        724]
-NotebookOptionsPosition[     24744,        665]
-NotebookOutlinePosition[     25084,        680]
-CellTagsIndexPosition[     25041,        677]
+NotebookDataLength[     25393,        701]
+NotebookOptionsPosition[     24095,        648]
+NotebookOutlinePosition[     24443,        663]
+CellTagsIndexPosition[     24400,        660]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -35,30 +35,13 @@ Cell[BoxData[
  RowBox[{"<<", "NounouW`"}]], "Input",
  CellChangeTimes->{{3.6168284755362277`*^9, 3.6168284777263527`*^9}}],
 
-Cell[CellGroupData[{
-
-Cell[BoxData["\<\"Welcome to NounouW, the Wolfram Language/Mathematica \
-interface to nounou!\"\>"], "Print",
- CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
-  3.6168346868714952`*^9, 3.6172758545043077`*^9, 3.6173438085960593`*^9}],
-
-Cell[BoxData["\<\"      ( current Git HEAD:  \
-5cfdc2787c37d1fef54ddbbfa42ff330b34ef343 )\"\>"], "Print",
- CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
-  3.6168346868714952`*^9, 3.6172758545043077`*^9, 3.6173438085970592`*^9}],
-
-Cell[BoxData["\<\"      ( http://github.org/ktakagaki/nounouw )\"\>"], "Print",
- CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
-  3.6168346868714952`*^9, 3.6172758545043077`*^9, 3.6173438085980597`*^9}],
-
 Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
  CellChangeTimes->{3.6168284784553947`*^9, 3.616828511698296*^9, 
-  3.6168346868714952`*^9, 3.6172758545043077`*^9, 3.617343808621061*^9}]
-}, Open  ]]
+  3.6168346868714952`*^9, 3.6172758545043077`*^9, 3.6173438085960593`*^9, 
+  3.635515466466405*^9, 3.6355159369993176`*^9, 3.6355177188202825`*^9, 
+  3.6355177941745925`*^9, 3.635517826817459*^9, 3.635518360987012*^9, 
+  3.6355369350868864`*^9, 3.635537187369316*^9}]
 }, Open  ]],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.6172758639578485`*^9, 3.6172758725133376`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -241,7 +224,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource[
                 "FEStrings", "sizeBriefExplanation"], StandardForm],
-               ImageSizeCache->{61., {2., 9.}}],
+               ImageSizeCache->{96., {3., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarCategory",
              StripOnInput->False],
@@ -263,7 +246,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
                 StandardForm],
-               ImageSizeCache->{54., {1., 9.}}],
+               ImageSizeCache->{82., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -294,7 +277,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
                 StandardForm],
-               ImageSizeCache->{62., {1., 9.}}],
+               ImageSizeCache->{93., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -325,7 +308,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
                 StandardForm],
-               ImageSizeCache->{45., {1., 9.}}],
+               ImageSizeCache->{69., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -334,7 +317,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
                 StandardForm],
-               ImageSizeCache->{45., {1., 9.}}],
+               ImageSizeCache->{69., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControlActive",
              StripOnInput->False]}, Dynamic[
@@ -356,7 +339,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
                 StandardForm],
-               ImageSizeCache->{80., {1., 9.}}],
+               ImageSizeCache->{125., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -485,7 +468,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource[
                 "FEStrings", "sizeBriefExplanation"], StandardForm],
-               ImageSizeCache->{61., {2., 9.}}],
+               ImageSizeCache->{96., {3., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarCategory",
              StripOnInput->False],
@@ -507,7 +490,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
                 StandardForm],
-               ImageSizeCache->{54., {1., 9.}}],
+               ImageSizeCache->{82., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -537,7 +520,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
                 StandardForm],
-               ImageSizeCache->{62., {1., 9.}}],
+               ImageSizeCache->{93., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -546,7 +529,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
                 StandardForm],
-               ImageSizeCache->{62., {1., 9.}}],
+               ImageSizeCache->{93., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControlActive",
              StripOnInput->False]}, Dynamic[
@@ -568,7 +551,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
                 StandardForm],
-               ImageSizeCache->{45., {1., 9.}}],
+               ImageSizeCache->{69., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -599,7 +582,7 @@ Cell[BoxData[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
                 StandardForm],
-               ImageSizeCache->{80., {1., 9.}}],
+               ImageSizeCache->{125., {1., 13.}}],
               StripOnInput->False,
               DynamicUpdating->True], "SuggestionsBarControl",
              StripOnInput->False], True->
@@ -663,9 +646,9 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{952, 1104},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+WindowSize->{952, 1133},
+WindowMargins->{{0, Automatic}, {Automatic, -1200}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -685,43 +668,37 @@ Cell[CellGroupData[{
 Cell[700, 27, 179, 2, 64, "Chapter"],
 Cell[CellGroupData[{
 Cell[904, 33, 122, 2, 31, "Input"],
-Cell[CellGroupData[{
-Cell[1051, 39, 250, 3, 23, "Print"],
-Cell[1304, 44, 246, 3, 23, "Print"],
-Cell[1553, 49, 220, 2, 23, "Print"],
-Cell[1776, 53, 213, 2, 23, "Print"]
-}, Open  ]]
-}, Open  ]],
-Cell[2016, 59, 96, 1, 31, "Input"],
-Cell[CellGroupData[{
-Cell[2137, 64, 96, 1, 63, "Section"],
-Cell[CellGroupData[{
-Cell[2258, 69, 384, 8, 31, "Input"],
-Cell[2645, 79, 208, 2, 31, "Output"]
+Cell[1029, 37, 408, 5, 23, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2890, 86, 304, 6, 31, "Input"],
-Cell[3197, 94, 364, 9, 31, "Output"]
+Cell[1474, 47, 96, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[1595, 52, 384, 8, 31, "Input"],
+Cell[1982, 62, 208, 2, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3598, 108, 203, 4, 31, "Input"],
-Cell[3804, 114, 120, 3, 31, "Output"]
+Cell[2227, 69, 304, 6, 31, "Input"],
+Cell[2534, 77, 364, 9, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3961, 122, 129, 3, 31, "Input"],
-Cell[4093, 127, 123, 3, 31, "Output"]
+Cell[2935, 91, 203, 4, 31, "Input"],
+Cell[3141, 97, 120, 3, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4253, 135, 157, 3, 31, "Input"],
-Cell[4413, 140, 70, 1, 31, "Output"]
+Cell[3298, 105, 129, 3, 31, "Input"],
+Cell[3430, 110, 123, 3, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4520, 146, 225, 4, 31, "Input"],
-Cell[4748, 152, 10757, 265, 171, "Output"]
+Cell[3590, 118, 157, 3, 31, "Input"],
+Cell[3750, 123, 70, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15542, 422, 646, 17, 31, "Input"],
-Cell[16191, 441, 8501, 218, 151, "Output"]
+Cell[3857, 129, 225, 4, 31, "Input"],
+Cell[4085, 135, 10764, 265, 171, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14886, 405, 646, 17, 31, "Input"],
+Cell[15535, 424, 8508, 218, 151, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

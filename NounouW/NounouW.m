@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["NounouW`", {"HokahokaW`","JLink`"}]
+BeginPackage["NounouW`", {"HokahokaW`","HokahokaW`Package`","JLink`"}]
 
 
 (* ::Section:: *)
@@ -13,42 +13,17 @@ BeginPackage["NounouW`", {"HokahokaW`","JLink`"}]
 General::invalidOptionValue="Option argument `2` -> `1` is invalid.";*)
 
 
-(*$PackageDirectoryNounouW = ParentDirectory[DirectoryName[FindFile["NounouW`"]]];
-$PackageNewestFileDateNounouW = DateString[Max @@ AbsoluteTime /@ FileDate /@ FileNames[ "*",$PackageDirectoryNounouW,Infinity] ];
-$GitCurrentHeadNounouW = Module[{tempretNN},
-	SetDirectory[ ParentDirectory[DirectoryName[ FindFile["NounouW`"] ]] ];
-	Run["git rev-parse HEAD > GitCurrentHEADHash.txt"];
-	tempretNN = Import["GitCurrentHEADHash.txt"];
-	ResetDirectory[];
-	tempretNN
-];*)
-
-
 HHPackageMessage["NounouW`"];
 
 
-(*CellPrint[TextCell[Row[{
-Style["NounouW  (http://github.org/ktakagaki/NounouW)", 
-    FontWeight -> "Bold", FontVariations -> {"Underline" -> True}], "\n" ,
-"    ( current Git HEAD:  "<> HHGitHEADHash["NounouW`"]<>" )\n" <>
-"    ( newest file:  "<> HHNewestFileDate["NounouW`"]<>" )"
-}],"Text"]];*)
+(*Convenience object for static methods*)
+NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
+NounouW`$NNData::usage="Main default reader object for NounouW.";
+NounouW`$NNData = NN`newNNData[];
 
 
-(* ::Subsection:: *)
-(*DataReader Java Object Handling*)
-
-
-(*NNDataReaderJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.DataReader";
-
-NNRangeFrSpecifierJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.ranges.RangeFrSpecifier";
-
-NNXDataJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XData";
-NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";
-NNXLayoutJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayout";
-NNXLayoutNullJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutNull";
-NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutSquare";
-*)
+$NNDataLayoutSpatialClass = "nounou.elements.layouts.NNDataLayoutSpatial";
+$NNEventClass = "nounou.elements.NNEvents";
 
 
 (* ::Section:: *)
@@ -56,26 +31,6 @@ NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and
 
 
 Begin["`Private`"];
-
-
-(*NNDataReaderJavaObjectQ[
-	dataReaderJavaObj_/;(JavaObjectQ[dataReaderJavaObj] 
-					&& InstanceOf[dataReaderJavaObj, "nounou.DataReader"])
-						]:= True ;
-NNDataReaderJavaObjectQ[args___]:= False ;
-NNRangeFrSpecifierJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.ranges.RangeFrSpecifier"])] := True;
-NNRangeFrSpecifierJavaObjectQ[args___] := False;
-NNXDataJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XData"])]:= True;
-NNXDataJavaObjectQ[args___]:= False;
-NNXMaskJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XMask"])]:= True;
-NNXMaskJavaObjectQ[args___]:= False;
-NNXLayoutJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayout"])]:= True;
-NNXLayoutJavaObjectQ[args___]:= False;
-NNXLayoutNullJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutNull"])]:= True;
-NNXLayoutNullJavaObjectQ[args___]:= False;
-NNXLayoutSquareJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutSquare"])]:= True;
-NNXLayoutSquareJavaObjectQ[args___]:= False;
-*)
 
 
 (* ::Section:: *)
@@ -137,3 +92,71 @@ be reloaded to test functionality, without losing any precalculated results in t
 
 (*NNNextPower[base_, n_]:= Ceiling[Log[base, n]];
 NNNextPower[args___]:=Message[NNNextPower::invalidArgs,{args}];*)
+
+
+(* ::Subsection:: *)
+(*DataReader Java Object Handling, transferred to Hokahoka*)
+
+
+(*NNDataReaderJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.DataReader";
+
+NNRangeFrSpecifierJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.ranges.RangeFrSpecifier";
+
+NNXDataJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XData";
+NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";
+NNXLayoutJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayout";
+NNXLayoutNullJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutNull";
+NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutSquare";
+*)
+
+
+(*NNDataReaderJavaObjectQ[
+	dataReaderJavaObj_/;(JavaObjectQ[dataReaderJavaObj] 
+					&& InstanceOf[dataReaderJavaObj, "nounou.DataReader"])
+						]:= True ;
+NNDataReaderJavaObjectQ[args___]:= False ;
+NNRangeFrSpecifierJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.ranges.RangeFrSpecifier"])] := True;
+NNRangeFrSpecifierJavaObjectQ[args___] := False;
+NNXDataJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XData"])]:= True;
+NNXDataJavaObjectQ[args___]:= False;
+NNXMaskJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XMask"])]:= True;
+NNXMaskJavaObjectQ[args___]:= False;
+NNXLayoutJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayout"])]:= True;
+NNXLayoutJavaObjectQ[args___]:= False;
+NNXLayoutNullJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutNull"])]:= True;
+NNXLayoutNullJavaObjectQ[args___]:= False;
+NNXLayoutSquareJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutSquare"])]:= True;
+NNXLayoutSquareJavaObjectQ[args___]:= False;
+*)
+
+
+(* ::Subsection:: *)
+(*Old Package Message*)
+
+
+(*$PackageDirectoryNounouW = ParentDirectory[DirectoryName[FindFile["NounouW`"]]];
+$PackageNewestFileDateNounouW = DateString[Max @@ AbsoluteTime /@ FileDate /@ FileNames[ "*",$PackageDirectoryNounouW,Infinity] ];
+$GitCurrentHeadNounouW = Module[{tempretNN},
+	SetDirectory[ ParentDirectory[DirectoryName[ FindFile["NounouW`"] ]] ];
+	Run["git rev-parse HEAD > GitCurrentHEADHash.txt"];
+	tempretNN = Import["GitCurrentHEADHash.txt"];
+	ResetDirectory[];
+	tempretNN
+];*)
+
+
+(*CellPrint[TextCell[Row[{
+Style["NounouW  (http://github.org/ktakagaki/NounouW)", 
+    FontWeight -> "Bold", FontVariations -> {"Underline" -> True}], "\n" ,
+"    ( current Git HEAD:  "<> HHGitHEADHash["NounouW`"]<>" )\n" <>
+"    ( newest file:  "<> HHNewestFileDate["NounouW`"]<>" )"
+}],"Text"]];*)
+
+
+(* ::Subsection:: *)
+(*Old File Loading*)
+
+
+(*NNData=LoadJavaClass["nounou.NNData", StaticsVisible->True, AllowShortContext\[Rule]True];*)
+(*NNDataReader=LoadJavaClass["nounou.NNDataReader", StaticsVisible->False, AllowShortContext->True];*)
+
