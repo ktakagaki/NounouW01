@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["NounouW`", {"HokahokaW`","HokahokaW`Package`","JLink`"}]
+BeginPackage["NounouW`", {"HokahokaW`","JLink`"}]
 
 
 (* ::Section:: *)
