@@ -1,0 +1,1 @@
+<pre name='i_37_in' id='i_37_in' class='IFT'>nngit = LoadJavaClass[&quot;nounou.util.NNGit&quot;, StaticsVisible -&gt; True]</pre><div class='IFU'><a name='200997102'></a>http://wolfram.com/xid/04jn5p8n63fccnxou84h09ia4y-dlycm4</div>
