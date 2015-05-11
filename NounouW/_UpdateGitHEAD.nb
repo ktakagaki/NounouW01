@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2632,         79]
-NotebookOptionsPosition[      2154,         57]
-NotebookOutlinePosition[      2532,         73]
-CellTagsIndexPosition[      2489,         70]
+NotebookDataLength[      2781,         80]
+NotebookOptionsPosition[      2302,         58]
+NotebookOutlinePosition[      2680,         74]
+CellTagsIndexPosition[      2637,         71]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,17 +33,17 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell[BoxData["\<\"a7b569f93d24f934eedde6a6ac130f15f8bd31fe\"\>"], "Print",
+Cell[BoxData["\<\"ac5255924ccf6e6a2800347fc2d529b689adadf3\"\>"], "Print",
  CellChangeTimes->{{3.6319670612651997`*^9, 3.6319670614472103`*^9}, {
    3.634586608067458*^9, 3.634586608292471*^9}, {3.6345867308094788`*^9, 
    3.6345867454523163`*^9}, {3.6373221502093887`*^9, 3.637322150458403*^9}, 
-   3.6373313586276875`*^9}],
+   3.6373313586276875`*^9, {3.640357047896944*^9, 3.64035704818196*^9}}],
 
-Cell[BoxData["\<\"Mon 6 Apr 2015 19:49:18\"\>"], "Print",
+Cell[BoxData["\<\"Mon 11 May 2015 20:17:28\"\>"], "Print",
  CellChangeTimes->{{3.6319670612651997`*^9, 3.6319670614472103`*^9}, {
    3.634586608067458*^9, 3.634586608292471*^9}, {3.6345867308094788`*^9, 
    3.6345867454523163`*^9}, {3.6373221502093887`*^9, 3.637322150458403*^9}, 
-   3.6373313586276875`*^9}]
+   3.6373313586276875`*^9, {3.640357047896944*^9, 3.6403570481829605`*^9}}]
 }, Open  ]],
 
 Cell[BoxData["\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\GitHEAD.m\"\>"], \
@@ -52,7 +52,8 @@ Cell[BoxData["\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\GitHEAD.m\"\>"], \
    3.631967022040956*^9, 3.631967022162963*^9}, {3.6319670612732*^9, 
    3.6319670614522104`*^9}, {3.63458660809046*^9, 3.634586608299472*^9}, {
    3.634586730817479*^9, 3.6345867454623165`*^9}, {3.637322150211389*^9, 
-   3.6373221504604034`*^9}, 3.637331358638688*^9}]
+   3.6373221504604034`*^9}, 3.637331358638688*^9, {3.6403570478999443`*^9, 
+   3.6403570481869607`*^9}}]
 }, Open  ]]
 },
 WindowSize->{952, 1133},
@@ -76,10 +77,10 @@ Cell[CellGroupData[{
 Cell[580, 22, 457, 9, 60, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1062, 35, 324, 4, 26, "Print"],
-Cell[1389, 41, 307, 4, 26, "Print"]
+Cell[1062, 35, 369, 4, 26, "Print"],
+Cell[1434, 41, 356, 4, 26, "Print"]
 }, Open  ]],
-Cell[1711, 48, 427, 6, 93, "Output"]
+Cell[1805, 48, 481, 7, 104, "Output"]
 }, Open  ]]
 }
 ]

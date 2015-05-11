@@ -10,12 +10,13 @@ ReinstallJava[];*)
 
 
 Needs[ "JLink`" ];
+Needs["HokahokaW`"];
 
 
 InstallJava[];
 
 
-NounouW`IncreaseJavaStack[stackSize_Integer]:=
+(*NounouW`IncreaseJavaStack[stackSize_Integer]:=
 	Module[{tempOptStringI,tempOptStringR,tempReI=False, tempReR=False, 
 		tempPrint},
 		
@@ -56,10 +57,10 @@ NounouW`IncreaseJavaStack[stackSize_Integer]:=
 		];
 
 		NotebookDelete[tempPrint];
-	]; (*Module for KKMInstallJava*)
+	]; (*Module for KKMInstallJava*)*)
 
 
-NounouW`IncreaseJavaStack[NounouW`$JavaStackSize];
+HHIncreaseJavaStack[NounouW`$JavaStackSize];
 
 
 Get[ "NounouW`NounouW`"];
