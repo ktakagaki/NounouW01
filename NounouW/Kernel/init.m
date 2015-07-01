@@ -60,6 +60,10 @@ InstallJava[];
 	]; (*Module for KKMInstallJava*)*)
 
 
+SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
+NounouW`$JavaStackSize = 6144;
+
+
 HHIncreaseJavaStack[NounouW`$JavaStackSize];
 
 
@@ -71,7 +75,3 @@ Needs[ "HokahokaW`" ];
 
 Needs["NounouW`Data`"];
 Needs["NounouW`Graphics`"];
-
-
-SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
-NounouW`$JavaStackSize = 6144;

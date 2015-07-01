@@ -22,6 +22,9 @@ NounouW`$NNData::usage="Main default reader object for NounouW.";
 NounouW`$NNData = NN`newNNData[];
 
 
+Print[NN`toString[]];
+
+
 $NNDataLayoutSpatialClass = "nounou.elements.layouts.NNDataLayoutSpatial";
 $NNEventClass = "nounou.elements.NNEvents";
 
