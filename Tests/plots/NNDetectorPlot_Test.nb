@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     42881,       1076]
-NotebookOptionsPosition[     40570,        986]
-NotebookOutlinePosition[     40918,       1001]
-CellTagsIndexPosition[     40875,        998]
+NotebookDataLength[     42483,       1059]
+NotebookOptionsPosition[     40176,        969]
+NotebookOutlinePosition[     40522,        984]
+CellTagsIndexPosition[     40479,        981]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,34 +22,14 @@ Cell[BoxData[
  RowBox[{"<<", "NounouW`"}]], "Input"],
 
 Cell[TextData[{
- StyleBox["HokahokaW`",
-  StripOnInput->False,
-  FontFamily->"Helvetica",
-  FontWeight->"Bold",
-  FontVariations->{"Underline"->True}],
- "\n",
- StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
-dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
-the penultimate commit before deployment. You should use a live git repo if \
-possible, for better version tracking.",
-  StripOnInput->False,
-  FontFamily->"Courier",
-  FontSize->Small]
-}], "Text",
- GeneratedCell->True,
- CellAutoOverwrite->True,
- CellChangeTimes->{3.6399191019932327`*^9},
- Background->GrayLevel[0.85]],
-
-Cell[TextData[{
  StyleBox["NounouW`",
   StripOnInput->False,
   FontFamily->"Helvetica",
   FontWeight->"Bold",
   FontVariations->{"Underline"->True}],
  "\n",
- StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 19:49:18 is \
-a7b569f93d24f934eedde6a6ac130f15f8bd31fe.\nRemember that this is at latest \
+ StyleBox["Git HEAD hash loaded on Tue 15 Sep 2015 12:44:29 is \
+36142530092fa937de2a5103a71fe8734f3061ee.\nRemember that this is at latest \
 the penultimate commit before deployment. You should use a live git repo if \
 possible, for better version tracking.",
   StripOnInput->False,
@@ -58,8 +38,16 @@ possible, for better version tracking.",
 }], "Text",
  GeneratedCell->True,
  CellAutoOverwrite->True,
- CellChangeTimes->{3.6399191021832438`*^9},
+ CellChangeTimes->{3.6535671688937254`*^9},
  Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+3cc31723ae141d3f2622c7f26ab9e5a96b19674c\\n  + current branch is: master\\n  \
++ remote names are: \
+https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9}],
 
 Cell[BoxData[
  RowBox[{"AllowRaggedArrays", "[", "True", "]"}]], "Input",
@@ -107,7 +95,7 @@ Cell[BoxData[
     RowBox[{
     "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
      "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm1`JavaObject4337107132743681]], "Output",
+  JLink`Objects`vm2`JavaObject23118095866396673]], "Output",
  CellChangeTimes->{
   3.637223521731993*^9, 3.6372235540228424`*^9, 3.6372238953683662`*^9, 
    3.6372241218233204`*^9, 3.6372243154213934`*^9, 3.6372251753126345`*^9, 
@@ -127,7 +115,7 @@ Cell[BoxData[
    3.6373283349701366`*^9, 3.637328403817075*^9, 3.637328522084839*^9, 
    3.6373313909925385`*^9, 3.6373323506554284`*^9, 3.637332698563328*^9, 
    3.637333499612145*^9, 3.637335558851927*^9, 3.6373357630126038`*^9, 
-   3.637335801866826*^9}]
+   3.637335801866826*^9, 3.653567173115967*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -152,10 +140,7 @@ Cell[BoxData[
 
 Cell[BoxData["\<\"{\\\"layoutArray\\\":[[-1,15,14,13,12,11],[10,9,8,1,0],[7,6,\
 5,4],[-1,3,2]],\\\"channelRadius\\\":50.0,\\\"channelDistance\\\":100.0,\\\"\
-masked\\\":[2,4],\\\"className\\\":\\\"nounou.elements.layouts.\
-NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
-674199eda7404048d811c228fb848bd74709fd6a\\\",\\\"version\\\":0.5,\\\"bitmap$0\
-\\\":false}\"\>"], "Output",
+masked\\\":[2,4],\\\"version\\\":0.5,\\\"bitmap$0\\\":0}\"\>"], "Output",
  CellChangeTimes->{
   3.637234546219962*^9, 3.6372350780563884`*^9, 3.6372353387033052`*^9, 
    3.6372353967046227`*^9, 3.637236000176159*^9, 3.637236875106218*^9, 
@@ -166,7 +151,7 @@ NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
    3.637328522257849*^9, 3.637331394143719*^9, 3.6373323532055745`*^9, 
    3.637332700126417*^9, 3.637333501489252*^9, 3.6373346393793364`*^9, 
    3.6373349718673534`*^9, 3.637335563923217*^9, {3.6373357828177366`*^9, 
-   3.637335802932887*^9}}]
+   3.637335802932887*^9}, 3.6535671773452086`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -275,7 +260,7 @@ Cell[BoxData[
    3.6373347470514946`*^9, 3.637334811542183*^9}, 3.6373349762606044`*^9, 
    3.6373350267034893`*^9, 3.637335059160346*^9, 3.6373351682665863`*^9, {
    3.6373355749888496`*^9, 3.6373356012633524`*^9}, 3.6373357045222588`*^9, 
-   3.637335804074953*^9}]
+   3.637335804074953*^9, 3.65356717982035*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -316,7 +301,7 @@ Cell[BoxData[
     RowBox[{
     "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
      "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm1`JavaObject33578183538245633]], "Output",
+  JLink`Objects`vm2`JavaObject26623775462129665]], "Output",
  CellChangeTimes->{
   3.637223521731993*^9, 3.6372235540228424`*^9, 3.6372238953683662`*^9, 
    3.6372241218233204`*^9, 3.6372243154213934`*^9, 3.6372251753126345`*^9, 
@@ -336,7 +321,8 @@ Cell[BoxData[
    3.6373283349701366`*^9, 3.637328403817075*^9, 3.637328522084839*^9, 
    3.6373313909925385`*^9, 3.6373323506554284`*^9, 3.637332698563328*^9, 
    3.637333499612145*^9, 3.637335558851927*^9, 3.6373357630126038`*^9, 
-   3.637335801866826*^9, 3.6399193057908893`*^9, 3.6399193614980755`*^9}]
+   3.637335801866826*^9, 3.6399193057908893`*^9, 3.6399193614980755`*^9, 
+   3.653567198280406*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -350,10 +336,7 @@ Cell[BoxData[
 
 Cell[BoxData["\<\"{\\\"layoutArray\\\":[[-1,0,1,2,3,4],[5,6,7,8,9,10],[11,12,\
 13,14,15]],\\\"channelRadius\\\":50.0,\\\"channelDistance\\\":100.0,\\\"\
-masked\\\":[],\\\"className\\\":\\\"nounou.elements.layouts.\
-NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
-674199eda7404048d811c228fb848bd74709fd6a\\\",\\\"version\\\":0.5,\\\"bitmap$0\
-\\\":false}\"\>"], "Output",
+masked\\\":[],\\\"version\\\":0.5,\\\"bitmap$0\\\":0}\"\>"], "Output",
  CellChangeTimes->{
   3.637234546219962*^9, 3.6372350780563884`*^9, 3.6372353387033052`*^9, 
    3.6372353967046227`*^9, 3.637236000176159*^9, 3.637236875106218*^9, 
@@ -364,7 +347,7 @@ NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
    3.637328522257849*^9, 3.637331394143719*^9, 3.6373323532055745`*^9, 
    3.637332700126417*^9, 3.637333501489252*^9, 3.6373346393793364`*^9, 
    3.6373349718673534`*^9, 3.637335563923217*^9, {3.6373357828177366`*^9, 
-   3.637335802932887*^9}, 3.6399193715536504`*^9}]
+   3.637335802932887*^9}, 3.6399193715536504`*^9, 3.6535671996704855`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -474,7 +457,7 @@ Cell[BoxData[
    3.6373347470514946`*^9, 3.637334811542183*^9}, 3.6373349762606044`*^9, 
    3.6373350267034893`*^9, 3.637335059160346*^9, 3.6373351682665863`*^9, {
    3.6373355749888496`*^9, 3.6373356012633524`*^9}, 3.6373357045222588`*^9, 
-   3.637335804074953*^9, 3.639919390357726*^9}]
+   3.637335804074953*^9, 3.639919390357726*^9, 3.653567205902842*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -986,7 +969,7 @@ Cell[BoxData[
 },
 WindowSize->{952, 1133},
 WindowMargins->{{960, Automatic}, {Automatic, -2400}},
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1001,81 +984,81 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 52, 1, 31, "Input"],
-Cell[613, 23, 619, 18, 76, "Text"],
-Cell[1235, 43, 617, 18, 76, "Text"],
-Cell[1855, 63, 161, 3, 31, "Input",
+Cell[613, 23, 618, 18, 76, "Text"],
+Cell[1234, 43, 378, 6, 119, "Print"],
+Cell[1615, 51, 161, 3, 31, "Input",
  CellID->514242286],
 Cell[CellGroupData[{
-Cell[2041, 70, 93, 1, 63, "Section"],
+Cell[1801, 58, 93, 1, 63, "Section"],
 Cell[CellGroupData[{
-Cell[2159, 75, 983, 25, 52, "Input",
+Cell[1919, 63, 983, 25, 52, "Input",
  CellID->687037852],
-Cell[3145, 102, 1658, 27, 31, "Output"]
+Cell[2905, 90, 1681, 27, 31, "Output"]
 }, Open  ]],
-Cell[4818, 132, 330, 10, 31, "Input"],
+Cell[4601, 120, 330, 10, 31, "Input"],
 Cell[CellGroupData[{
-Cell[5173, 146, 173, 4, 31, "Input",
+Cell[4956, 134, 173, 4, 31, "Input",
  CellID->32444361],
-Cell[5349, 152, 1077, 16, 72, "Output"]
+Cell[5132, 140, 954, 13, 52, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6463, 173, 308, 7, 31, "Input",
+Cell[6123, 158, 308, 7, 31, "Input",
  CellID->200294427],
-Cell[6774, 182, 3933, 95, 270, "Output"]
+Cell[6434, 167, 3954, 95, 270, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10756, 283, 149, 2, 63, "Section"],
+Cell[10437, 268, 149, 2, 63, "Section"],
 Cell[CellGroupData[{
-Cell[10930, 289, 907, 20, 52, "Input",
+Cell[10611, 274, 907, 20, 52, "Input",
  CellID->17142971],
-Cell[11840, 311, 1707, 27, 31, "Output"]
+Cell[11521, 296, 1733, 28, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13584, 343, 205, 5, 31, "Input",
+Cell[13291, 329, 205, 5, 31, "Input",
  CellID->83040427],
-Cell[13792, 350, 1093, 16, 72, "Output"]
+Cell[13499, 336, 970, 13, 52, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14922, 371, 387, 9, 31, "Input",
+Cell[14506, 354, 387, 9, 31, "Input",
  CellID->141096601],
-Cell[15312, 382, 3827, 94, 242, "Output"]
+Cell[14896, 365, 3849, 94, 235, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19188, 482, 149, 2, 63, "Section"],
+Cell[18794, 465, 149, 2, 63, "Section"],
 Cell[CellGroupData[{
-Cell[19362, 488, 1034, 23, 52, "Input",
+Cell[18968, 471, 1034, 23, 52, "Input",
  CellID->57546804],
-Cell[20399, 513, 1735, 28, 31, "Output"]
+Cell[20005, 496, 1735, 28, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22171, 546, 231, 5, 31, "Input",
+Cell[21777, 529, 231, 5, 31, "Input",
  CellID->118258490],
-Cell[22405, 553, 1117, 16, 72, "Output"]
+Cell[22011, 536, 1117, 16, 72, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23559, 574, 440, 9, 31, "Input",
+Cell[23165, 557, 440, 9, 31, "Input",
  CellID->437972848],
-Cell[24002, 585, 3889, 95, 293, "Output"]
+Cell[23608, 568, 3889, 95, 293, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27940, 686, 198, 3, 63, "Section"],
+Cell[27546, 669, 198, 3, 63, "Section"],
 Cell[CellGroupData[{
-Cell[28163, 693, 1538, 37, 72, "Input",
+Cell[27769, 676, 1538, 37, 72, "Input",
  CellID->442654304],
-Cell[29704, 732, 1779, 28, 31, "Output"]
+Cell[29310, 715, 1779, 28, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31520, 765, 279, 6, 31, "Input",
+Cell[31126, 748, 279, 6, 31, "Input",
  CellID->12280197],
-Cell[31802, 773, 1228, 17, 92, "Output"]
+Cell[31408, 756, 1228, 17, 92, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33067, 795, 487, 10, 31, "Input",
+Cell[32673, 778, 487, 10, 31, "Input",
  CellID->15888873],
-Cell[33557, 807, 6985, 175, 305, "Output"]
+Cell[33163, 790, 6985, 175, 265, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
