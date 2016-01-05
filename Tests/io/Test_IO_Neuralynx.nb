@@ -1,0 +1,379 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14462,        370]
+NotebookOptionsPosition[     13032,        315]
+NotebookOutlinePosition[     13380,        330]
+CellTagsIndexPosition[     13337,        327]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Test Neuralynx IO", "Title"],
+
+Cell["Updated 2015.12 .31", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.6609071100989757`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 4 Jan 2016 15:38:30     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[49d44a08c64a146a010f8de46223ecea3699dedd]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6609071104869976`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.660907110666008*^9}],
+
+Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
+\"\>"], "Print",
+ CellChangeTimes->{3.6609071107070103`*^9}],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.6609071134471674`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 4 Jan 2016 15:38:34     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[af91d1dff493df4df1b926d84743d5ba9f5bb494]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6609071140132*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+3cc31723ae141d3f2622c7f26ab9e5a96b19674c\\n  + current branch is: master\\n  \
++ remote names are: \
+https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.660907116734355*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataDirectory", "=", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ParentDirectory", "[", 
+      RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", " ", 
+     "\"\<_resources\>\"", ",", "\"\<nounou\>\"", ",", "\"\<Neuralynx\>\""}], 
+    "}"}], "]"}], " "}]], "Input"],
+
+Cell[BoxData["\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\Tests\\\\_resources\\\\\
+nounou\\\\Neuralynx\"\>"], "Output",
+ CellChangeTimes->{3.660907117242384*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NCS", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testNCS1", " ", "=", " ", 
+  RowBox[{"NNLoad", "[", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"dataDirectory", ",", "\"\<E04LC\>\"", ",", "\"\<CSC1.ncs\>\""}],
+      "}"}], "]"}], " ", "]"}]}]], "Input",
+ InitializationCell->False],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "io", ".", "neuralynx", ".", "NNDataChannelFileReadNCS"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject33070809136234497]], "Output",
+ CellChangeTimes->{3.660907125198839*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Timing", "Subsection",
+ CellChangeTimes->{{3.660907541017623*^9, 3.6609075455888844`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testNCS1", "@", 
+  RowBox[{
+   RowBox[{"getTiming", "[", "]"}], "@", 
+   RowBox[{"toString", "[", "]"}]}]}]], "Input",
+ InitializationCell->False],
+
+Cell[BoxData["\<\"NNDataTiming(fs=32000.0, segmentCount=94)\"\>"], "Output",
+ CellChangeTimes->{3.6609071252718434`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NNPrintTiming", "[", "testNCS1", "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"testNCS1", "@", 
+    RowBox[{
+     RowBox[{"getTiming", "[", "]"}], "@", 
+     RowBox[{"toStringFull", "[", "]"}]}]}], "*)"}]}]], "Input",
+ InitializationCell->False,
+ CellChangeTimes->{{3.6609074009556117`*^9, 3.660907411469213*^9}}],
+
+Cell[BoxData["\<\"nounou.elements._timing.NNDataTiming(fs=32000.0, \
+segmentCount=94, \
+3cc31723ae)\\n================================================================\
+================\\nsegment\\tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  \
+hh:mm )\\n   0\\t   2546176 (  1:19.57) (    79.6)\\t 10237373715 ( \
+0:00.00)\\n   1\\t   2170880 (  1:07.84) (    67.8)\\t 10664246433 ( 0:07.11)\
+\\n   2\\t   2305024 (  1:12.03) (    72.0)\\t 10754520433 ( 0:08.62)\\n   \
+3\\t   2161664 (  1:07.55) (    67.6)\\t 10850792433 ( 0:10.22)\\n   4\\t   \
+2997760 (  1:33.68) (    93.7)\\t 11295017433 ( 0:17.63)\\n   5\\t   2387456 \
+(  1:14.61) (    74.6)\\t 11487036433 ( 0:20.83)\\n   6\\t   2265088 (  \
+1:10.78) (    70.8)\\t 11583691433 ( 0:22.44)\\n   7\\t   2387456 (  1:14.61) \
+(    74.6)\\t 11683016433 ( 0:24.09)\\n   8\\t   3902976 (  2:01.97) (   \
+122.0)\\t 11827213433 ( 0:26.50)\\n   9\\t   2618368 (  1:21.82) (    \
+81.8)\\t 11983645433 ( 0:29.10)\\n  10\\t   1647104 (  0:51.47) (    51.5)\\t \
+12072502433 ( 0:30.59)\\n  11\\t   1575424 (  0:49.23) (    49.2)\\t \
+12133227433 ( 0:31.60)\\n  12\\t   3245056 (  1:41.41) (   101.4)\\t \
+12288900433 ( 0:34.19)\\n  13\\t   2422784 (  1:15.71) (    75.7)\\t \
+12409026433 ( 0:36.19)\\n  14\\t   2198528 (  1:08.70) (    68.7)\\t \
+12498511433 ( 0:37.69)\\n  15\\t   2352128 (  1:13.50) (    73.5)\\t \
+12579166433 ( 0:39.03)\\n  16\\t   2157568 (  1:07.42) (    67.4)\\t \
+12741121433 ( 0:41.73)\\n  17\\t   2134528 (  1:06.70) (    66.7)\\t \
+12858472433 ( 0:43.68)\\n  18\\t   2119680 (  1:06.24) (    66.2)\\t \
+12936583433 ( 0:44.99)\\n  19\\t   2090496 (  1:05.33) (    65.3)\\t \
+13017220433 ( 0:46.33)\\n  20\\t   2553344 (  1:19.79) (    79.8)\\t \
+13093848433 ( 0:47.61)\\n  21\\t   1839616 (  0:57.49) (    57.5)\\t \
+16591907433 ( 1:45.91)\\n  22\\t   1851392 (  0:57.86) (    57.9)\\t \
+16672397433 ( 1:47.25)\\n  23\\t   1785344 (  0:55.79) (    55.8)\\t \
+16753078433 ( 1:48.60)\\n  24\\t   1777152 (  0:55.54) (    55.5)\\t \
+16830068433 ( 1:49.88)\\n  25\\t   2441216 (  1:16.29) (    76.3)\\t \
+16973050433 ( 1:52.26)\\n  26\\t   1899520 (  0:59.36) (    59.4)\\t \
+21828657152 ( 3:13.19)\\n  27\\t   1888256 (  0:59.01) (    59.0)\\t \
+21913112152 ( 3:14.60)\\n  28\\t   1721856 (  0:53.81) (    53.8)\\t \
+21991295152 ( 3:15.90)\\n  29\\t   1846784 (  0:57.71) (    57.7)\\t \
+22066384152 ( 3:17.15)\\n  30\\t   2132992 (  1:06.66) (    66.7)\\t \
+22160886152 ( 3:18.73)\\n  31\\t   2460160 (  1:16.88) (    76.9)\\t \
+22251741152 ( 3:20.24)\\n  32\\t   2265088 (  1:10.78) (    70.8)\\t \
+22352221152 ( 3:21.91)\\n  33\\t   2185216 (  1:08.29) (    68.3)\\t \
+22445370152 ( 3:23.47)\\n  34\\t   3800064 (  1:58.75) (   118.8)\\t \
+22580373152 ( 3:25.72)\\n  35\\t   2446848 (  1:16.46) (    76.5)\\t \
+22705666152 ( 3:27.80)\\n  36\\t   1822208 (  0:56.94) (    56.9)\\t \
+22805853152 ( 3:29.47)\\n  37\\t   1444352 (  0:45.14) (    45.1)\\t \
+22870118152 ( 3:30.55)\\n  38\\t   2193920 (  1:08.56) (    68.6)\\t \
+22968881152 ( 3:32.19)\\n  39\\t   2121728 (  1:06.30) (    66.3)\\t \
+23062296152 ( 3:33.75)\\n  40\\t   2095104 (  1:05.47) (    65.5)\\t \
+23137807152 ( 3:35.01)\\n  41\\t   2156544 (  1:07.39) (    67.4)\\t \
+23280546152 ( 3:37.39)\\n  42\\t   2127360 (  1:06.48) (    66.5)\\t \
+23370970152 ( 3:38.89)\\n  43\\t   2094592 (  1:05.46) (    65.5)\\t \
+23438460152 ( 3:40.02)\\n  44\\t   2126848 (  1:06.46) (    66.5)\\t \
+23504925152 ( 3:41.13)\\n  45\\t   2122240 (  1:06.32) (    66.3)\\t \
+23573260152 ( 3:42.26)\\n  46\\t   1861632 (  0:58.18) (    58.2)\\t \
+23863261152 ( 3:47.10)\\n  47\\t   1770496 (  0:55.33) (    55.3)\\t \
+23940017152 ( 3:48.38)\\n  48\\t   1795584 (  0:56.11) (    56.1)\\t \
+24017170152 ( 3:49.66)\\n  49\\t   1971712 (  1:01.62) (    61.6)\\t \
+24107429152 ( 3:51.17)\\n  50\\t   2276352 (  1:11.14) (    71.1)\\t \
+24266402152 ( 3:53.82)\\n  51\\t   2361344 (  1:13.79) (    73.8)\\t \
+24363959152 ( 3:55.44)\\n  52\\t   2138624 (  1:06.83) (    66.8)\\t \
+24457818152 ( 3:57.01)\\n  53\\t   2222592 (  1:09.46) (    69.5)\\t \
+24540062152 ( 3:58.38)\\n  54\\t   3304448 (  1:43.26) (   103.3)\\t \
+24660860152 ( 4:00.39)\\n  55\\t   2171904 (  1:07.87) (    67.9)\\t \
+24773138152 ( 4:02.26)\\n  56\\t   1558528 (  0:48.70) (    48.7)\\t \
+24847063152 ( 4:03.49)\\n  57\\t   1312256 (  0:41.01) (    41.0)\\t \
+24901897152 ( 4:04.41)\\n  58\\t   3031040 (  1:34.72) (    94.7)\\t \
+24986583152 ( 4:05.82)\\n  59\\t   2152448 (  1:07.26) (    67.3)\\t \
+25092888152 ( 4:07.59)\\n  60\\t   2109440 (  1:05.92) (    65.9)\\t \
+25161343152 ( 4:08.73)\\n  61\\t   2138112 (  1:06.82) (    66.8)\\t \
+25227916152 ( 4:09.84)\\n  62\\t   2124800 (  1:06.40) (    66.4)\\t \
+25306723152 ( 4:11.16)\\n  63\\t   2082816 (  1:05.09) (    65.1)\\t \
+25374354152 ( 4:12.28)\\n  64\\t   2061312 (  1:04.42) (    64.4)\\t \
+25440636152 ( 4:13.39)\\n  65\\t   2149888 (  1:07.18) (    67.2)\\t \
+25506334152 ( 4:14.48)\\n  66\\t   1409024 (  0:44.03) (    44.0)\\t \
+25618653152 ( 4:16.35)\\n  67\\t   1364992 (  0:42.66) (    42.7)\\t \
+25686018152 ( 4:17.48)\\n  68\\t   1436672 (  0:44.90) (    44.9)\\t \
+25749984152 ( 4:18.54)\\n  69\\t   1519104 (  0:47.47) (    47.5)\\t \
+25813278152 ( 4:19.60)\\n  70\\t   1218560 (  0:38.08) (    38.1)\\t \
+26345811152 ( 4:28.47)\\n  71\\t   1157632 (  0:36.18) (    36.2)\\t \
+26401763152 ( 4:29.41)\\n  72\\t   1254912 (  0:39.22) (    39.2)\\t \
+26454942152 ( 4:30.29)\\n  73\\t   1192960 (  0:37.28) (    37.3)\\t \
+26520656152 ( 4:31.39)\\n  74\\t    817152 (  0:25.54) (    25.5)\\t \
+26628123152 ( 4:33.18)\\n  75\\t    733696 (  0:22.93) (    22.9)\\t \
+26676913152 ( 4:33.99)\\n  76\\t    558592 (  0:17.46) (    17.5)\\t \
+26716100152 ( 4:34.65)\\n  77\\t    545280 (  0:17.04) (    17.0)\\t \
+26745031152 ( 4:35.13)\\n  78\\t    700928 (  0:21.90) (    21.9)\\t \
+26784193152 ( 4:35.78)\\n  79\\t    702976 (  0:21.97) (    22.0)\\t \
+26819927152 ( 4:36.38)\\n  80\\t    757248 (  0:23.66) (    23.7)\\t \
+26866787152 ( 4:37.16)\\n  81\\t    644096 (  0:20.13) (    20.1)\\t \
+26903901152 ( 4:37.78)\\n  82\\t    769024 (  0:24.03) (    24.0)\\t \
+27119440152 ( 4:41.37)\\n  83\\t    592896 (  0:18.53) (    18.5)\\t \
+27165321152 ( 4:42.13)\\n  84\\t   1137664 (  0:35.55) (    35.6)\\t \
+27199194152 ( 4:42.70)\\n  85\\t    961024 (  0:30.03) (    30.0)\\t \
+27247322152 ( 4:43.50)\\n  86\\t    455680 (  0:14.24) (    14.2)\\t \
+27298550152 ( 4:44.35)\\n  87\\t    493568 (  0:15.42) (    15.4)\\t \
+27324852152 ( 4:44.79)\\n  88\\t    471552 (  0:14.74) (    14.7)\\t \
+27354092152 ( 4:45.28)\\n  89\\t    418816 (  0:13.09) (    13.1)\\t \
+27382802152 ( 4:45.76)\\n  90\\t    388608 (  0:12.14) (    12.1)\\t \
+27415682152 ( 4:46.31)\\n  91\\t    386560 (  0:12.08) (    12.1)\\t \
+27440979152 ( 4:46.73)\\n  92\\t    370176 (  0:11.57) (    11.6)\\t \
+27468094152 ( 4:47.18)\\n  93\\t    368640 (  0:11.52) (    11.5)\\t \
+27488855152 ( 4:47.52)\"\>"], "Output",
+ CellChangeTimes->{3.660907125456854*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Whole Range Plot", "Subsection",
+ CellChangeTimes->{{3.660907541017623*^9, 3.660907551404217*^9}, {
+  3.660907854781569*^9, 3.660907859708851*^9}}]
+}, Open  ]],
+
+Cell["NEV", "Section",
+ CellChangeTimes->{{3.66090751159694*^9, 3.66090751177295*^9}}]
+}, Open  ]]
+},
+WindowSize->{952, 1135},
+WindowMargins->{{Automatic, 0}, {1140, Automatic}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 34, 0, 90, "Title"],
+Cell[617, 24, 35, 0, 30, "Text"],
+Cell[CellGroupData[{
+Cell[677, 28, 82, 2, 31, "Input"],
+Cell[762, 32, 178, 2, 23, "Print"]
+}, Open  ]],
+Cell[955, 37, 960, 34, 118, "Text"],
+Cell[CellGroupData[{
+Cell[1940, 75, 116, 1, 23, "Print"],
+Cell[2059, 78, 139, 2, 23, "Print"],
+Cell[2201, 82, 176, 2, 23, "Print"]
+}, Open  ]],
+Cell[2392, 87, 948, 33, 118, "Text"],
+Cell[3343, 122, 378, 6, 119, "Print"],
+Cell[CellGroupData[{
+Cell[3746, 132, 324, 8, 52, "Input"],
+Cell[4073, 142, 152, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4262, 149, 22, 0, 63, "Section"],
+Cell[CellGroupData[{
+Cell[4309, 153, 283, 7, 31, "Input",
+ InitializationCell->False],
+Cell[4595, 162, 324, 8, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4956, 175, 96, 1, 43, "Subsection"],
+Cell[CellGroupData[{
+Cell[5077, 180, 170, 5, 31, "Input",
+ InitializationCell->False],
+Cell[5250, 187, 120, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5407, 193, 339, 9, 31, "Input",
+ InitializationCell->False],
+Cell[5749, 204, 6986, 98, 1952, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[12762, 306, 153, 2, 43, "Subsection"]
+}, Open  ]],
+Cell[12930, 311, 86, 1, 63, "Section"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
