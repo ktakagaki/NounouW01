@@ -12,14 +12,29 @@ BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}]
 (*NNLoad*)
 
 
-NNLoad::usage="Load data objects from files.";
+NNLoad::usage="Load data object(s) from file(s).";
+
+
+(* ::Subsection:: *)
+(*NNData Accessors*)
+
+
+NNPrintTiming::usage="Print out timing information for a NNDataObject";
+
+
+NNReadTrace::usage="";
+
+Options[NNReadTrace] = {
+	NNOptReadTraceTimings -> True,
+	NNOptReadTraceUnit -> 
+};
 
 
 (* ::Subsection:: *)
 (*NNToList*)
 
 
-NNToList::usage="Import data objects into Mathematica List.";
+(*NNToList::usage="Import data objects into Mathematica List.";*)
 
 
 (* ::Section:: *)
@@ -29,22 +44,77 @@ NNToList::usage="Import data objects into Mathematica List.";
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNLoad*)
 
 
-NNLoad[fileName_String]:=NN`load[fileName];
-NNLoad[fileNames:{__String}]:=NN`load[fileNames];
+NNLoad[fileName_String]:=NNLoad[{fileName}];
+NNLoad[fileNames:{__String}]:=Module[{tempret},
+	tempret = NN`load[fileNames];
+	If[ Length[tempret]==1, tempret[[1]], tempret ]
+];
 
 
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
+(*NNData Accessors*)
+
+
+$NNSpanToRangeSpecifier[range_Span]:=
+Module[{tempCh, tempRan},
+	
+];
+
+$NNSpanToRangeSpecifier[args___]:=Message[$NNSpanToRangeSpecifier::invalidArgs, {args}];
+
+
+(* ::Subsubsection:: *)
+(*NNPrintTiming*)
+
+
+NNPrintTiming[dataObj_/;NNJavaObjectQ$NNData[dataObj]]:=
+Module[{tempCh, tempRan},
+	dataObj@getTiming[]@toStringFull[]
+];
+
+NNPrintTiming[args___]:=Message[NNPrintTiming::invalidArgs, {args}];
+
+
+(* ::Subsubsection:: *)
+(*NNReadTrace*)
+
+
+NNReadTrace[dataObj_/;NNJavaObjectQ$NNData[dataObj], 
+			channel_/;NumberQ[channel], 
+			range_Span, 
+			opts:OptionsPattern[]]:=
+
+
+
+NNReadTrace[dataObj_/;NNJavaObjectQ$NNData[dataObj], 
+			channel_/;NumberQ[channel], 
+			range_/;NNJavaObjectQ$NNSampleRangeSpecifier[range], 
+			opts:OptionsPattern[]]:=
+Module[{optTimings, tempTimePoints, tempTrace},
+
+	optTimings= OptionValue[ NNReadTraceTimings ];
+	If[optTimings =!= True && optTimings =!= False, Message[NNReadTrace::invalidOptionValue, "NNReadTraceTimings", optTimings];
+	
+	If[optTimings,
+		tempTimePoints = range@ dataObj@
+	dataObj@readTrace[Round[channel]]
+];
+
+NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
+
+
+(* ::Subsection::Closed:: *)
 (*NNToList*)
 
 
-NNToList[eventObj_/;HHJavaObjectQ[eventObj,$NNEventClass]]:=
+(*NNToList[eventObj_/;HHJavaObjectQ[eventObj,$NNEventClass]]:=
 Module[{tempret, tempPortEvt},
 	tempret=Table[
 		tempPortEvt=eventObj@filterByPortA[p];
@@ -54,10 +124,7 @@ Module[{tempret, tempPortEvt},
 	tempret=Flatten[tempret,1];
 	Sort[tempret, (#1[[2]] < #2[[2]])&]
 ];
-NNToList[args___]:=Message[NNToList::invalidArgs, {args}];
-
-
-NNToList[args___]:=Message[NNLoad::invalidArgs, {args}];
+NNToList[args___]:=Message[NNLoad::invalidArgs, {args}];*)
 
 
 (* ::Section:: *)

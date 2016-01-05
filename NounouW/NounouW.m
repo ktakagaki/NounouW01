@@ -8,25 +8,60 @@ BeginPackage["NounouW`", {"HokahokaW`","JLink`"}]
 (*Declarations*)
 
 
-(* Exported symbols added here with SymbolName::usage *) 
-(*General::invalidArgs="Function called with invalid arguments `1`.";
-General::invalidOptionValue="Option argument `2` -> `1` is invalid.";*)
+(* Memo: Following from HokahokaW *) 
+(*
+General::invalidArgs="Function called with invalid arguments `1`.";
+General::invalidOptionValue="Option argument `1` -> `2` is invalid.";
+General::deprecated="Function is deprecated, use `1` instead.";
+General::nullArgument="At least one of the required arguments is null!";
+*)
 
 
 HHPackageMessage["NounouW`"];
 
 
+(* ::Subsection:: *)
+(*Load Static NN Object*)
+
+
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
-NounouW`$NNData::usage="Main default reader object for NounouW.";
-NounouW`$NNData = NN`newNNData[];
-
-
 Print[NN`toString[]];
 
 
-$NNDataLayoutSpatialClass = "nounou.elements.layouts.NNDataLayoutSpatial";
-$NNEventClass = "nounou.elements.NNEvents";
+(* ::Subsection:: *)
+(*nounou Java class paths and object checking*)
+
+
+$NNJavaClass$NNDataLayout = "nounou.elements.layouts.NNDataLayoutSpatial";
+$NNJavaClass$NNEvent = "nounou.elements.NNEvents";
+$NNJavaClass$NNData = "nounou.elements.data.NNData";
+
+$NNJavaClass$NNSampleRangeSpecifier = "nounou.elements.ranges.NNSampleRangeSpecifier";
+
+
+NNJavaObjectQ$NNData::usage="Checks whether something is a Java object and an instance of $NNJavaClass$NNData";
+
+NNJavaObjectQ$NNSampleRangeSpecifier::usage=
+	"Checks whether something is a Java object and an instance of $NNJavaClass$NNSampleRangeSpecifier";
+
+
+(*NNFrameRangeJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.FrameRange";
+
+NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";
+NNXLayoutJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayout";
+NNXLayoutNullJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutNull";
+NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutSquare";*)
+
+
+(* ::Subsection:: *)
+(*Package-wide option keys*)
+
+
+NNValueUnit::usage="Specifies what units the data output should be in (Absolute, \"microV\")";
+NNTimeUnit::usage="Specifies what time units the data output should be in (\"ms\", \"samples\").
+For trace reading, only relevant if time stamps are returned (i.e. NNReturnTimestamps -> True).";
+NNReturnTimestamps::usage="Whether to return timestamps when reading data (NNTraceRead). True or False.";
 
 
 (* ::Section:: *)
@@ -36,8 +71,20 @@ $NNEventClass = "nounou.elements.NNEvents";
 Begin["`Private`"];
 
 
+(* ::Subsection:: *)
+(*Java object checking*)
+
+
+NNJavaObjectQ$NNData[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNData ])]:= True ;
+NNJavaObjectQ$NNData[ args___]:= False ;
+
+
+NNJavaObjectQ$NNSampleRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNSampleRangeSpecifier ])]:= True ;
+NNJavaObjectQ$NNSampleRangeSpecifier[ args___]:= False ;
+
+
 (* ::Section:: *)
-(*Ending*)
+(*End Private*)
 
 
 End[]
@@ -95,65 +142,6 @@ be reloaded to test functionality, without losing any precalculated results in t
 
 (*NNNextPower[base_, n_]:= Ceiling[Log[base, n]];
 NNNextPower[args___]:=Message[NNNextPower::invalidArgs,{args}];*)
-
-
-(* ::Subsection:: *)
-(*DataReader Java Object Handling, transferred to Hokahoka*)
-
-
-(*NNDataReaderJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.DataReader";
-
-NNRangeFrSpecifierJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.ranges.RangeFrSpecifier";
-
-NNXDataJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XData";
-NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";
-NNXLayoutJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayout";
-NNXLayoutNullJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutNull";
-NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutSquare";
-*)
-
-
-(*NNDataReaderJavaObjectQ[
-	dataReaderJavaObj_/;(JavaObjectQ[dataReaderJavaObj] 
-					&& InstanceOf[dataReaderJavaObj, "nounou.DataReader"])
-						]:= True ;
-NNDataReaderJavaObjectQ[args___]:= False ;
-NNRangeFrSpecifierJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.ranges.RangeFrSpecifier"])] := True;
-NNRangeFrSpecifierJavaObjectQ[args___] := False;
-NNXDataJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XData"])]:= True;
-NNXDataJavaObjectQ[args___]:= False;
-NNXMaskJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XMask"])]:= True;
-NNXMaskJavaObjectQ[args___]:= False;
-NNXLayoutJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayout"])]:= True;
-NNXLayoutJavaObjectQ[args___]:= False;
-NNXLayoutNullJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutNull"])]:= True;
-NNXLayoutNullJavaObjectQ[args___]:= False;
-NNXLayoutSquareJavaObjectQ[x_/;(JavaObjectQ[x] && InstanceOf[x, "nounou.data.XLayoutSquare"])]:= True;
-NNXLayoutSquareJavaObjectQ[args___]:= False;
-*)
-
-
-(* ::Subsection:: *)
-(*Old Package Message*)
-
-
-(*$PackageDirectoryNounouW = ParentDirectory[DirectoryName[FindFile["NounouW`"]]];
-$PackageNewestFileDateNounouW = DateString[Max @@ AbsoluteTime /@ FileDate /@ FileNames[ "*",$PackageDirectoryNounouW,Infinity] ];
-$GitCurrentHeadNounouW = Module[{tempretNN},
-	SetDirectory[ ParentDirectory[DirectoryName[ FindFile["NounouW`"] ]] ];
-	Run["git rev-parse HEAD > GitCurrentHEADHash.txt"];
-	tempretNN = Import["GitCurrentHEADHash.txt"];
-	ResetDirectory[];
-	tempretNN
-];*)
-
-
-(*CellPrint[TextCell[Row[{
-Style["NounouW  (http://github.org/ktakagaki/NounouW)", 
-    FontWeight -> "Bold", FontVariations -> {"Underline" -> True}], "\n" ,
-"    ( current Git HEAD:  "<> HHGitHEADHash["NounouW`"]<>" )\n" <>
-"    ( newest file:  "<> HHNewestFileDate["NounouW`"]<>" )"
-}],"Text"]];*)
 
 
 (* ::Subsection:: *)

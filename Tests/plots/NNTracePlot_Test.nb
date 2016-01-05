@@ -1,0 +1,279 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8738,        270]
+NotebookOptionsPosition[      7326,        217]
+NotebookOutlinePosition[      7879,        238]
+CellTagsIndexPosition[      7776,        233]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["NNTracePlot test", "Title",
+ CellChangeTimes->{{3.6602353439586716`*^9, 3.6602353492179728`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input"],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382385968*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 28 Dec 2015 16:13:02     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[49d44a08c64a146a010f8de46223ecea3699dedd]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6603043825459776`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382703986*^9}],
+
+Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
+\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382734988*^9}],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.6603043838770533`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 28 Dec 2015 16:13:04     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[af91d1dff493df4df1b926d84743d5ba9f5bb494]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.660304384199072*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+3cc31723ae141d3f2622c7f26ab9e5a96b19674c\\n  + current branch is: master\\n  \
++ remote names are: \
+https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304385688157*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Tetrode sample files", "Section",
+ CellChangeTimes->{{3.639919107227532*^9, 3.6399191116997876`*^9}, {
+  3.6399193985941973`*^9, 3.6399194143721*^9}, {3.6399194787137794`*^9, 
+  3.639919479841844*^9}, {3.6602358411631103`*^9, 3.6602358517947187`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{
+  "FileNames", "[", 
+   "\"\<C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\Neuralynx\\\\\
+t130911\\\\*.ncs\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.658242217188537*^9, 3.6582422411819096`*^9}, {
+  3.658242297158111*^9, 3.6582423303420095`*^9}, {3.6582423730704527`*^9, 
+  3.6582424011820607`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4a.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4b.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4c.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4d.ncs\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6582423163312073`*^9, 3.658242330730031*^9}, {
+   3.658242384572111*^9, 3.6582424015320807`*^9}, 3.6602351186677856`*^9, 
+   3.6602355596110067`*^9, 3.6602356617878504`*^9, 3.6602358463244057`*^9, 
+   3.660302008341181*^9, 3.6603043513791947`*^9, 3.660304388257304*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"NNLoad", "[", "files", "]"}]}]], "Input",
+ CellChangeTimes->{{3.660304356806505*^9, 3.6603043591176376`*^9}, {
+  3.660305067174136*^9, 3.660305070630334*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "data", ".", "NNDataChannelArray"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject27115648370868225]], "Output",
+ CellChangeTimes->{3.6603043929855747`*^9, 3.6603050721654215`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NNJavaObjectQ$NNData"}]], "Input",
+ CellChangeTimes->{{3.660305100900065*^9, 3.660305101182081*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Checks whether something is a Java object and an instance of \
+$NNJavaClass$NNData\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.6603051018621197`*^9},
+ CellTags->"Info-bcc44668-3e18-44ae-9949-2fb070e5d688"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNJavaObjectQ$NNData", "[", "data", "]"}]], "Input",
+ CellChangeTimes->{{3.660305048437064*^9, 3.6603050783897777`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6603050801208763`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{953, 1075},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-bcc44668-3e18-44ae-9949-2fb070e5d688"->{
+  Cell[6778, 198, 249, 4, 41, "Print",
+   CellTags->"Info-bcc44668-3e18-44ae-9949-2fb070e5d688"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-bcc44668-3e18-44ae-9949-2fb070e5d688", 7654, 227}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 103, 1, 90, "Title"],
+Cell[CellGroupData[{
+Cell[708, 27, 52, 1, 31, "Input"],
+Cell[763, 30, 342, 4, 23, "Print"]
+}, Open  ]],
+Cell[1120, 37, 961, 34, 118, "Text"],
+Cell[CellGroupData[{
+Cell[2106, 75, 282, 3, 23, "Print"],
+Cell[2391, 80, 303, 4, 23, "Print"],
+Cell[2697, 86, 342, 4, 23, "Print"]
+}, Open  ]],
+Cell[3054, 93, 951, 33, 118, "Text"],
+Cell[4008, 128, 544, 8, 119, "Print"],
+Cell[CellGroupData[{
+Cell[4577, 140, 257, 3, 63, "Section"],
+Cell[CellGroupData[{
+Cell[4859, 147, 363, 8, 31, "Input"],
+Cell[5225, 157, 793, 13, 92, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6055, 175, 206, 4, 31, "Input"],
+Cell[6264, 181, 345, 8, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6646, 194, 129, 2, 31, "Input"],
+Cell[6778, 198, 249, 4, 41, "Print",
+ CellTags->"Info-bcc44668-3e18-44ae-9949-2fb070e5d688"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7064, 207, 144, 2, 31, "Input"],
+Cell[7211, 211, 75, 1, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
