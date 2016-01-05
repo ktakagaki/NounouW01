@@ -9,11 +9,13 @@ SetOptions[JLink`ReinstallJava, JVMArguments -> "-Xmx1024m"];
 ReinstallJava[];*)
 
 
-Needs[ "JLink`" ];
-Needs["HokahokaW`"];
-
-
+(*Needed to ensure java classes available below during certain call chains*)
+<<JLink`;
 InstallJava[];
+AddToClassPath[FileNameJoin[{ParentDirectory[DirectoryName[FindFile["NounouW`"]]], "Java"}]];
+
+
+Needs["HokahokaW`"];
 
 
 (*NounouW`IncreaseJavaStack[stackSize_Integer]:=
@@ -68,9 +70,6 @@ HHIncreaseJavaStack[NounouW`$JavaStackSize];
 
 
 Get[ "NounouW`NounouW`"];
-
-
-Needs[ "HokahokaW`" ];
 
 
 Needs["NounouW`Data`"];
