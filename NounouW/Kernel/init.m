@@ -2,18 +2,23 @@
 
 (* Mathematica Init File *)
 
-Get[ "NounouW`NounouW`"];
-NounouW`$JavaStackSize = 6144;
 
 
-Needs[ "JLink`" ];
-Needs[ "HokahokaW`" ];
 (*SetOptions[JLink`InstallJava, JVMArguments -> "-Xmx1024m"];
 SetOptions[JLink`ReinstallJava, JVMArguments -> "-Xmx1024m"];
 ReinstallJava[];*)
 
 
-NounouW`IncreaseJavaStack[stackSize_Integer]:=
+(*Needed to ensure java classes available below during certain call chains*)
+<<JLink`;
+InstallJava[];
+AddToClassPath[FileNameJoin[{ParentDirectory[DirectoryName[FindFile["NounouW`"]]], "Java"}]];
+
+
+Needs["HokahokaW`"];
+
+
+(*NounouW`IncreaseJavaStack[stackSize_Integer]:=
 	Module[{tempOptStringI,tempOptStringR,tempReI=False, tempReR=False, 
 		tempPrint},
 		
@@ -54,22 +59,18 @@ NounouW`IncreaseJavaStack[stackSize_Integer]:=
 		];
 
 		NotebookDelete[tempPrint];
-	]; (*Module for KKMInstallJava*)
+	]; (*Module for KKMInstallJava*)*)
 
 
-NounouW`IncreaseJavaStack[NounouW`$JavaStackSize];
+SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
+NounouW`$JavaStackSize = 6144;
 
 
-(*Convenience object for static methods*)
-NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
-(*NNData=LoadJavaClass["nounou.NNData", StaticsVisible->True, AllowShortContext\[Rule]True];*)
-NNDataReader=LoadJavaClass["nounou.NNDataReader", StaticsVisible->False, AllowShortContext->True];
-NounouW`$NNData::usage="Main default reader object for NounouW.";
-NounouW`$NNData = NN`newNNData[];
+HHIncreaseJavaStack[NounouW`$JavaStackSize];
 
 
-(*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
-SetComplexClass["breeze.math.Complex"];
+Get[ "NounouW`NounouW`"];
 
 
 Needs["NounouW`Data`"];
+Needs["NounouW`Graphics`"];
