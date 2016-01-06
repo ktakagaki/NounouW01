@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["NounouW`", {"HokahokaW`","JLink`"}]
+BeginPackage["NounouW`", {"HokahokaW`","JLink`"}];
 
 
 (* ::Section:: *)
@@ -33,25 +33,47 @@ Print[NN`toString[]];
 (*nounou Java class paths and object checking*)
 
 
-$NNJavaClass$NNDataLayout = "nounou.elements.layouts.NNDataLayoutSpatial";
-$NNJavaClass$NNEvent = "nounou.elements.NNEvents";
-$NNJavaClass$NNData = "nounou.elements.data.NNData";
-
-$NNJavaClass$NNSampleRangeSpecifier = "nounou.elements.ranges.NNSampleRangeSpecifier";
+NNJavaObjectQ::usage=
+"Checks whether something is a Java object and an instance of the given class name (full).";
 
 
-NNJavaObjectQ$NNData::usage="Checks whether something is a Java object and an instance of $NNJavaClass$NNData";
+$NNJavaClass$NNElement = "nounou.elements.NNElement";
 
-NNJavaObjectQ$NNSampleRangeSpecifier::usage=
-	"Checks whether something is a Java object and an instance of $NNJavaClass$NNSampleRangeSpecifier";
+$NNJavaClass$NNData          = "nounou.elements.data.NNData";
+$NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
+$NNJavaClass$NNDataLayout    = "nounou.elements.traits.NNLayoutSpatial";
+
+$NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
+
+$NNJavaClass$NNEvent = "nounou.elements.events.NNEvents";
+
+
+(*NNJavaObjectQ$NNElement::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNElement ("<>$NNJavaClass$NNElement<>")";
+
+NNJavaObjectQ$NNData::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNData ("<>$NNJavaClass$NNData<>")";
+NNJavaObjectQ$NNTimingElement::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNTimingElement ("<>$NNJavaClass$NNTimingElement<>")";
+
+NNJavaObjectQ$NNEvent::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNEvent ("<>$NNJavaClass$NNEvent<>")";*)
+
+
+$NNJavaClass$NNRangeSpecifier = "nounou.ranges.NNRangeSpecifier";
+
+$NNJavaClass$NNRange =          "nounou.ranges.NNRange";
+$NNJavaClass$NNRangeAll =       "nounou.ranges.NNRangeAll";
+$NNJavaClass$NNRangeTs =        "nounou.ranges.NNRangeTs";
+
+
+(*NNJavaObjectQ$NNRangeSpecifier::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNRangeSpecifier ("<>$NNJavaClass$NNRangeSpecifier<>")";*)
 
 
 (*NNFrameRangeJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.FrameRange";
 
-NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";
-NNXLayoutJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayout";
-NNXLayoutNullJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutNull";
-NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XLayoutSquare";*)
+NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";*)
 
 
 (* ::Subsection:: *)
@@ -59,9 +81,10 @@ NNXLayoutSquareJavaObjectQ::usage="Checks whether something is a Java object and
 
 
 NNValueUnit::usage="Specifies what units the data output should be in (Absolute, \"microV\")";
-NNTimeUnit::usage="Specifies what time units the data output should be in (\"ms\", \"samples\").
+NNTimeUnit::usage="Specifies what time units the data output should be in (\"ms\", \"samples\"). \
 For trace reading, only relevant if time stamps are returned (i.e. NNReturnTimestamps -> True).";
-NNReturnTimestamps::usage="Whether to return timestamps when reading data (NNTraceRead). True or False.";
+NNOptReturnTimepoints::usage=
+"Whether to return a 2D array with time points ({{t1, x1}, {t2, x2}, ...}) when reading data (NNReadTrace). True or False.";
 
 
 (* ::Section:: *)
@@ -75,25 +98,40 @@ Begin["`Private`"];
 (*Java object checking*)
 
 
-NNJavaObjectQ$NNData[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNData ])]:= True ;
+NNJavaObjectQ[ obj_/;JavaObjectQ[obj], className_String ]:= InstanceOf[obj, className];
+NNJavaObjectQ[ args___]:= False ;
+
+
+(*NNJavaObjectQ$NNElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNElement ])]:= True ;
+NNJavaObjectQ$NNElement[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNData[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNData ])]:= True ;
 NNJavaObjectQ$NNData[ args___]:= False ;
 
+NNJavaObjectQ$NNTimingElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNTimingElement ])]:= True ;
+NNJavaObjectQ$NNTimingElement[ args___]:= False ;*)
 
-NNJavaObjectQ$NNSampleRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNSampleRangeSpecifier ])]:= True ;
-NNJavaObjectQ$NNSampleRangeSpecifier[ args___]:= False ;
+
+(*NNJavaObjectQ$NNEvent[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNEvent ])]:= True ;
+NNJavaObjectQ$NNEvent[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNRangeSpecifier ])]:= True ;
+NNJavaObjectQ$NNRangeSpecifier[ args___]:= False ;*)
 
 
 (* ::Section:: *)
 (*End Private*)
 
 
-End[]
+End[];
 
 
-EndPackage[]
+EndPackage[];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Bak*)
 
 
