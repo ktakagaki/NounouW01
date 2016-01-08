@@ -45,7 +45,7 @@ $NNJavaClass$NNDataLayout    = "nounou.elements.traits.NNLayoutSpatial";
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
 
-$NNJavaClass$NNEvent = "nounou.elements.events.NNEvents";
+$NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
 
 
 (*NNJavaObjectQ$NNElement::usage=
@@ -113,8 +113,8 @@ NNJavaObjectQ$NNTimingElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJav
 NNJavaObjectQ$NNTimingElement[ args___]:= False ;*)
 
 
-(*NNJavaObjectQ$NNEvent[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNEvent ])]:= True ;
-NNJavaObjectQ$NNEvent[ args___]:= False ;*)
+(*NNJavaObjectQ$NNEvents[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNEvents ])]:= True ;
+NNJavaObjectQ$NNEvents[ args___]:= False ;*)
 
 
 (*NNJavaObjectQ$NNRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNRangeSpecifier ])]:= True ;

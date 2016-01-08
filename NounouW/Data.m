@@ -33,6 +33,14 @@ Options[NNReadTrace] = {
 };
 
 
+NNReadEvents::usage="";
+
+Options[NNReadEvents] = {
+};
+
+NNReadPorts::usage="";
+
+
 (* ::Subsection:: *)
 (*NNToList*)
 
@@ -65,7 +73,7 @@ NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 (*NNData Accessors*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*RangeSpecifier related*)
 
 
@@ -94,6 +102,10 @@ If[ NNJavaObjectQ[range, $NNJavaClass$NNRange] || NNJavaObjectQ[range, $NNJavaCl
 
 NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
 NNReadTimepoints::incompatible="modify NNReadTimepoints to handle this NNRangeSpecifier.";
+
+
+(* ::Subsubsection:: *)
+(*NNData filters*)
 
 
 (* ::Subsubsection:: *)
@@ -179,6 +191,30 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 ];
 
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];*)
+
+
+(* ::Subsection::Closed:: *)
+(*NNEvents Accessors*)
+
+
+NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], "Ports", opts:OptionsPattern[]]:=
+		dataObj@getPorts[];
+
+NNReadPorts[args___]:=Message[NNReadPorts::invalidArgs, {args}];
+
+
+NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], port_Integer,
+			opts:OptionsPattern[]]:=
+Module[{},
+
+	Transpose[{Transpose[{dataObj@readPortTimestampArray[port], dataObj@readPortDurationArray[port]}],
+				dataObj@readPortCodeArray[port],
+				dataObj@readPortCommentArray[port]}
+	]
+
+];
+
+NNReadEvents[args___]:=Message[NNReadEvents::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
