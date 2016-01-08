@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39098,        832]
-NotebookOptionsPosition[     36980,        753]
-NotebookOutlinePosition[     37328,        768]
-CellTagsIndexPosition[     37285,        765]
+NotebookDataLength[     49526,       1102]
+NotebookOptionsPosition[     46639,        996]
+NotebookOutlinePosition[     46987,       1011]
+CellTagsIndexPosition[     46944,       1008]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -44,7 +44,10 @@ at C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\"\>"], "Print",
    3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
    3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
    3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
-   3.6610837030919194`*^9}]
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.661240094239548*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -54,7 +57,7 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontVariations->{"Underline"->True}],
  "\n",
- StyleBox["Wed 6 Jan 2016 16:41:43     [Mathematica: 10.3.1 for Microsoft \
+ StyleBox["Fri 8 Jan 2016 12:08:14     [Mathematica: 10.3.1 for Microsoft \
 Windows (64-bit) (December 9, 2015)]",
   StripOnInput->False,
   FontFamily->"Helvetica",
@@ -80,7 +83,7 @@ C:\\prog\\_w\\HokahokaW\\.git",
 }], "Text",
  GeneratedCell->True,
  CellAutoOverwrite->True,
- CellChangeTimes->{3.661083703262929*^9},
+ CellChangeTimes->{3.661240094411558*^9},
  Background->GrayLevel[0.85]],
 
 Cell[CellGroupData[{
@@ -93,7 +96,10 @@ Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
    3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
    3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
    3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
-   3.661083703368935*^9}],
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.6612400945215645`*^9}],
 
 Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
 \"\>"], "Print",
@@ -104,7 +110,10 @@ Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
    3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
    3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
    3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
-   3.661083703397937*^9}],
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.661240094570567*^9}],
 
 Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
 at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
@@ -115,7 +124,10 @@ at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
    3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
    3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
    3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
-   3.6610837044969997`*^9}]
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.661240095685631*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -125,7 +137,7 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontVariations->{"Underline"->True}],
  "\n",
- StyleBox["Wed 6 Jan 2016 16:41:44     [Mathematica: 10.3.1 for Microsoft \
+ StyleBox["Fri 8 Jan 2016 12:08:16     [Mathematica: 10.3.1 for Microsoft \
 Windows (64-bit) (December 9, 2015)]",
   StripOnInput->False,
   FontFamily->"Helvetica",
@@ -137,7 +149,7 @@ Windows (64-bit) (December 9, 2015)]",
   FontSize->12],
  "\n",
  StyleBox["     Current branch [hash]:  dev \
-[918924eb8a29f0de2404a6c4707ca8bcf110e8a5]",
+[79195af4082b83c6222910a7b483cdc441a97c13]",
   StripOnInput->False,
   FontFamily->"Helvetica",
   FontSize->12],
@@ -150,7 +162,7 @@ Windows (64-bit) (December 9, 2015)]",
 }], "Text",
  GeneratedCell->True,
  CellAutoOverwrite->True,
- CellChangeTimes->{3.661083704790016*^9},
+ CellChangeTimes->{3.6612400960226502`*^9},
  Background->GrayLevel[0.85]],
 
 Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
@@ -166,32 +178,57 @@ https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
    3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
    3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
    3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
-   3.6610837061190925`*^9}],
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.6612400974587326`*^9}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"dataDirectory", "=", 
-  RowBox[{"FileNameJoin", "[", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"ParentDirectory", "[", 
-      RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", " ", 
-     "\"\<_resources\>\"", ",", "\"\<nounou\>\"", ",", "\"\<Neuralynx\>\""}], 
-    "}"}], "]"}], " "}]], "Input"],
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"resourceDataDirectory", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"ParentDirectory", "[", 
+         RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", " ", 
+        "\"\<_resources\>\"", ",", "\"\<nounou\>\"", ",", 
+        "\"\<Neuralynx\>\""}], "}"}], "]"}]}], " ", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"FileExistsQ", "[", "resourceDataDirectory", "]"}]}], "}"}], "//",
+   "Column"}]], "Input",
+ CellChangeTimes->{{3.661091893022456*^9, 3.661091895173579*^9}, {
+  3.6611057428976936`*^9, 3.6611057573375196`*^9}}],
 
-Cell[BoxData["\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Tests\\\\_\
-resources\\\\nounou\\\\Neuralynx\"\>"], "Output",
- CellChangeTimes->{3.660907117242384*^9, 3.6610160028887577`*^9, 
-  3.6610161834160833`*^9, 3.6610763265200033`*^9, 3.661078522188589*^9, 
-  3.6610787050970507`*^9, 3.6610787614952765`*^9, 3.661079124009011*^9, 
-  3.661081950531679*^9, 3.6610821689021688`*^9, 3.661082488927473*^9, 
-  3.6610825364881935`*^9, 3.661082615414708*^9, 3.661083708262215*^9}]
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Tests\\\\_resources\\\\\
+nounou\\\\Neuralynx\"\>"},
+    {"True"}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{
+  3.660907117242384*^9, 3.6610160028887577`*^9, 3.6610161834160833`*^9, 
+   3.6610763265200033`*^9, 3.661078522188589*^9, 3.6610787050970507`*^9, 
+   3.6610787614952765`*^9, 3.661079124009011*^9, 3.661081950531679*^9, 
+   3.6610821689021688`*^9, 3.661082488927473*^9, 3.6610825364881935`*^9, 
+   3.661082615414708*^9, 3.661083708262215*^9, 3.6610919116835237`*^9, {
+   3.661105748871035*^9, 3.6611057575995345`*^9}, 3.6611062583421755`*^9, 
+   3.6612299219407263`*^9, 3.6612376714359717`*^9, 3.6612381898326225`*^9, 
+   3.661238711064435*^9, 3.6612396505831723`*^9, 3.661239812168415*^9, 
+   3.6612400279047537`*^9, 3.6612400980517664`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["NCS", "Section"],
+Cell["NCS1 (E04LC: single channel, many segments)", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -200,9 +237,11 @@ Cell[BoxData[
   RowBox[{"NNLoad", "[", " ", 
    RowBox[{"FileNameJoin", "[", 
     RowBox[{"{", 
-     RowBox[{"dataDirectory", ",", "\"\<E04LC\>\"", ",", "\"\<CSC1.ncs\>\""}],
+     RowBox[{
+     "resourceDataDirectory", ",", "\"\<E04LC\>\"", ",", "\"\<CSC1.ncs\>\""}],
       "}"}], "]"}], " ", "]"}]}]], "Input",
- InitializationCell->False],
+ InitializationCell->False,
+ CellChangeTimes->{3.6610920287102175`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
@@ -211,12 +250,12 @@ Cell[BoxData[
     RowBox[{
     "nounou", ".", "io", ".", "neuralynx", ".", "NNDataChannelFileReadNCS"}], 
     "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm2`JavaObject26021859334029313]], "Output",
+  JLink`Objects`vm2`JavaObject30061653647163393]], "Output",
  CellChangeTimes->{3.660907125198839*^9, 3.661016189175412*^9, 
   3.661076333765418*^9, 3.661078709390296*^9, 3.6610787655895104`*^9, 
   3.661079129784341*^9, 3.661081954092882*^9, 3.6610821728083925`*^9, 
   3.661082492159658*^9, 3.661082541411475*^9, 3.661082619404936*^9, 
-  3.6610837193948517`*^9}]
+  3.6610837193948517`*^9, 3.661105768765173*^9, 3.6612400340511055`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -237,7 +276,7 @@ Cell[BoxData[
 Cell[BoxData["\<\"NNTiming(fs=32000.0, segmentCount=94)\"\>"], "Output",
  CellChangeTimes->{3.6609071252718434`*^9, 3.66101621570693*^9, 
   3.6610763338434224`*^9, 3.6610787094643*^9, 3.6610787656605144`*^9, 
-  3.6610791298613453`*^9}]
+  3.6610791298613453`*^9, 3.6612400479829025`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -250,7 +289,8 @@ fs=32000.0,  \
 file=C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Tests\\\\_resources\\\\nounou\\\
 \\Neuralynx\\\\E04LC\\\\CSC1.ncs, , 3cc31723ae)\"\>"], "Output",
  CellChangeTimes->{3.6610162036942425`*^9, 3.661076333890425*^9, 
-  3.6610787124854727`*^9, 3.661078765705517*^9, 3.6610791299103484`*^9}]
+  3.6610787124854727`*^9, 3.661078765705517*^9, 3.6610791299103484`*^9, 
+  3.6612400484529295`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -367,7 +407,7 @@ hh:mm )\\n   0\\t   2546176 (  1:19.57) (    79.6)\\t 10237373715 ( \
 27440979152 ( 4:46.73)\\n  92\\t    370176 (  0:11.57) (    11.6)\\t \
 27468094152 ( 4:47.18)\\n  93\\t    368640 (  0:11.52) (    11.5)\\t \
 27488855152 ( 4:47.52)\"\>"], "Output",
- CellChangeTimes->{3.6610791300363555`*^9}]
+ CellChangeTimes->{3.6610791300363555`*^9, 3.661240049004961*^9}]
 }, Open  ]]
 }, Closed]],
 
@@ -742,17 +782,220 @@ lMFgMBgMBkM9GIMyGAwGg8FgqAfjUQaDwWAwGFYn/j8Sr6ZM
 }, Open  ]]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
+Cell["Filters", "Subsection",
+ CellChangeTimes->{{3.660907541017623*^9, 3.660907551404217*^9}, {
+  3.660907854781569*^9, 3.660907859708851*^9}, {3.6612418124318233`*^9, 
+  3.6612418143999357`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"testDataDownsampled", " ", "=", " ", 
+  RowBox[{"NNDataDownsample", "[", "testData", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6612418168870783`*^9, 3.6612418447836733`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"testDataFiltered", " ", "=", " "}]], "Input",
+ CellChangeTimes->{{3.661241839367364*^9, 3.6612418516480665`*^9}}]
+}, Open  ]],
+
 Cell["Whole Range Plot", "Subsection",
  CellChangeTimes->{{3.660907541017623*^9, 3.660907551404217*^9}, {
   3.660907854781569*^9, 3.660907859708851*^9}}]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell["NEV", "Section",
- CellChangeTimes->{{3.66090751159694*^9, 3.66090751177295*^9}}]
+ CellChangeTimes->{{3.66090751159694*^9, 3.66090751177295*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testNEV1", " ", "=", " ", 
+  RowBox[{"NNLoad", "[", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "resourceDataDirectory", ",", "\"\<t130911\>\"", ",", 
+      "\"\<Events.nev\>\""}], "}"}], "]"}], " ", "]"}]}]], "Input",
+ CellChangeTimes->{{3.661092009071094*^9, 3.661092039405829*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "elements", ".", "events", ".", "NNEvents"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject34503636465745921]], "Output",
+ CellChangeTimes->{3.6610920426490145`*^9, 3.6611059761110325`*^9, 
+  3.6611062650415583`*^9, 3.6612299276490526`*^9, 3.6612376758332233`*^9, 
+  3.6612381948699102`*^9, 3.661238715644697*^9, 3.6612396542593827`*^9, 
+  3.6612398172787066`*^9, 3.6612400343461227`*^9, 3.6612401010829396`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testNEV1", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6611062683127456`*^9, 3.661106275002128*^9}}],
+
+Cell[BoxData["\<\"NNEvents(ports=2, events=List(5, 2702))\"\>"], "Output",
+ CellChangeTimes->{3.661106275266143*^9, 3.6612299277100563`*^9, 
+  3.66123767595323*^9, 3.6612381949279137`*^9, 3.661238715729702*^9, 
+  3.661239654347388*^9, 3.6612398173417106`*^9, 3.6612400343791246`*^9, 
+  3.66124010302005*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", "testNEV1", "]"}]], "Input",
+ CellChangeTimes->{{3.6612396856221766`*^9, 3.6612396933986216`*^9}}],
+
+Cell[BoxData["\<\"nounou.elements.events.NNEvents(ports=2, events=List(5, \
+2702), 3cc31723ae)\\n=========================================================\
+=======================\\nPort 0\\n    Code     0 (00000000):        5 events\
+\\nPort 1000001\\n    Code     1 (00000001):      246 events\\n    Code     2 \
+(00000010):      232 events\\n    Code     3 (00000011):      260 events\\n   \
+ Code     4 (00000100):      232 events\\n    Code     5 (00000101):      241 \
+events\\n    Code     6 (00000110):      268 events\\n    Code     7 \
+(00000111):      240 events\\n    Code     8 (00001000):      238 events\\n   \
+ Code     9 (00001001):      250 events\\n    Code    10 (00001010):      241 \
+events\\n    Code    11 (00001011):      254 events\\n\"\>"], "Output",
+ CellChangeTimes->{3.6612401042961235`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNReadEvents", "[", 
+  RowBox[{"testNEV1", ",", " ", "\"\<Ports\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6612399549215794`*^9, 3.6612399656061907`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "1000001"}], "}"}]], "Output",
+ CellChangeTimes->{3.6612401074983063`*^9, 3.66124021962272*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NNReadEvents", "[", 
+    RowBox[{"testNEV1", ",", " ", "1000001"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ";;", "15"}], "]"}], "]"}], "//", "Table"}]], "Input",
+ CellChangeTimes->{{3.661237749189419*^9, 3.6612377556127863`*^9}, {
+  3.6612378197974577`*^9, 3.6612378312211113`*^9}, {3.6612387373659396`*^9, 
+  3.66123875048369*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21412881115", ",", "203562"}], "}"}], ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0001).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21413605959", ",", "204312"}], "}"}], ",", "8", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0008).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21414493771", ",", "204156"}], "}"}], ",", "6", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0006).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21415235771", ",", "204344"}], "}"}], ",", "5", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0005).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21415969271", ",", "204219"}], "}"}], ",", "11", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x000B).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21416703521", ",", "204438"}], "}"}], ",", "3", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0003).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21417397021", ",", "204219"}], "}"}], ",", "8", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0008).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21418214365", ",", "204219"}], "}"}], ",", "11", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x000B).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21418880240", ",", "204406"}], "}"}], ",", "9", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0009).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21419581521", ",", "203281"}], "}"}], ",", "8", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0008).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21420529646", ",", "204344"}], "}"}], ",", "6", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0006).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21421163552", ",", "204219"}], "}"}], ",", "3", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0003).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21422121552", ",", "204344"}], "}"}], ",", "5", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0005).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21422655302", ",", "203719"}], "}"}], ",", "7", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0007).\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"21423563084", ",", "204156"}], "}"}], ",", "2", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value \
+(0x0002).\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6612378483990936`*^9, {3.661238722373082*^9, 3.661238750646699*^9}, 
+   3.661239654952422*^9, 3.6612398185517797`*^9, 3.6612400348351507`*^9, 
+   3.661240200463624*^9}]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{952, 1135},
-WindowMargins->{{0, Automatic}, {1140, Automatic}},
+WindowSize->{950, 1134},
+WindowMargins->{{Automatic, 0}, {1138, Automatic}},
 FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -773,66 +1016,93 @@ Cell[617, 24, 214, 4, 30, "Text"],
 Cell[834, 30, 35, 0, 30, "Text"],
 Cell[CellGroupData[{
 Cell[894, 34, 52, 1, 31, "Input"],
-Cell[949, 37, 620, 9, 23, "Print"]
+Cell[949, 37, 884, 12, 23, "Print"]
 }, Open  ]],
-Cell[1584, 49, 958, 34, 118, "Text"],
+Cell[1848, 52, 958, 34, 118, "Text"],
 Cell[CellGroupData[{
-Cell[2567, 87, 558, 8, 23, "Print"],
-Cell[3128, 97, 579, 9, 23, "Print"],
-Cell[3710, 108, 618, 9, 23, "Print"]
+Cell[2831, 90, 826, 11, 23, "Print"],
+Cell[3660, 103, 845, 12, 23, "Print"],
+Cell[4508, 117, 882, 12, 23, "Print"]
 }, Open  ]],
-Cell[4343, 120, 950, 33, 118, "Text"],
-Cell[5296, 155, 822, 13, 119, "Print"],
+Cell[5405, 132, 952, 33, 118, "Text"],
+Cell[6360, 167, 1088, 16, 119, "Print"],
 Cell[CellGroupData[{
-Cell[6143, 172, 324, 8, 52, "Input"],
-Cell[6470, 182, 475, 6, 31, "Output"]
+Cell[7473, 187, 642, 16, 72, "Input"],
+Cell[8118, 205, 992, 19, 43, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6982, 193, 22, 0, 63, "Section"],
+Cell[9147, 229, 132, 1, 63, "Section"],
 Cell[CellGroupData[{
-Cell[7029, 197, 283, 7, 31, "Input",
+Cell[9304, 234, 341, 9, 31, "Input",
  InitializationCell->False],
-Cell[7315, 206, 584, 12, 31, "Output"]
+Cell[9648, 245, 630, 12, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7936, 223, 159, 2, 43, "Subsection"],
+Cell[10315, 262, 159, 2, 43, "Subsection"],
 Cell[CellGroupData[{
-Cell[8120, 229, 170, 5, 31, "Input",
+Cell[10499, 268, 170, 5, 31, "Input",
  InitializationCell->False],
-Cell[8293, 236, 235, 3, 31, "Output"]
+Cell[10672, 275, 259, 3, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8565, 244, 71, 1, 31, "Input"],
-Cell[8639, 247, 376, 5, 52, "Output"]
+Cell[10968, 283, 71, 1, 31, "Input"],
+Cell[11042, 286, 403, 6, 52, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9052, 257, 481, 12, 31, "Input",
+Cell[11482, 297, 481, 12, 31, "Input",
  InitializationCell->False],
-Cell[9536, 271, 6983, 98, 1952, "Output"]
+Cell[11966, 311, 7005, 98, 1952, "Output"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[16568, 375, 161, 2, 35, "Subsection"],
+Cell[19020, 415, 161, 2, 35, "Subsection"],
 Cell[CellGroupData[{
-Cell[16754, 381, 303, 6, 31, "Input"],
-Cell[17060, 389, 389, 9, 31, "Output"]
+Cell[19206, 421, 303, 6, 31, "Input"],
+Cell[19512, 429, 389, 9, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17486, 403, 264, 4, 31, "Input"],
-Cell[17753, 409, 1202, 19, 92, "Output"]
+Cell[19938, 443, 264, 4, 31, "Input"],
+Cell[20205, 449, 1202, 19, 92, "Output"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[19004, 434, 199, 3, 35, "Subsection"],
-Cell[19206, 439, 369, 10, 31, "Input"],
+Cell[21456, 474, 199, 3, 35, "Subsection"],
+Cell[21658, 479, 369, 10, 31, "Input"],
 Cell[CellGroupData[{
-Cell[19600, 453, 405, 9, 31, "Input"],
-Cell[20008, 464, 16675, 276, 129, "Output"]
+Cell[22052, 493, 405, 9, 31, "Input"],
+Cell[22460, 504, 16675, 276, 94, "Output"]
 }, Open  ]]
 }, Open  ]],
-Cell[36710, 744, 153, 2, 43, "Subsection"]
+Cell[CellGroupData[{
+Cell[39184, 786, 197, 3, 43, "Subsection"],
+Cell[39384, 791, 197, 3, 31, "Input"],
+Cell[39584, 796, 137, 2, 31, "Input"]
 }, Open  ]],
-Cell[36878, 749, 86, 1, 63, "Section"]
+Cell[39736, 801, 153, 2, 43, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39926, 808, 86, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[40037, 813, 340, 8, 31, "Input"],
+Cell[40380, 823, 555, 10, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40972, 838, 154, 3, 31, "Input"],
+Cell[41129, 843, 307, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41473, 852, 141, 2, 31, "Input"],
+Cell[41617, 856, 821, 10, 352, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42475, 871, 182, 3, 31, "Input"],
+Cell[42660, 876, 144, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42841, 884, 387, 9, 31, "Input"],
+Cell[43231, 895, 3368, 96, 312, "Output"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
