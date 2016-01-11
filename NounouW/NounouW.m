@@ -43,7 +43,14 @@ $NNJavaClass$NNData          = "nounou.elements.data.NNData";
 $NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
 $NNJavaClass$NNDataLayout    = "nounou.elements.traits.NNLayoutSpatial";
 
+
+$NNJavaClass$NNDataFilterDownsample    = "nounou.elements.data.filters.NNDataFilterDownsample";
+$NNJavaClass$NNDataFilterDecimate      = "nounou.elements.data.filters.NNDataFilterDecimate";
+
+
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
+$NNJavaClass$NNDataChannelArray     = "nounou.elements.data.NNDataChannelArray";
+$NNJavaClass$NNDataChannelExtracted = "nounou.elements.data.NNDataChannelExtracted";
 
 $NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
 
