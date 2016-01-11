@@ -23,6 +23,10 @@ $NNSpanToNNRangeSpecifier::usage="";
 NNReadTimepoints::usage="";
 
 
+NNDataDownsample::usage="";
+NNDataDecimate::usage="";
+
+
 NNPrintInfo::usage="Prints out java object information for an NNElement child class (calls toStringFull[]).";
 
 
@@ -73,7 +77,7 @@ NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 (*NNData Accessors*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*RangeSpecifier related*)
 
 
@@ -106,6 +110,33 @@ NNReadTimepoints::incompatible="modify NNReadTimepoints to handle this NNRangeSp
 
 (* ::Subsubsection:: *)
 (*NNData filters*)
+
+
+NNDataDownsample[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+				initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	JavaNew[$NNJavaClass$NNDataFilterDownsample, dataObj, initialFactor];
+
+NNDataDownsample[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	(NNDataDownsample[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, {dataChannelObj}], 
+		initialFactor, opts
+	])@getNNDataChannel[ 0 ];
+
+NNDataDownsample[args___]:=Message[NNDataDownsample::invalidArgs, {args}];
+
+
+NNDataDecimate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	JavaNew[$NNJavaClass$NNDataFilterDecimate, dataObj, initialFactor];
+
+NNDataDecimate[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	(NNDataDecimate[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], 
+		initialFactor, opts
+	])@getNNDataChannel[ 0 ];
+
+NNDataDecimate[args___]:=Message[NNDataDecimate::invalidArgs, {args}];
 
 
 (* ::Subsubsection:: *)
