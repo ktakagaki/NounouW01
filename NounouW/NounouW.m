@@ -41,11 +41,12 @@ $NNJavaClass$NNElement = "nounou.elements.NNElement";
 
 $NNJavaClass$NNData          = "nounou.elements.data.NNData";
 $NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
-$NNJavaClass$NNDataLayout    = "nounou.elements.traits.NNLayoutSpatial";
+$NNJavaClass$NNLayout    = "nounou.elements.traits.NNLayoutSpatial";
 
 
-$NNJavaClass$NNDataFilterDownsample    = "nounou.elements.data.filters.NNDataFilterDownsample";
-$NNJavaClass$NNDataFilterDecimate      = "nounou.elements.data.filters.NNDataFilterDecimate";
+$NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDownsample";
+$NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDecimate";
+$NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
@@ -70,8 +71,10 @@ NNJavaObjectQ$NNEvent::usage=
 $NNJavaClass$NNRangeSpecifier = "nounou.ranges.NNRangeSpecifier";
 
 $NNJavaClass$NNRange =          "nounou.ranges.NNRange";
+$NNJavaClass$NNRangeEvent =     "nounou.ranges.NNRangeEvent";
 $NNJavaClass$NNRangeAll =       "nounou.ranges.NNRangeAll";
 $NNJavaClass$NNRangeTs =        "nounou.ranges.NNRangeTs";
+$NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
 
 
 (*NNJavaObjectQ$NNRangeSpecifier::usage=
@@ -107,6 +110,10 @@ Begin["`Private`"];
 
 NNJavaObjectQ[ obj_/;JavaObjectQ[obj], className_String ]:= InstanceOf[obj, className];
 NNJavaObjectQ[ args___]:= False ;
+
+
+NNJavaObjectListQ[ objList_List, className_String ]:= And@@( NNJavaObjectQ[#, className]& /@ objList );
+NNJavaObjectListQ[ args___]:= False ;
 
 
 (*NNJavaObjectQ$NNElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNElement ])]:= True ;
