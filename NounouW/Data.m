@@ -23,10 +23,6 @@ $NNSpanToNNRangeSpecifier::usage="";
 NNReadTimepoints::usage="";
 
 
-NNDataDownsample::usage="";
-NNDataDecimate::usage="";
-
-
 NNPrintInfo::usage="Prints out java object information for an NNElement child class (calls toStringFull[]).";
 
 
@@ -43,6 +39,15 @@ Options[NNReadEvents] = {
 };
 
 NNReadPorts::usage="";
+
+
+(* ::Subsection:: *)
+(*NNFilter methods*)
+
+
+NNFilterDownsample::usage="";
+NNFilterDecimate::usage="";
+NNFilterMedianSubtract::usage="";
 
 
 (* ::Subsection:: *)
@@ -73,24 +78,52 @@ NNLoad[fileNames:{__String}]:=Module[{tempret},
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
 (* ::Subsubsection:: *)
-(*RangeSpecifier related*)
+(*$NNSpanToNNRangeSpecifier*)
 
 
-$NNSpanToNNRangeSpecifier[ Span[start_/;NumberQ[start], last_/;NumberQ[last]],  segment_/;NumberQ[segment] ]:=
-	$NNSpanToNNRangeSpecifier[ Span[start, last, 1], segment ];
+$NNSpanToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]],  segment_/;NumberQ[segment]} ]:=
+	$NNSpanToNNRangeSpecifier[ {Span[start, last, 1], segment} ];
 
-$NNSpanToNNRangeSpecifier[ Span[
-							start_/;NumberQ[start], 
-							last_/;NumberQ[last], 
-							step_/;NumberQ[step]
-						],  segment_/;NumberQ[segment] ]:= NN`NNRange[start, last, step, segment];
+$NNSpanToNNRangeSpecifier[ 
+		{Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] ],  
+			segment_/;NumberQ[segment]} 
+]:= NN`NNRange[start, last, step, segment];
 
-$NNSpanToNNRangeSpecifier[args___]:=Message[$NNSpanToNNRangeSpecifier::invalidArgs, {args}];
+$NNSpanToNNRangeSpecifier[ 
+		Rule[ timestamp_/;NumberQ[timestamp], Span[   start_/;NumberQ[start], 
+												 last_/;NumberQ[last] 	]]
+						]:= NN`NNRangeTsEvent[timestamp, start, last, 1];
+
+$NNSpanToNNRangeSpecifier[ 
+		Rule[ timestamp_/;NumberQ[timestamp], Span[   start_/;NumberQ[start], 
+												 last_/;NumberQ[last], 
+												 step_/;NumberQ[step] 	]]
+						]:= NN`NNRangeTsEvent[timestamp, start, last, step];
+
+$NNSpanToNNRangeSpecifier[ 
+		Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), Span[   start_/;NumberQ[start], 
+												 last_/;NumberQ[last]	]]
+						]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;
+
+$NNSpanToNNRangeSpecifier[ 
+		Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), Span[   start_/;NumberQ[start], 
+												 last_/;NumberQ[last], 
+												 step_/;NumberQ[step] 	]]
+						]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;
+
+
+
+$NNSpanToNNRangeSpecifier[args___]:=Message[$NNSpanToNNRangeSpecifier::invalidArgs2, {args}];
+$NNSpanToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
+
+
+(* ::Subsubsection:: *)
+(*NNReadTimepoints*)
 
 
 NNReadTimepoints[ range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier],
@@ -98,7 +131,7 @@ NNReadTimepoints[ range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier],
 				]:=
 If[ NNJavaObjectQ[range, $NNJavaClass$NNRange] || NNJavaObjectQ[range, $NNJavaClass$NNRangeAll],
 	range@readTimepoints[ dataObj ],
-	If[ NNJavaObjectQ[range, $NNJavaClass$NNRangeTs],
+	If[ NNJavaObjectQ[range, $NNJavaClass$NNRangeTs] || NNJavaObjectQ[range, $NNJavaClass$NNRangeTsEvent],
 		range@readTimepointsTs[ dataObj ],
 		Message[NNReadTimepoints::incompatible]
 	]
@@ -106,37 +139,6 @@ If[ NNJavaObjectQ[range, $NNJavaClass$NNRange] || NNJavaObjectQ[range, $NNJavaCl
 
 NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
 NNReadTimepoints::incompatible="modify NNReadTimepoints to handle this NNRangeSpecifier.";
-
-
-(* ::Subsubsection:: *)
-(*NNData filters*)
-
-
-NNDataDownsample[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-				initialFactor_Integer:16, opts:OptionsPattern[]]:=
-	JavaNew[$NNJavaClass$NNDataFilterDownsample, dataObj, initialFactor];
-
-NNDataDownsample[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
-				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
-	(NNDataDownsample[ 
-		JavaNew[$NNJavaClass$NNDataChannelArray, {dataChannelObj}], 
-		initialFactor, opts
-	])@getNNDataChannel[ 0 ];
-
-NNDataDownsample[args___]:=Message[NNDataDownsample::invalidArgs, {args}];
-
-
-NNDataDecimate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], initialFactor_Integer:16, opts:OptionsPattern[]]:=
-	JavaNew[$NNJavaClass$NNDataFilterDecimate, dataObj, initialFactor];
-
-NNDataDecimate[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
-				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
-	(NNDataDecimate[ 
-		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], 
-		initialFactor, opts
-	])@getNNDataChannel[ 0 ];
-
-NNDataDecimate[args___]:=Message[NNDataDecimate::invalidArgs, {args}];
 
 
 (* ::Subsubsection:: *)
@@ -157,9 +159,20 @@ NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-			channel_/;NumberQ[channel], {range_Span, segment_/;NumberQ[segment]}, 
+			channel_/;NumberQ[channel], 
+			range_, 
 			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, channel, $NNSpanToNNRangeSpecifier[range, segment], opts];
+NNReadTrace[dataObj, channel, $NNSpanToNNRangeSpecifier[range], opts];
+
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
+			range_, 
+			opts:OptionsPattern[]]:=
+NNReadTrace[dataObj, $NNSpanToNNRangeSpecifier[range], opts];
+
+
+(* ::Subsubsection:: *)
+(*Java NNRangeSpecifier implementations*)
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
@@ -178,13 +191,12 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 
 ];
 
-NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
-
-NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
-			{range_Span, segment_/;NumberQ[segment]}, 
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channel_/;NumberQ[channel], 
+			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, $NNSpanToNNRangeSpecifier[range, segment], opts];
+NNReadTrace[dataObj, channel, #, opts]& /@ rangeList;
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
@@ -202,26 +214,73 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 
 ];
 
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
+			channel_/;NumberQ[channel], 
+			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
+			opts:OptionsPattern[]]:=
+NNReadTrace[dataObj, channel, #, opts]& /@ rangeList;
+
+
+(* ::Subsubsection:: *)
+(*Default*)
+
+
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
 
-(*NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-			channel_/;NumberQ[channel], 
-			range_/;NNJavaObjectQ$NNRangeSpecifier[range], 
-			opts:OptionsPattern[]]:=
-Module[{optTimepoints, tempTimepoints, tempTrace},
+(* ::Subsection:: *)
+(*NNFilterXXX*)
 
-	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
-	If[optTimepoints =!= True && optTimepoints =!= False, Message[NNReadTrace::invalidOptionValue, "NNOptReturnTimepoints", NNOptReturnTimepoints]];
-	
-	If[optTimepoints,
-		Transpose[ {NNReadTimepoints[range], dataObj@readTrace[Round[channel]]} ],
-		dataObj@readTrace[Round[channel]]
-	]
 
+NNFilterDownsample[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+				initialFactor_Integer:16, opts:OptionsPattern[]]:=
+Module[{tempret},
+	tempret=JavaNew[$NNJavaClass$NNFilterDownsample, dataObj, initialFactor];
+	tempret
 ];
 
-NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];*)
+NNFilterDownsample[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	(NNFilterDownsample[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, {dataChannelObj}], 
+		initialFactor, opts
+	])@getNNDataChannel[ 0 ];
+
+NNFilterDownsample[args___]:=Message[NNFilterDownsample::invalidArgs, {args}];
+
+
+NNFilterDecimate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], initialFactor_Integer:16, opts:OptionsPattern[]]:=
+Module[{tempret},
+	tempret=JavaNew[$NNJavaClass$NNFilterDecimate, dataObj, initialFactor];
+	tempret
+];
+
+NNFilterDecimate[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 initialFactor_Integer:16, opts:OptionsPattern[]]:=
+	(NNFilterDecimate[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], 
+		initialFactor, opts
+	])@getNNDataChannel[ 0 ];
+
+NNFilterDecimate[args___]:=Message[NNFilterDecimate::invalidArgs, {args}];
+
+
+NNFilterMedianSubtract[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], initialFactor_Integer:81, opts:OptionsPattern[]]:=
+Module[{tempret},
+	tempret=JavaNew[$NNJavaClass$NNFilterMedianSubtract, dataObj];
+	tempret@setWindowLength[ initialFactor ];
+	tempret
+];
+
+NNFilterMedianSubtract[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 initialFactor_Integer:81, opts:OptionsPattern[]]:=
+	(NNFilterMedianSubtract[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], 
+		initialFactor, opts
+	])@getNNDataChannel[ 0 ];
+
+NNFilterMedianSubtract[args___]:=Message[NNFilterMedianSubtract::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
