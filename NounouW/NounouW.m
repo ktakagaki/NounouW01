@@ -26,6 +26,8 @@ HHPackageMessage["NounouW`"];
 
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
+NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
+NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];
 
 
@@ -35,6 +37,7 @@ Print[NN`toString[]];
 
 NNJavaObjectQ::usage=
 "Checks whether something is a Java object and an instance of the given class name (full).";
+NNJavaObjectListQ::usage="";
 
 
 $NNJavaClass$NNElement = "nounou.elements.NNElement";
@@ -47,6 +50,7 @@ $NNJavaClass$NNLayout    = "nounou.elements.traits.NNLayoutSpatial";
 $NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDownsample";
 $NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDecimate";
 $NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
+$NNJavaClass$NNFilterFIR             = "nounou.elements.data.filters.NNFilterFIR";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
