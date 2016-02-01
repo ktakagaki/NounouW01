@@ -9,10 +9,20 @@ BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}]
 
 
 (* ::Subsection:: *)
-(*NNLoad*)
+(*NNLoad/NNSave*)
 
 
 NNLoad::usage="Load data object(s) from file(s).";
+Options[NNLoad] = {NNOptFileNameSort -> True};
+NNSave::usage="Save data object(s) to a file.";
+
+
+(* ::Subsection:: *)
+(*NNFilenameSort*)
+
+
+NNFilenameSort::usage="Sorts data filenames based on trailing digits, which may not be straight forward. \
+For example, XXX\CSC2.ncs => XXX\CSC10.ncs";
 
 
 (* ::Subsection:: *)
@@ -32,13 +42,22 @@ Options[NNReadTrace] = {
 	NNOptReturnTimepoints -> True
 };
 
+NNReadPage::usage="";
+
+Options[NNReadPage] = {
+	NNOptReturnTimepoints -> True
+};
+
 
 NNReadEvents::usage="";
 
 Options[NNReadEvents] = {
 };
 
-NNReadPorts::usage="";
+NNReadTimestamps::usage="";
+Options[NNReadTimestamps] = {
+	NNOptDurationCheck -> False
+};
 
 
 (* ::Subsection:: *)
@@ -48,6 +67,7 @@ NNReadPorts::usage="";
 NNFilterDownsample::usage="";
 NNFilterDecimate::usage="";
 NNFilterMedianSubtract::usage="";
+NNFilterFIR::usage="";
 
 
 (* ::Subsection:: *)
@@ -64,84 +84,65 @@ NNFilterMedianSubtract::usage="";
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNLoad*)
 
 
-NNLoad[fileName_String]:=NNLoad[{fileName}];
-NNLoad[fileNames:{__String}]:=Module[{tempret},
-	tempret = NN`load[fileNames];
-	If[ Length[tempret]==1, tempret[[1]], tempret ]
+NNLoad[fileName_String, opts:OptionsPattern[]]:=NNLoad[{fileName}, opts];
+
+NNLoad[fileNames:{__String}, opts:OptionsPattern[]]:=
+Module[{tempret, optSort},
+	optSort = OptionValue[NNOptFileNameSort];
+		
+	tempret = NN`load[
+				If[ optSort, NNFilenameSort[ fileNames ], fileNames]
+	];
+	If[ Head[tempret]===List && Length[tempret]==1, tempret[[1]], tempret ]
 ];
 
 
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
-(*NNData Accessors*)
+(* ::Subsection:: *)
+(*NNSave*)
 
 
-(* ::Subsubsection:: *)
-(*$NNSpanToNNRangeSpecifier*)
+NNSave[fileName_String, obj_/;NNJavaObjectQ[obj, $NNJavaClass$NNElement], opts:OptionsPattern[]]:=
+NNSave[fileName, {obj}, opts];
 
 
-$NNSpanToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]],  segment_/;NumberQ[segment]} ]:=
-	$NNSpanToNNRangeSpecifier[ {Span[start, last, 1], segment} ];
-
-$NNSpanToNNRangeSpecifier[ 
-		{Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] ],  
-			segment_/;NumberQ[segment]} 
-]:= NN`NNRange[start, last, step, segment];
-
-$NNSpanToNNRangeSpecifier[ 
-		Rule[ timestamp_/;NumberQ[timestamp], Span[   start_/;NumberQ[start], 
-												 last_/;NumberQ[last] 	]]
-						]:= NN`NNRangeTsEvent[timestamp, start, last, 1];
-
-$NNSpanToNNRangeSpecifier[ 
-		Rule[ timestamp_/;NumberQ[timestamp], Span[   start_/;NumberQ[start], 
-												 last_/;NumberQ[last], 
-												 step_/;NumberQ[step] 	]]
-						]:= NN`NNRangeTsEvent[timestamp, start, last, step];
-
-$NNSpanToNNRangeSpecifier[ 
-		Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), Span[   start_/;NumberQ[start], 
-												 last_/;NumberQ[last]	]]
-						]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;
-
-$NNSpanToNNRangeSpecifier[ 
-		Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), Span[   start_/;NumberQ[start], 
-												 last_/;NumberQ[last], 
-												 step_/;NumberQ[step] 	]]
-						]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;
-
-
-
-$NNSpanToNNRangeSpecifier[args___]:=Message[$NNSpanToNNRangeSpecifier::invalidArgs2, {args}];
-$NNSpanToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
-
-
-(* ::Subsubsection:: *)
-(*NNReadTimepoints*)
-
-
-NNReadTimepoints[ range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier],
-				  dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement]
-				]:=
-If[ NNJavaObjectQ[range, $NNJavaClass$NNRange] || NNJavaObjectQ[range, $NNJavaClass$NNRangeAll],
-	range@readTimepoints[ dataObj ],
-	If[ NNJavaObjectQ[range, $NNJavaClass$NNRangeTs] || NNJavaObjectQ[range, $NNJavaClass$NNRangeTsEvent],
-		range@readTimepointsTs[ dataObj ],
-		Message[NNReadTimepoints::incompatible]
-	]
+NNSave[fileName_String, objList_List/;NNJavaObjectListQ[objList, $NNJavaClass$NNElement], opts:OptionsPattern[]]:=
+Module[{tempret},
+	(*optSort = OptionValue[NNOptFileNameSort];*)
+		
+	tempret = NN`save[fileName, objList]
 ];
 
-NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
-NNReadTimepoints::incompatible="modify NNReadTimepoints to handle this NNRangeSpecifier.";
+
+NNSave[args___]:=Message[NNSave::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsection::Closed:: *)
+(*NNFilenameSort*)
+
+
+NNFilenameSort[fileNames:{__String}]:=
+Module[{},
+		
+		SortBy[fileNames,
+			StringCases[ #,
+					Shortest[__] ~~ x:NumberString~~"."~~WordCharacter ..  :> ToExpression[x]
+			]&
+		]
+
+];
+
+
+NNFilenameSort[args___]:=Message[NNFilenameSort::invalidArgs, {args}];
+
+
+(* ::Subsection::Closed:: *)
 (*NNPrintInfo*)
 
 
@@ -154,25 +155,101 @@ NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Tim
 NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
+(* ::Subsection:: *)
+(*NNData Accessors*)
+
+
+(* ::Subsubsection:: *)
+(*$NNSpanToNNRangeSpecifier*)
+
+
+(* { start;;last , segment}  *)
+$NNSpanToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]],  segment_/;NumberQ[segment]} ]:=
+	NN`NNRange[start, last, 1, segment];
+(* { start;;last;;step , segment} *)
+$NNSpanToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] ],  segment_/;NumberQ[segment]} ]:= 
+	NN`NNRange[start, last, step, segment];
+
+(*  timestamp -> start;;last  *)
+$NNSpanToNNRangeSpecifier[ 
+	Rule[ timestamp_/;NumberQ[timestamp], 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last] ]
+	]
+]:= NN`NNRangeTsEvent[timestamp, start, last, 1];
+
+(*  timestamp -> start;;last;;step  *)
+$NNSpanToNNRangeSpecifier[ 
+	Rule[ timestamp_/;NumberQ[timestamp], 
+		  Span[ start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step]]
+	]
+]:= NN`NNRangeTsEvent[timestamp, start, last, step];
+
+(*  {timestamps} -> start;;last  *)
+$NNSpanToNNRangeSpecifier[ 
+	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last]	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;
+
+(*  {timestamps} -> start;;last;;step  *)
+$NNSpanToNNRangeSpecifier[ 
+	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] 	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;
+
+
+$NNSpanToNNRangeSpecifier[args___]:=Message[$NNSpanToNNRangeSpecifier::invalidArgs2, {args}];
+$NNSpanToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
+
+
+(* ::Subsubsection::Closed:: *)
+(*NNReadTimepoints*)
+
+
+NNReadTimepoints[ range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier],
+				  dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement],
+				  type_String: "Timestamps"
+				]:=
+Module[{},
+	Switch[type,
+		"Timestamps", range@readTimepointsTs[ dataObj ],
+		"Frames", range@readTimepoints[ dataObj ]
+	]
+];
+		
+(*If[ NNJavaObjectQ[range, $NNJavaClass$NNRange] || NNJavaObjectQ[range, $NNJavaClass$NNRangeAll],
+	range@readTimepoints[ dataObj ],
+	If[ NNJavaObjectQ[range, $NNJavaClass$NNRangeTs] || NNJavaObjectQ[range, $NNJavaClass$NNRangeTsEvent],
+		range@readTimepointsTs[ dataObj ],
+		Message[NNReadTimepoints::incompatible]
+	]
+];
+*)
+NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
+NNReadTimepoints::incompatible="modify NNReadTimepoints to handle this NNRangeSpecifier.";
+
+
 (* ::Subsubsection:: *)
 (*NNReadTrace*)
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channel_/;NumberQ[channel], 
-			range_, 
+			range_Rule, 
+			opts:OptionsPattern[]]:= NNReadTrace[dataObj, channel, $NNSpanToNNRangeSpecifier[range], opts];
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channel_/;NumberQ[channel], 
+			range_List/;(Head[range[[1]]]===Span), 
+			opts:OptionsPattern[]]:= NNReadTrace[dataObj, channel, $NNSpanToNNRangeSpecifier[range], opts];
+
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channel_/;NumberQ[channel], 
+			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, channel, $NNSpanToNNRangeSpecifier[range], opts];
-
-
-NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
-			range_, 
-			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, $NNSpanToNNRangeSpecifier[range], opts];
-
-
-(* ::Subsubsection:: *)
-(*Java NNRangeSpecifier implementations*)
+NNReadTrace[dataObj, channel, #, opts]& /@ rangeList;
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
@@ -182,21 +259,29 @@ NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 Module[{optTimepoints, tempTimepoints, tempTrace},
 
 	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
-	If[optTimepoints =!= True && optTimepoints =!= False, Message[NNReadTrace::invalidOptionValue, "NNOptReturnTimepoints", NNOptReturnTimepoints]];
-	
-	If[optTimepoints,
-		Transpose[ {NNReadTimepoints[range, dataObj], dataObj@readTrace[Round[channel], range]} ],
-		dataObj@readTrace[range]
-	]
+	If[optTimepoints===True, optTimepoints="Frames" ];
 
+	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
+		dataObj@readTrace[Round[channel], range],
+		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], dataObj@readTrace[Round[channel], range]} ]
+	]
 ];
 
 
-NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-			channel_/;NumberQ[channel], 
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
+			range_Rule, 
+			opts:OptionsPattern[]]:= NNReadTrace[dataObj, $NNSpanToNNRangeSpecifier[range], opts];
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
+			range_List/;(Head[range[[1]]]===Span), 
+			opts:OptionsPattern[]]:= NNReadTrace[dataObj, $NNSpanToNNRangeSpecifier[range], opts];
+
+
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
 			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, channel, #, opts]& /@ rangeList;
+NNReadTrace[dataObj, #, opts]& /@ rangeList;
+
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
@@ -205,31 +290,90 @@ NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel],
 Module[{optTimepoints, tempTimepoints, tempTrace},
 
 	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
-	If[optTimepoints =!= True && optTimepoints =!= False, Message[NNReadTrace::invalidOptionValue, "NNOptReturnTimepoints", NNOptReturnTimepoints]];
-	
-	If[optTimepoints,
-		Transpose[ {NNReadTimepoints[range, dataObj], dataObj@readTrace[range]} ],
-		dataObj@readTrace[range]
+	If[optTimepoints===True, optTimepoints="Frames" ];
+
+
+	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
+		dataObj@readTrace[range],
+		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], dataObj@readTrace[range]} ]
 	]
-
 ];
-
-
-NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
-			channel_/;NumberQ[channel], 
-			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
-			opts:OptionsPattern[]]:=
-NNReadTrace[dataObj, channel, #, opts]& /@ rangeList;
-
-
-(* ::Subsubsection:: *)
-(*Default*)
 
 
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsubsection:: *)
+(*NNReadPage*)
+
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			range_Rule, 
+			opts:OptionsPattern[]]:= NNReadPage[dataObj, channels, $NNSpanToNNRangeSpecifier[range], opts];
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			range_List/;(Head[range[[1]]===Span]), 
+			opts:OptionsPattern[]]:= NNReadPage[dataObj, channels, $NNSpanToNNRangeSpecifier[range], opts];
+
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
+			opts:OptionsPattern[]]:=
+NNReadPage[dataObj, channels, #, opts]& /@ rangeList;
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			range_Rule, 
+			opts:OptionsPattern[]]:= NNReadPage[dataObj, channels, $NNSpanToNNRangeSpecifier[range], opts];
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			range_List/;(Head[range[[1]]===Span]), 
+			opts:OptionsPattern[]]:= NNReadPage[dataObj, channels, $NNSpanToNNRangeSpecifier[range], opts];
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels_List/;And@@(NumberQ/@channels), 
+			range_/;NNJavaObjectQ[ range, $NNJavaClass$NNRangeSpecifier], 
+			opts:OptionsPattern[]]:=
+Module[{optTimepoints, tempTimepoints, tempTrace},
+
+	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
+	If[optTimepoints===True, optTimepoints="Frames" ];
+
+	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
+		dataObj@readPage[Round[channels], range],
+		Prepend[ dataObj@readPage[Round[channels], range], NNReadTimepoints[range, dataObj, optTimepoints] ]
+	]
+];
+
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
+			opts:OptionsPattern[]]:=
+NNReadPage[dataObj, #, opts]& /@ rangeList;
+
+
+NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			range_/;NNJavaObjectQ[ range, $NNJavaClass$NNRangeSpecifier], 
+			opts:OptionsPattern[]]:=
+Module[{optTimepoints, tempTimepoints, tempTrace},
+
+	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
+	If[optTimepoints===True, optTimepoints="Frames" ];
+
+	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
+		dataObj@readPage[range],
+		Prepend[ dataObj@readPage[range], NNReadTimepoints[range, dataObj, optTimepoints] ]
+	]
+];
+
+
+NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
+
+
+(* ::Subsection::Closed:: *)
 (*NNFilterXXX*)
 
 
@@ -283,28 +427,72 @@ NNFilterMedianSubtract[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaCla
 NNFilterMedianSubtract[args___]:=Message[NNFilterMedianSubtract::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+NNFilterFIR[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], {highPass_/;NumberQ[highPass], lowPass_/;NumberQ[lowPass]}, opts:OptionsPattern[]]:=
+Module[{tempret},
+	tempret=JavaNew[$NNJavaClass$NNFilterFIR, dataObj];
+	tempret@setFilterHz[ highPass, lowPass ];
+	tempret
+];
+
+NNFilterFIR[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				 {highPass_/;NumberQ[highPass], lowPass_/;NumberQ[lowPass]}, opts:OptionsPattern[]]:=
+	(NNFilterFIR[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], 
+		{highPass, lowPass}, opts
+	])@getNNDataChannel[ 0 ];
+
+NNFilterFIR[args___]:=Message[NNFilterFIR::invalidArgs, {args}];
+
+
+(* ::Subsection:: *)
 (*NNEvents Accessors*)
 
 
 NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], "Ports", opts:OptionsPattern[]]:=
 		dataObj@getPorts[];
 
-NNReadPorts[args___]:=Message[NNReadPorts::invalidArgs, {args}];
-
 
 NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], port_Integer,
 			opts:OptionsPattern[]]:=
 Module[{},
 
-	Transpose[{Transpose[{dataObj@readPortTimestampArray[port], dataObj@readPortDurationArray[port]}],
-				dataObj@readPortCodeArray[port],
-				dataObj@readPortCommentArray[port]}
+	Transpose[{Transpose[{
+				dataObj@readPortEventArrayTimestamp[port], 
+				dataObj@readPortEventArrayDuration[port]}],
+				dataObj@readPortEventArrayCodes[port],
+				dataObj@readPortEventArrayComments[port]}
 	]
 
 ];
 
 NNReadEvents[args___]:=Message[NNReadEvents::invalidArgs, {args}];
+
+
+NNReadTimestamps[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], {port_Integer, code_Integer},
+	opts:OptionsPattern[]]:=
+Module[{tempTimestamps, tempTimestampsChecked, optDurationCheck},
+
+	tempTimestamps = dataObj@readPortCodeEventArray[ port, code ];
+
+	optDurationCheck = OptionValue[NNOptDurationCheck];
+	If[ optDurationCheck === False || optDurationCheck === None,
+		tempTimestamps[[All, 1]],
+		If[ HHFunctionQ[ optDurationCheck ],
+			tempTimestampsChecked = Select[ tempTimestamps, optDurationCheck[ #[[2]] ]& ];
+			If[ Length[tempTimestamps] != Length[tempTimestampsChecked],
+				Message[ NNReadTimestamps::rejectDuration, Length[tempTimestamps]-Length[tempTimestampsChecked] ]
+			];
+			tempTimestampsChecked[[All, 1]],
+			
+			Message[NNReadTimestamps::invalidOptionValue, "NNOptDurationCheck", ToString[ optDurationCheck ] ];
+			tempTimestamps[[All, 1]]
+		]
+	]
+
+];
+
+NNReadTimestamps::rejectDuration = "Some timestamps (n=`1`) rejected due to NNOptDurationCheck criteria";
+NNReadTimestamps[args___]:=Message[NNReadTimestamps::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
