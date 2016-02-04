@@ -51,6 +51,7 @@ $NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDow
 $NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDecimate";
 $NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
 $NNJavaClass$NNFilterFIR             = "nounou.elements.data.filters.NNFilterFIR";
+$NNJavaClass$NNFilterBuffer             = "nounou.elements.data.filters.NNFilterBuffer";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
