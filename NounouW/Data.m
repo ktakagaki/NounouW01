@@ -25,7 +25,7 @@ NNFilenameSort::usage="Sorts data filenames based on trailing digits, which may 
 For example, XXX\CSC2.ncs => XXX\CSC10.ncs";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
@@ -68,6 +68,7 @@ NNFilterDownsample::usage="";
 NNFilterDecimate::usage="";
 NNFilterMedianSubtract::usage="";
 NNFilterFIR::usage="";
+NNFilterBuffer::usage="";
 
 
 (* ::Subsection:: *)
@@ -104,7 +105,7 @@ Module[{tempret, optSort},
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNSave*)
 
 
@@ -155,7 +156,7 @@ NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Tim
 NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
@@ -263,7 +264,9 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 
 	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
 		dataObj@readTrace[Round[channel], range],
-		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], dataObj@readTrace[Round[channel], range]} ]
+		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], 
+					dataObj@readTrace[Round[channel], range]
+		} ]
 	]
 ];
 
@@ -281,7 +284,6 @@ NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel],
 			rangeList_List/;NNJavaObjectListQ[ rangeList, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
 NNReadTrace[dataObj, #, opts]& /@ rangeList;
-
 
 
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
@@ -373,7 +375,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilterXXX*)
 
 
@@ -442,6 +444,20 @@ NNFilterFIR[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataCh
 	])@getNNDataChannel[ 0 ];
 
 NNFilterFIR[args___]:=Message[NNFilterFIR::invalidArgs, {args}];
+
+
+NNFilterBuffer[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], opts:OptionsPattern[]]:=
+Module[{tempret},
+	JavaNew[$NNJavaClass$NNFilterBuffer, dataObj]
+];
+
+NNFilterBuffer[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel],
+				opts:OptionsPattern[]]:=
+	(NNFilterBuffer[ 
+		JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObj], opts
+	])@getNNDataChannel[ 0 ];
+
+NNFilterBuffer[args___]:=Message[NNFilterBuffer::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
