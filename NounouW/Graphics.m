@@ -8,11 +8,12 @@ BeginPackage["NounouW`Graphics`", {"HokahokaW`","HokahokaW`Graphics`","JLink`","
 (*Declarations*)
 
 
-(* ::Subsection::Closed:: *)
-(*NNDetectorPlot*)
+(* ::Subsection:: *)
+(*NNDetectorPlot/NNDetectorInsetPlot*)
 
 
 NNDetectorPlot::usage="Plots detector field.";
+NNDetectorInsetPlot::usage="";
 
 
 NNDetectorText::usage="Option for {NNDetectorPlot}: Whether to plot text";
@@ -80,11 +81,11 @@ Options[NNTracePlot] = HHJoinOptionLists[
 Begin["`Private`"];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNDetectorPlot*)
 
 
-NNDetectorPlot[layoutObj_/;HHJavaObjectQ[layoutObj, $NNDataLayoutSpatialClass], opts:OptionsPattern[]]:=
+NNDetectorPlot[layoutObj_/;HHJavaObjectQ[layoutObj, $NNJavaClass$NNLayoutSpatial ], opts:OptionsPattern[]]:=
 Module[{tempret, 
 		channelCount, channelRadius,
 		textFunc},
@@ -116,7 +117,47 @@ Module[{tempret,
 ];
 
 
-NNDetectorPlot[args___]:=Message[NNToList::invalidArgs, {args}];
+NNDetectorPlot[args___]:=Message[NNDetectorPlot::invalidArgs, {args}];
+
+
+(* ::Subsection:: *)
+(*NNDetectorInsetPlot*)
+
+
+NNDetectorInsetPlot[insetList_List,
+					layoutObj_/;HHJavaObjectQ[layoutObj, $NNJavaClass$NNLayoutSpatial ], 
+					opts:OptionsPattern[]]:=
+Module[{tempReturn, 
+		channelCount, channelRadius,
+		textFunc},
+
+	channelCount = layoutObj@getChannelCount[];
+	channelRadius = layoutObj@getChannelRadius[];
+
+	If[ channelCount < Length[insetList],
+		Message[NNDetectorInsetPlot::notEnoughChannels, channelCount, Length[insetList]];
+		Null,
+		
+		If[ channelCount > Length[insetList], NNDetectorInsetPlot::insetsNotForAllChannels, channelCount, Length[insetList]];
+		tempReturn=
+		MapThread[
+			If[ layoutObj@isMasked[#1],
+					{Gray, Disk[layoutObj@getChannelCoordinates[#1], channelRadius ]},
+					{Inset[ #2, layoutObj@getChannelCoordinates[#1], Center, channelRadius*1.75 ]}
+			]&,
+			{Range[ Length[insetList] ]-1, insetList}
+		];
+		Graphics[tempReturn, Sequence@@FilterRules[{opts}, Options[Graphics]]]
+
+	]
+	
+];
+
+NNDetectorInsetPlot::notEnoughChannels="Not enough channels in layout object (`1`) to display all insets (`2`)";
+NNDetectorInsetPlot::insetsNotForAllChannels="Not all channels in layout object (getChannelCount = `1`) will have insets (Length = `2`)";
+
+
+NNDetectorInsetPlot[args___]:=Message[NNDetectorInsetPlot::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)

@@ -61,6 +61,9 @@ $NNJavaClass$NNDataChannelExtracted = "nounou.elements.data.NNDataChannelExtract
 $NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
 
 
+$NNJavaClass$NNLayoutSpatial = "nounou.elements.traits.layout.NNLayoutSpatial";
+
+
 (*NNJavaObjectQ$NNElement::usage=
 "Checks whether something is a Java object and an instance of $NNJavaClass$NNElement ("<>$NNJavaClass$NNElement<>")";
 
