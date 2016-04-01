@@ -25,12 +25,13 @@ NNFilenameSort::usage="Sorts data filenames based on trailing digits, which may 
 For example, XXX\CSC2.ncs => XXX\CSC10.ncs";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData Accessors*)
 
 
 $NNSpanToNNRangeSpecifier::usage="";
 NNReadTimepoints::usage="";
+NNOptTimepointUnit::usage="";
 
 
 NNPrintInfo::usage="Prints out java object information for an NNElement child class (calls toStringFull[]).";
@@ -39,7 +40,8 @@ NNPrintInfo::usage="Prints out java object information for an NNElement child cl
 NNReadTrace::usage="";
 
 Options[NNReadTrace] = {
-	NNOptReturnTimepoints -> True
+	NNOptReturnTimepoints -> True,
+	NNOptTimepointUnit -> Automatic
 };
 
 NNReadPage::usage="";
@@ -50,8 +52,10 @@ Options[NNReadPage] = {
 
 
 NNReadEvents::usage="";
+NNOptDurationEvents::usage="";
 
 Options[NNReadEvents] = {
+	NNOptDurationEvents -> True
 };
 
 NNReadTimestamps::usage="";
@@ -156,7 +160,7 @@ NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Tim
 NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData Accessors*)
 
 
@@ -204,7 +208,7 @@ $NNSpanToNNRangeSpecifier[args___]:=Message[$NNSpanToNNRangeSpecifier::invalidAr
 $NNSpanToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NNReadTimepoints*)
 
 
@@ -257,16 +261,20 @@ NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 			channel_/;NumberQ[channel], 
 			range_/;NNJavaObjectQ[ range, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
-Module[{optTimepoints, tempTimepoints, tempTrace},
+Module[{optTimepoints, optTimepointUnit, tempTimepoints, tempTrace},
 
 	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
-	If[optTimepoints===True, optTimepoints="Frames" ];
+	optTimepointUnit = OptionValue[ NNOptTimepointUnit ];
+	If[optTimepoints===True, 
+		If[optTimepointUnit===Automatic, optTimepointUnit="Frames"],
+		optTimepoints=False 
+	 ];
 
-	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
-		dataObj@readTrace[Round[channel], range],
-		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], 
+	If[optTimepoints(* === Null || optTimepoints === None || optTimepoints === False*),
+		Transpose[ {NNReadTimepoints[range, dataObj, optTimepointUnit], 
 					dataObj@readTrace[Round[channel], range]
-		} ]
+		} ],
+		dataObj@readTrace[Round[channel], range]
 	]
 ];
 
@@ -289,15 +297,20 @@ NNReadTrace[dataObj, #, opts]& /@ rangeList;
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 
 			range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:=
-Module[{optTimepoints, tempTimepoints, tempTrace},
+Module[{optTimepoints, optTimepointUnit, tempTimepoints, tempTrace},
 
 	optTimepoints = OptionValue[ NNOptReturnTimepoints ];
-	If[optTimepoints===True, optTimepoints="Frames" ];
+	optTimepointUnit = OptionValue[ NNOptTimepointUnit ];
+	If[optTimepoints===True, 
+		If[optTimepointUnit===Automatic, optTimepointUnit="Frames"],
+		optTimepoints=False 
+	 ];
 
-
-	If[optTimepoints === Null || optTimepoints === None || optTimepoints === False,
-		dataObj@readTrace[range],
-		Transpose[ {NNReadTimepoints[range, dataObj, optTimepoints], dataObj@readTrace[range]} ]
+	If[optTimepoints(* === Null || optTimepoints === None || optTimepoints === False*),
+		Transpose[ {NNReadTimepoints[range, dataObj, optTimepointUnit], 
+					dataObj@readTrace[range]
+		} ],
+		dataObj@readTrace[range]
 	]
 ];
 
@@ -375,7 +388,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNFilterXXX*)
 
 
@@ -470,13 +483,23 @@ NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], "Ports", o
 
 NNReadEvents[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], port_Integer,
 			opts:OptionsPattern[]]:=
-Module[{},
+Module[{tempReturn},
+	
+	(*If[!OptionValue[NNOptDurationEvents], dataObj@expandDurationEventsToStartAndReset[] ];*)
 
-	Transpose[{Transpose[{
+	tempReturn=Transpose[{Transpose[{
 				dataObj@readPortEventArrayTimestamp[port], 
 				dataObj@readPortEventArrayDuration[port]}],
 				dataObj@readPortEventArrayCodes[port],
 				dataObj@readPortEventArrayComments[port]}
+	];
+
+	If[!OptionValue[NNOptDurationEvents], 
+		tempReturn=If[#[[1,2]]!=0,
+			{{{#[[1,1]], 0}, #[[2]], #[[3]]}, {{#[[1,1]]+#[[1,2]], 0}, #[[2]], "END: "<>#[[3]]}},
+			{#}]& /@ tempReturn;
+		Flatten[tempReturn, 1],
+		tempReturn
 	]
 
 ];

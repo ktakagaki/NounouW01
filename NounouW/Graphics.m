@@ -14,6 +14,7 @@ BeginPackage["NounouW`Graphics`", {"HokahokaW`","HokahokaW`Graphics`","JLink`","
 
 NNDetectorPlot::usage="Plots detector field.";
 NNDetectorInsetPlot::usage="";
+NNHexagon::usage="";
 
 
 NNDetectorText::usage="Option for {NNDetectorPlot}: Whether to plot text";
@@ -23,7 +24,7 @@ NNDetectorTextFunction::usage="Option for {NNDetectorPlot}: function to use to p
 
 Options[NNDetectorPlot]=
 	HHJoinOptionLists[
-		{NNDetectorText->True, NNDetectorTextFunction -> (Text[Style[#1, Medium], #2, {0, 0}]&) },
+		{NNDetectorText->True, NNDetectorTextFunction -> (Text[Style[#1, Medium], #2, {0, 0}]&), ColorFunction -> ColorData["Rainbow"] },
 		Options[Graphics]
 	];
 
@@ -117,7 +118,37 @@ Module[{tempret,
 ];
 
 
+NNDetectorPlot[layoutObj_/;HHJavaObjectQ[layoutObj, $NNJavaClass$NNLayoutSpatial ], data_List, opts:OptionsPattern[]]:=
+Module[{channelCount, channelRadius,
+		tempGraphic},
+
+	channelCount = layoutObj@getChannelCount[];
+	channelRadius = layoutObj@getChannelRadius[];
+	tempGraphic=If[channelCount < Length[data],
+		Message[NNDetectorPlot::invalidChCount, channelCount, Length[data]];
+		{},
+		Table[ 
+			{If[ layoutObj@isMasked[n],
+				{Black, Circle[layoutObj@getChannelCoordinates[n], channelRadius ]},
+				{(*EdgeForm[None],*)OptionValue[ColorFunction][data[[n+1]]],NNHexagon[ layoutObj@getChannelCoordinates[n], channelRadius*2/Sqrt[3] ]}
+			]},
+			{n, 0, channelCount-1}
+		]
+	];
+		
+	Graphics[tempGraphic, Sequence@@FilterRules[{opts}, Options[Graphics]]]
+];
+
+NNDetectorPlot::invalidChCount="Channel count for layout object (`1`) must be longer than data length (`2`)";
+
+
 NNDetectorPlot[args___]:=Message[NNDetectorPlot::invalidArgs, {args}];
+
+
+NNHexagon[{x_, y_}, r_]:= Polygon[ Table[{x,y}+r*{Sin[theta], Cos[theta]},{theta, Pi/3, 7 Pi/3, Pi/3}]];
+
+
+NNHexagon[args___]:=Message[NNHexagon::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)

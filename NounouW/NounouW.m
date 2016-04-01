@@ -27,7 +27,7 @@ HHPackageMessage["NounouW`"];
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
 NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
-NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
+(*NNOpt=LoadJavaClass["nounou.options.NNOpt", StaticsVisible->False, AllowShortContext->True];*)
 Print[NN`toString[]];
 
 
@@ -44,7 +44,8 @@ $NNJavaClass$NNElement = "nounou.elements.NNElement";
 
 $NNJavaClass$NNData          = "nounou.elements.data.NNData";
 $NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
-$NNJavaClass$NNLayout    = "nounou.elements.traits.NNLayoutSpatial";
+$NNJavaClass$NNLayout    = "nounou.elements.layout.NNLayoutSpatial";
+$NNJavaClass$NNLayoutSpatial = "nounou.elements.layout.NNLayoutSpatial";
 
 
 $NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDownsample";
@@ -59,9 +60,6 @@ $NNJavaClass$NNDataChannelArray     = "nounou.elements.data.NNDataChannelArray";
 $NNJavaClass$NNDataChannelExtracted = "nounou.elements.data.NNDataChannelExtracted";
 
 $NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
-
-
-$NNJavaClass$NNLayoutSpatial = "nounou.elements.traits.layout.NNLayoutSpatial";
 
 
 (*NNJavaObjectQ$NNElement::usage=
