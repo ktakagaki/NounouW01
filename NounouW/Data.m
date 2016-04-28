@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}]
+BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}];
 
 
 (* ::Section:: *)
@@ -22,7 +22,7 @@ NNSave::usage="Save data object(s) to a file.";
 
 
 NNFilenameSort::usage="Sorts data filenames based on trailing digits, which may not be straight forward. \
-For example, XXX\CSC2.ncs => XXX\CSC10.ncs";
+For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs";
 
 
 (* ::Subsection:: *)
