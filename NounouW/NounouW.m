@@ -20,7 +20,7 @@ General::nullArgument="At least one of the required arguments is null!";
 HHPackageMessage["NounouW`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Load Static NN Object*)
 
 
@@ -31,8 +31,8 @@ NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];
 
 
-(* ::Subsection:: *)
-(*nounou Java class paths and object checking*)
+(* ::Subsection::Closed:: *)
+(*Java class paths and object checking*)
 
 
 NNJavaObjectQ::usage=
@@ -90,6 +90,13 @@ $NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
 (*NNFrameRangeJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.FrameRange";
 
 NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";*)
+
+
+(* ::Subsection:: *)
+(*Package-wide markers*)
+
+
+NNTimestamp::usage="Marker for specifying times as timestamps, use as \"NNTimestamp @ 1000000\".";
 
 
 (* ::Subsection:: *)
