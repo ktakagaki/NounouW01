@@ -18,7 +18,7 @@ NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel(s), <<JavaObject[nounou
 
 NNTracePlot$UniqueOptions = {
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
-	(*NNBaselineCorrection->Mean,*) NNTimeUnit -> "ms"
+	(*NNBaselineCorrection->Mean,*) NNTimeUnit -> "ms", NNOptStack-> Automatic,
 	(*, NNMasking->False*)
 	(*HHStackIncrement -> 0, HHBaselineCorrection -> None*)
 };
