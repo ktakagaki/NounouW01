@@ -20,19 +20,19 @@ General::nullArgument="At least one of the required arguments is null!";
 HHPackageMessage["NounouW`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Load Static NN Object*)
 
 
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
 NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
-NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
+(*NNOpt=LoadJavaClass["nounou.options.NNOpt", StaticsVisible->False, AllowShortContext->True];*)
 Print[NN`toString[]];
 
 
-(* ::Subsection:: *)
-(*nounou Java class paths and object checking*)
+(* ::Subsection::Closed:: *)
+(*Java class paths and object checking*)
 
 
 NNJavaObjectQ::usage=
@@ -44,7 +44,8 @@ $NNJavaClass$NNElement = "nounou.elements.NNElement";
 
 $NNJavaClass$NNData          = "nounou.elements.data.NNData";
 $NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
-$NNJavaClass$NNLayout    = "nounou.elements.traits.NNLayoutSpatial";
+$NNJavaClass$NNLayout    = "nounou.elements.layout.NNLayoutSpatial";
+$NNJavaClass$NNLayoutSpatial = "nounou.elements.layout.NNLayoutSpatial";
 
 
 $NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDownsample";
@@ -59,9 +60,6 @@ $NNJavaClass$NNDataChannelArray     = "nounou.elements.data.NNDataChannelArray";
 $NNJavaClass$NNDataChannelExtracted = "nounou.elements.data.NNDataChannelExtracted";
 
 $NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
-
-
-$NNJavaClass$NNLayoutSpatial = "nounou.elements.traits.layout.NNLayoutSpatial";
 
 
 (*NNJavaObjectQ$NNElement::usage=
@@ -95,12 +93,22 @@ NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an inst
 
 
 (* ::Subsection:: *)
+(*Package-wide markers*)
+
+
+NNTimestamp::usage="Marker for specifying times as timestamps, use as \"NNTimestamp @ 1000000\".";
+
+
+(* ::Subsection:: *)
 (*Package-wide option keys*)
 
 
-NNValueUnit::usage="Specifies what units the data output should be in (Absolute, \"microV\")";
 NNTimeUnit::usage="Specifies what time units the data output should be in (\"ms\", \"samples\"). \
 For trace reading, only relevant if time stamps are returned (i.e. NNReturnTimestamps -> True).";
+NNOptStack::usage="Whether to stack multiple channels in NNTracePlot. Automatic will stack based on digitization range.";
+NNOptStackGain::usage="Stack increment as a multiple of digitization range. Only valid when NNOptStack -> Automatic.";
+
+NNValueUnit::usage="Specifies what units the data output should be in (Absolute, \"microV\")";
 NNOptReturnTimepoints::usage=
 "Whether to return a 2D array with time points ({{t1, x1}, {t2, x2}, ...}) when reading data (NNReadTrace). True or False.";
 
